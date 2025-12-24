@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8">
+  <title>Balades narratives au MAN</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Hello, world! 🌍</h1>
-  <p>This site is hosted for free on GitHub Pages.</p>
+<h1>Interactive Image Hotspots</h1>
 
-  <script src="script.js"></script>
+<div class="image-container">
+  <img src="image.jpg" alt="Main Image">
+
+  <!-- Hotspot 1 -->
+  <div class="hotspot" style="top: 30%; left: 40%;" 
+       data-title="Hotspot 1"
+       data-text="This is information for hotspot 1."></div>
+
+  <!-- Hotspot 2 -->
+  <div class="hotspot" style="top: 60%; left: 70%;" 
+       data-title="Hotspot 2"
+       data-text="This is information for hotspot 2."></div>
+</div>
+
+<!-- Popup Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
