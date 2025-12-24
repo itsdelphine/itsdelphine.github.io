@@ -1,6 +1,71 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 50px;
-  background: #f4f4f4;
+  background: #f5f5f5;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Hotspots */
+.hotspot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover tooltip */
+.hotspot::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.hotspot:hover::after {
+  opacity: 1;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  margin: 10% auto;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
 }
