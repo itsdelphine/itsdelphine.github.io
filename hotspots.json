@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "title": "Balades narratives au musée d'Archéologie nationale",
+    "defaultScene": "BN_C0"
+  },
+  "scenes": {
+    "BN_C0": {
+      "image": "images/BN_C0.jpg",
+      "hotspots": [
+        {
+          "id": "C0-HS-01",
+          "position": { "x": 70, "y": 64 },
+          "entries": [
+            {
+              "id": "C0-HS-01-A",
+              "label": "Alerte dosettes",
+              "title": "Alerte dosettes",
+              "author": "Vincent A. (Arraud)",
+              "text": "texts/C0-HS-01-A.txt",
+              "pdf": "pdfs/BN_Alerte-dosettes.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-02",
+          "position": { "x": 65, "y": 59 },
+          "entries": [
+            {
+              "id": "C0-HS-02-A",
+              "label": "Le passage du portique",
+              "title": "Le passage du portique",
+              "author": "Michel",
+              "text": "texts/C0-HS-02-A.txt",
+              "pdf": "pdfs/BN_Passage-portique.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-03",
+          "position": { "x": 40, "y": 47 },
+          "entries": [
+            {
+              "id": "C0-HS-03-A",
+              "label": "Le médaillon",
+              "title": "Le médaillon",
+              "author": "Daniel Roger",
+              "text": "texts/C0-HS-03-A.txt",
+              "pdf": "pdfs/BN_Medaillon.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-04",
+          "position": { "x": 59, "y": 44 },
+          "entries": [
+            {
+              "id": "C0-HS-04-A",
+              "label": "Un immense privilège",
+              "title": "Un immense privilège",
+              "author": "Didier Skrobala",
+              "text": "texts/C0-HS-04-A.txt",
+              "pdf": "pdfs/BN_Immense-privilege.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-05",
+          "position": { "x": 62, "y": 38 },
+          "entries": [
+            {
+              "id": "C0-HS-05-A",
+              "label": "Un jeune couple, pendant la Nuit des musées",
+              "title": "Un jeune couple, pendant la Nuit des musées",
+              "author": "Brian et Lisa",
+              "text": "texts/C0-HS-05-A.txt",
+              "pdf": "pdfs/BN_Jeune-couple.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-06",
+          "position": { "x": 62, "y": 32 },
+          "entries": [
+            {
+              "id": "C0-HS-06-A",
+              "label": "Aujourd’hui les Barbares",
+              "title": "Aujourd’hui les Barbares",
+              "author": "Eric Moraud",
+              "text": "texts/C0-HS-06-A.txt",
+              "pdf": "pdfs/BN_Barbares.pdf"
+            }
+          ]
+        },
+        {
+          "id": "C0-HS-07",
+          "position": { "x": 50, "y": 67 },
+          "entries": [
+            {
+              "id": "C0-HS-07-A",
+              "label": "Histoire d’Hérisson",
+              "title": "Histoire d’Hérisson",
+              "author": "Jean-Philippe Lagarde",
+              "text": "texts/C0-HS-07-A.txt",
+              "pdf": "pdfs/BN_Histoire-herisson.pdf"
+            },
+            {
+              "id": "C0-HS-07-B",
+              "label": "Les fantômes de la boutique",
+              "title": "Les fantômes de la boutique",
+              "author": "Yannick Lefloch",
+              "text": "texts/C0-HS-07-B.txt",
+              "pdf": "pdfs/BN_Fantome-boutique.pdf"
+            }
+          ]
+        }
+      ]
+    },
+
+    "BN_C1_4": {
+      "image": "images/BN_C1-4.jpg",
+      "hotspots": [
+        {
+          "id": "C1-4-HS-01",
+          "position": { "x": 69, "y": 63 },
+          "entries": [
+            {
+              "id": "C1-4-HS-01-A",
+              "label": "Ils nous ont précédé sur le chemin de la vie",
+              "title": "Ils nous ont précédé sur le chemin de la vie",
+              "author": "Dimitri",
+              "text": "texts/C1-4-HS-01-A.txt",
+              "pdf": "pdfs/BN_Chemin-vie.pdf"
+            },
+            {
+              "id": "C1-4-HS-01-B",
+              "label": "Ma première impression au musée d’archéologie",
+              "title": "Ma première impression au musée d’archéologie",
+              "author": "Isabelle Fichter",
+              "text": "texts/C1-4-HS-01-B.txt",
+              "pdf": "pdfs/BN_Premiere-impression.pdf"
+            },
+            {
+              "id": "C1-4-HS-01-C",
+              "label": "Le magdalénien",
+              "title": "Le magdalénien",
+              "author": "Arlette Millard",
+              "text": "texts/C1-4-HS-01-C.txt",
+              "pdf": "pdfs/BN_Magdalenien.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-02",
+          "position": { "x": 52, "y": 69 },
+          "entries": [
+            {
+              "id": "C1-4-HS-02-A",
+              "label": "Wanted !",
+              "title": "Wanted !",
+              "author": "Delphine Peschard",
+              "text": "texts/C1-4-HS-02-A.txt",
+              "pdf": "pdfs/BN_Wanted.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-03",
+          "position": { "x": 34, "y": 54 },
+          "entries": [
+            {
+              "id": "C1-4-HS-03-A",
+              "label": "Un musée qui m’a marquée",
+              "title": "Un musée qui m’a marquée",
+              "author": "Véronique Masson",
+              "text": "texts/C1-4-HS-03-A.txt",
+              "pdf": "pdfs/BN_Marquee.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-04",
+          "position": { "x": 46, "y": 35 },
+          "entries": [
+            {
+              "id": "C1-4-HS-04-A",
+              "label": "Récit de fantôme",
+              "title": "Récit de fantôme",
+              "author": "Bénédicte Malard",
+              "text": "texts/C1-4-HS-04-A.txt",
+              "pdf": "pdfs/BN_Recit-fantome.pdf"
+            },
+            {
+              "id": "C1-4-HS-04-B",
+              "label": "Balade narrative remonte les temps, rencontre les gens",
+              "title": "Balade narrative remonte les temps, rencontre les gens",
+              "author": "Xavier Lemaître",
+              "text": "texts/C1-4-HS-04-B.txt",
+              "pdf": "pdfs/BN_Rencontre.pdf"
+            },
+            {
+              "id": "C1-4-HS-04-C",
+              "label": "Un lieu réconfortant",
+              "title": "Un lieu réconfortant",
+              "author": "Benoit Dercy",
+              "text": "texts/C1-4-HS-04-C.txt",
+              "pdf": "pdfs/BN_Lieu-reconfortant.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-05",
+          "position": { "x": 46, "y": 23 },
+          "entries": [
+            {
+              "id": "C1-4-HS-05-A",
+              "label": "Et toi tu feras quoi plus tard ?",
+              "title": "Et toi tu feras quoi plus tard ?",
+              "author": "Marie Wiegelt",
+              "text": "texts/C1-4-HS-05-A.txt",
+              "pdf": "pdfs/BN_Plus-tard.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-06",
+          "position": { "x": 66, "y": 50 },
+          "entries": [
+            {
+              "id": "C1-4-HS-06-A",
+              "label": "Salle des bals",
+              "title": "Salle des bals",
+              "author": "Xavier Lemaître",
+              "text": "texts/C1-4-HS-06-A.txt",
+              "pdf": "pdfs/BN_Salle-bals.pdf"
+            }
+          ]
+        },
+
+        {
+          "id": "C1-4-HS-07",
+          "position": { "x": 68, "y": 33 },
+          "entries": [
+            {
+              "id": "C1-4-HS-07-A",
+              "label": "Le toit du château",
+              "title": "Le toit du château",
+              "author": "Frédéric R. (Rink)",
+              "text": "texts/C1-4-HS-07-A.txt",
+              "pdf": "pdfs/BN_Toit-chateau.pdf"
+            }
+          ]
+        }
+      ]
+    },
+
+    "BN_D": {
+      "image": "images/BN_D.jpg",
+      "hotspots": [
+        {
+          "id": "D-HS-01",
+          "position": { "x": 45, "y": 61 },
+          "entries": [
+            {
+              "id": "D-HS-01-A",
+              "label": "Une aventure collective",
+              "title": "Une aventure collective",
+              "author": "Anabelle Palignac",
+              "text": "texts/D-HS-01-A.txt",
+              "pdf": "pdfs/BN_Aventure-collective.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-02",
+          "position": { "x": 65, "y": 84 },
+          "entries": [
+            {
+              "id": "D-HS-02-A",
+              "label": "Crise d’adolescence",
+              "title": "Crise d’adolescence",
+              "author": "Françoise Douxami",
+              "text": "texts/D-HS-02-A.txt",
+              "pdf": "pdfs/BN_Crise-adolescence.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-03",
+          "position": { "x": 47, "y": 37 },
+          "entries": [
+            {
+              "id": "D-HS-03-A",
+              "label": "Souvenirs d’enfance",
+              "title": "Souvenirs d’enfance",
+              "author": "Myriam Splemkes",
+              "text": "texts/D-HS-03-A.txt",
+              "pdf": "pdfs/BN_Souvenirs-enfance.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-04",
+          "position": { "x": 34, "y": 52 },
+          "entries": [
+            {
+              "id": "D-HS-04-A",
+              "label": "Un adulte en devenir",
+              "title": "Un adulte en devenir",
+              "author": "Hélène",
+              "text": "texts/D-HS-04-A.txt",
+              "pdf": "pdfs/BN_Adulte-devenir.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-05",
+          "position": { "x": 45, "y": 77 },
+          "entries": [
+            {
+              "id": "D-HS-05-A",
+              "label": "Les coqs",
+              "title": "Les coqs",
+              "author": "Nicole Ruyer",
+              "text": "texts/D-HS-05-A.txt",
+              "pdf": "pdfs/BN_Coqs.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-06",
+          "position": { "x": 53, "y": 37 },
+          "entries": [
+            {
+              "id": "D-HS-06-A",
+              "label": "Les foulées royales",
+              "title": "Les foulées royales",
+              "author": "Aude Alexandre",
+              "text": "texts/D-HS-06-A.txt",
+              "pdf": "pdfs/BN_Foulees-royales.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-07",
+          "position": { "x": 52, "y": 61 },
+          "entries": [
+            {
+              "id": "D-HS-07-A",
+              "label": "Notre déjeuner sur l’herbe",
+              "title": "Notre déjeuner sur l’herbe",
+              "author": "Grégory Chaillou",
+              "text": "texts/D-HS-07-A.txt",
+              "pdf": "pdfs/BN_Dejeuner-herbe.pdf"
+            }
+          ]
+        },
+        {
+          "id": "D-HS-08",
+          "position": { "x": 31, "y": 18 },
+          "entries": [
+            {
+              "id": "D-HS-08-A",
+              "label": "Une promesse",
+              "title": "Une promesse",
+              "author": "Elise Hermann",
+              "text": "texts/D-HS-08-A.txt",
+              "pdf": "pdfs/BN_Promesse.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
