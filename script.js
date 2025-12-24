@@ -1,28 +1,67 @@
-let data;
-let currentScene;
+/* =========================
+   GLOBAL STATE & ELEMENTS
+========================= */
+
+let data = null;
+let currentSceneKey = null;
+
 const sceneEl = document.getElementById("scene");
 const imgEl = document.getElementById("sceneImage");
 const layer = document.getElementById("hotspotLayer");
 
+/* Modals */
+const modal = document.getElementById("modal");
+const infoModal = document.getElementById("infoModal");
+
+/* Tooltip */
+let tooltip = null;
+
+/* =========================
+   LOAD JSON DATA
+========================= */
+
 fetch("hotspots.json")
-  .then(r => r.json())
+  .then(res => {
+    if (!res.ok) throw new Error("Cannot load hotspots.json");
+    return res.json();
+  })
   .then(json => {
     data = json;
     loadScene(data.meta.defaultScene);
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Erreur de chargement des données.");
   });
 
+/* =========================
+   SCENE LOADING
+========================= */
+
 function loadScene(key) {
+  if (!data || !data.scenes[key]) return;
+
+  currentSceneKey = key;
+
+  // Fade out
   sceneEl.classList.add("hidden");
 
   setTimeout(() => {
-    currentScene = data.scenes[key];
-    imgEl.src = currentScene.image;
+    const scene = data.scenes[key];
+
+    imgEl.src = scene.image;
     layer.innerHTML = "";
 
-    currentScene.hotspots.forEach(h => createHotspotGroup(h));
+    scene.hotspots.forEach(h => createHotspotGroup(h));
+
+    // Fade in
     sceneEl.classList.remove("hidden");
   }, 400);
 }
+
+/* =========================
+   HOTSPOTS
+========================= */
 
 function createHotspotGroup(h) {
   const base = document.createElement("div");
@@ -30,77 +69,135 @@ function createHotspotGroup(h) {
   base.style.left = h.position.x + "%";
   base.style.top = h.position.y + "%";
 
-  let expanded = false;
   let children = [];
 
-  base.onmouseenter = () => {
-    if (expanded) return;
-    expanded = true;
+  /* Hover on base */
+  base.addEventListener("mouseenter", () => {
+    showTooltip(base, h.entries[0].label);
 
-    h.entries.forEach((e, i) => {
-      const angle = (i / h.entries.length) * Math.PI * 2;
-      const r = 30;
+    // Split only if multiple entries
+    if (h.entries.length > 1 && children.length === 0) {
+      h.entries.forEach((entry, index) => {
+        const angle = (index / h.entries.length) * Math.PI * 2;
+        const radius = 34;
 
-      const child = document.createElement("div");
-      child.className = "hotspot";
-      child.style.left = `calc(${h.position.x}% + ${Math.cos(angle) * r}px)`;
-      child.style.top = `calc(${h.position.y}% + ${Math.sin(angle) * r}px)`;
+        const child = document.createElement("div");
+        child.className = "hotspot";
+        child.style.left =
+          `calc(${h.position.x}% + ${Math.cos(angle) * radius}px)`;
+        child.style.top =
+          `calc(${h.position.y}% + ${Math.sin(angle) * radius}px)`;
 
-      child.onmouseenter = () => showTooltip(child, e.label);
-      child.onmouseleave = hideTooltip;
-      child.onclick = () => openModal(e);
+        child.addEventListener("mouseenter", () =>
+          showTooltip(child, entry.label)
+        );
 
-      layer.appendChild(child);
-      children.push(child);
-    });
-  };
+        child.addEventListener("mouseleave", hideTooltip);
 
-  base.onmouseleave = () => {
-    expanded = false;
+        child.addEventListener("click", () =>
+          openModal(entry)
+        );
+
+        layer.appendChild(child);
+        children.push(child);
+      });
+    }
+  });
+
+  /* Leave base */
+  base.addEventListener("mouseleave", () => {
+    hideTooltip();
+
     children.forEach(c => c.remove());
     children = [];
-  };
+  });
 
-  base.onmouseenter = () => showTooltip(base, h.entries[0].label);
-  base.onmouseleave = hideTooltip;
+  /* Click on base if single entry */
+  if (h.entries.length === 1) {
+    base.addEventListener("click", () =>
+      openModal(h.entries[0])
+    );
+  }
 
   layer.appendChild(base);
 }
 
-/* Tooltip */
-let tooltip;
+/* =========================
+   TOOLTIP
+========================= */
+
 function showTooltip(el, text) {
+  hideTooltip();
   tooltip = document.createElement("div");
   tooltip.className = "tooltip";
   tooltip.textContent = text;
   el.appendChild(tooltip);
 }
+
 function hideTooltip() {
-  if (tooltip) tooltip.remove();
+  if (tooltip) {
+    tooltip.remove();
+    tooltip = null;
+  }
 }
 
-/* Modal */
+/* =========================
+   MODAL (MAIN CONTENT)
+========================= */
+
 function openModal(entry) {
-  const modal = document.getElementById("modal");
   modal.style.display = "block";
 
   document.getElementById("modalTitle").textContent = entry.title;
   document.getElementById("modalAuthor").textContent = entry.author;
   document.getElementById("modalPdf").href = entry.pdf;
 
+  const textContainer = document.getElementById("modalText");
+  textContainer.textContent = "Chargement…";
+
   fetch(entry.text)
-    .then(r => r.text())
-    .then(t => document.getElementById("modalText").innerText = t);
+    .then(res => {
+      if (!res.ok) throw new Error("Cannot load text file");
+      return res.text();
+    })
+    .then(text => {
+      textContainer.textContent = text;
+    })
+    .catch(() => {
+      textContainer.textContent =
+        "Erreur de chargement du texte.";
+    });
 }
 
-/* Close modals */
-document.querySelectorAll(".close").forEach(c =>
-  c.onclick = () => c.closest(".modal").style.display = "none"
-);
+/* =========================
+   MODAL CONTROLS
+========================= */
 
-document.querySelectorAll(".scene-nav button").forEach(b =>
-  b.onclick = () => loadScene(b.dataset.scene)
-);
+document.querySelectorAll(".close").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").style.display = "none";
+  });
+});
 
-document.getElementById("infoBtn").onclick = () =>
-  document.getElementById("infoModal").style.display = "block";
+window.addEventListener("click", e => {
+  if (e.target === modal) modal.style.display = "none";
+  if (e.target === infoModal) infoModal.style.display = "none";
+});
+
+/* =========================
+   INFO BUTTON
+========================= */
+
+document.getElementById("infoBtn").addEventListener("click", () => {
+  infoModal.style.display = "block";
+});
+
+/* =========================
+   SCENE NAVIGATION
+========================= */
+
+document.querySelectorAll(".scene-nav button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    loadScene(btn.dataset.scene);
+  });
+});
