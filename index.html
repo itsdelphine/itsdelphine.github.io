@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Balades narratives au MAN</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Balades narratives</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<h1>Interactive Image Hotspots</h1>
+<header>
+  <div class="title">
+    Balades narratives au musée d'Archéologie nationale
+  </div>
+  <button id="infoBtn">ℹ️</button>
+</header>
 
-<div class="image-container">
-  <img src="BN_D.jpg" alt="Main Image">
+<main id="scene" class="fade">
+  <img id="sceneImage" alt="" />
+  <div id="hotspotLayer"></div>
+</main>
 
-  <!-- Hotspot 1 -->
-  <div class="hotspot" style="top: 30%; left: 40%;" 
-       data-title="Hotspot 1"
-       data-text="This is information for hotspot 1."></div>
+<nav class="scene-nav">
+  <button data-scene="BN_C0">C0</button>
+  <button data-scene="BN_C1_4">C1–4</button>
+  <button data-scene="BN_D">D</button>
+</nav>
 
-  <!-- Hotspot 2 -->
-  <div class="hotspot" style="top: 60%; left: 70%;" 
-       data-title="Hotspot 2"
-       data-text="This is information for hotspot 2."></div>
+<!-- Main modal -->
+<div class="modal" id="modal">
+  <div class="modal-content light">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <h4 id="modalAuthor"></h4>
+    <div id="modalText"></div>
+    <a id="modalPdf" target="_blank">Télécharger le PDF</a>
+  </div>
 </div>
 
-<!-- Popup Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
+<!-- Info modal -->
+<div class="modal" id="infoModal">
+  <div class="modal-content light">
     <span class="close">&times;</span>
-    <h2 id="modal-title"></h2>
-    <p id="modal-text"></p>
+    <h2>À propos</h2>
+    <img src="images/BN_C0.jpg" alt="" />
+    <p>
+      Texte de présentation du projet.  
+      Vous pouvez remplacer ce contenu plus tard.
+    </p>
   </div>
 </div>
 
