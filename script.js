@@ -70,46 +70,57 @@ function createHotspotGroup(h) {
   base.style.top = h.position.y + "%";
 
   let children = [];
+  let closeTimer = null;
 
-  /* Hover on base */
-  base.addEventListener("mouseenter", () => {
-    showTooltip(base, h.entries[0].label);
+  function openSplit() {
+    if (children.length > 0 || h.entries.length <= 1) return;
 
-    // Split only if multiple entries
-    if (h.entries.length > 1 && children.length === 0) {
-      h.entries.forEach((entry, index) => {
-        const angle = (index / h.entries.length) * Math.PI * 2;
-        const radius = 34;
+    h.entries.forEach((entry, index) => {
+      const angle = (index / h.entries.length) * Math.PI * 2;
+      const radius = 34;
 
-        const child = document.createElement("div");
-        child.className = "hotspot";
-        child.style.left =
-          `calc(${h.position.x}% + ${Math.cos(angle) * radius}px)`;
-        child.style.top =
-          `calc(${h.position.y}% + ${Math.sin(angle) * radius}px)`;
+      const child = document.createElement("div");
+      child.className = "hotspot";
+      child.style.left =
+        `calc(${h.position.x}% + ${Math.cos(angle) * radius}px)`;
+      child.style.top =
+        `calc(${h.position.y}% + ${Math.sin(angle) * radius}px)`;
 
-        child.addEventListener("mouseenter", () =>
-          showTooltip(child, entry.label)
-        );
-
-        child.addEventListener("mouseleave", hideTooltip);
-
-        child.addEventListener("click", () =>
-          openModal(entry)
-        );
-
-        layer.appendChild(child);
-        children.push(child);
+      child.addEventListener("mouseenter", () => {
+        if (closeTimer) clearTimeout(closeTimer);
+        showTooltip(child, entry.label);
       });
-    }
+
+      child.addEventListener("mouseleave", () => {
+        hideTooltip();
+        scheduleClose();
+      });
+
+      child.addEventListener("click", () => openModal(entry));
+
+      layer.appendChild(child);
+      children.push(child);
+    });
+  }
+
+  function scheduleClose() {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      children.forEach(c => c.remove());
+      children = [];
+    }, 500); // ← delay in ms (adjust if needed)
+  }
+
+  /* Base hover */
+  base.addEventListener("mouseenter", () => {
+    if (closeTimer) clearTimeout(closeTimer);
+    showTooltip(base, h.entries[0].label);
+    openSplit();
   });
 
-  /* Leave base */
   base.addEventListener("mouseleave", () => {
     hideTooltip();
-
-    children.forEach(c => c.remove());
-    children = [];
+    scheduleClose();
   });
 
   /* Click on base if single entry */
@@ -121,6 +132,7 @@ function createHotspotGroup(h) {
 
   layer.appendChild(base);
 }
+
 
 /* =========================
    TOOLTIP
