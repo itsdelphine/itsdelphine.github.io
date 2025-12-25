@@ -57,6 +57,7 @@ header {
   position: relative;
   width: 100vw;
   overflow-x: hidden; /* safety: no horizontal scroll */
+  background: var(--brand-blue);
 }
 
 #sceneImage {
