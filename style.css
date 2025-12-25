@@ -1,3 +1,8 @@
+:root {
+  --brand-blue: #0b4da2;
+  --brand-blue-dark: #083c7d;
+}
+
 html, body {
   margin: 0;
   height: 100%;
@@ -88,6 +93,10 @@ header {
   color: #cfe2ff;
 }
 
+.scene-nav button:hover {
+  background: var(--brand-blue-dark);
+}
+
 #hotspotLayer {
   position: absolute;
   inset: 0;
@@ -106,34 +115,53 @@ header {
   position: absolute;
   width: 16px;
   height: 16px;
-  background: rgba(28,83,242,0.8);
+
+  background: var(--brand-blue);
   border-radius: 50%;
+
+  /* center on coordinates */
   transform: translate(-50%, -50%);
   cursor: pointer;
+
+  /* stacking */
+  z-index: 6;
 }
 
+/* Pulsing ring */
 .hotspot::before {
   content: "";
   position: absolute;
   inset: 0;
+
   border-radius: 50%;
-  background: rgba(28,83,242,0.8);
-  animation: pulse 1.8s infinite;
-}
+  background: var(--brand-blue);
 
-@keyframes pulse {
-  to { transform: scale(2.5); opacity: 0; }
-}
-
-.hotspot--collapsed {
-  transform: scale(0.6);
   opacity: 0.6;
+  animation: hotspot-pulse 1.8s infinite;
+}
+
+/* Pulse animation */
+@keyframes hotspot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Collapsed main hotspot when split opens */
+.hotspot--collapsed {
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0.7;
 }
 
 /* Tooltip */
 .tooltip {
   position: absolute;
-  background: black;
+  background: var(--brand-blue);
   color: white;
   font-size: 12px;
   padding: 4px 8px;
