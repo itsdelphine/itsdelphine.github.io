@@ -204,6 +204,15 @@ header {
     flex-direction: column;
 }
 
+.modal-content h2 {
+  color: var(--brand-blue);
+}
+
+#modalAuthor {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
 .modal-body {
     overflow-y: auto;
     padding-right: 8px;
