@@ -214,6 +214,7 @@ window.addEventListener("click", e => {
 ========================= */
 
 document.getElementById("infoBtn").addEventListener("click", () => {
+  setModalState(true);
   infoModal.style.display = "block";
 
   const container = document.getElementById("infoText");
