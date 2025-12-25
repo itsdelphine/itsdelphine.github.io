@@ -56,14 +56,13 @@ header {
 #scene {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
-  padding-top: 56px;
+  overflow-x: hidden; /* safety: no horizontal scroll */
 }
 
 #sceneImage {
   width: 100%;
   display: block;
+  height: auto;
 }
 
 .scene-nav {
