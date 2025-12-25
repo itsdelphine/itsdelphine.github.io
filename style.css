@@ -210,6 +210,23 @@ header {
     flex: 1; 
 }
 
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #e6ecf7;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: var(--brand-blue);
+  border-radius: 4px;
+}
+
+.modal-body {
+  scrollbar-color: var(--brand-blue) #e6ecf7; /* Firefox */
+}
+
 .close {
     float: right;
     cursor: pointer;
