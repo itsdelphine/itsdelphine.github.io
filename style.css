@@ -150,3 +150,19 @@ header {
   float: right;
   cursor: pointer;
 }
+
+/* PDF button */
+.pdf-btn {
+  margin-top: 16px;
+  align-self: flex-start;
+  padding: 10px 16px;
+  background: #0b4da2;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.pdf-btn:hover {
+  background: #083c7d;
+}
