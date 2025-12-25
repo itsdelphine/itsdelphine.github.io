@@ -10,22 +10,29 @@ header {
   left: 0;
   right: 0;
 
-  padding: 12px 16px;
-  padding-left: max(16px, env(safe-area-inset-left));
-  padding-right: max(16px, env(safe-area-inset-right));
+  height: 56px;
+  background: #0b4da2;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  box-sizing: border-box;
-  z-index: 10;
+  padding: 0 20px;
+  z-index: 20;
+}
 
-  background: linear-gradient(
-  to bottom,
-  rgba(0,0,0,0.45),
-  rgba(0,0,0,0)
-  );
+.title {
+  color: white;
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+}
+
+#infoBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* <weight>: Use a value from 200 to 1000
@@ -41,19 +48,12 @@ header {
     "YTLC" 500;
 }
 
-
-.title {
-  max-width: 75%;
-  font-size: clamp(14px, 2.2vw, 18px);
-  line-height: 1.2;
-  white-space: normal;
-}
-
 #scene {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  padding-top: 56px;
 }
 
 #sceneImage {
