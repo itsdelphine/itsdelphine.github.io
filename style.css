@@ -114,6 +114,7 @@ header {
 /* Hotspots */
 .hotspot {
   position: absolute;
+  z-index: 6;
   width: 16px;
   height: 16px;
 
@@ -186,10 +187,13 @@ header {
   display: none;
   position: fixed;
   inset: 0;
+  z-index: 100; /* higher than hotspots */
   background: rgba(255,255,255,0.7);
 }
 
 .modal-content {
+  position: relative;
+  z-index: 101;
   max-width: 520px;
   margin: 8% auto;
   padding: 20px;
@@ -208,6 +212,10 @@ header {
 .close {
   float: right;
   cursor: pointer;
+}
+
+body.modal-open #hotspotLayer {
+  pointer-events: none;
 }
 
 /* PDF button */
