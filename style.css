@@ -163,6 +163,7 @@ header {
 /* Tooltip */
 .tooltip {
   position: absolute;
+  z-index: 50;
   background: var(--brand-blue-dark);
   color: white;
   font-size: 12px;
