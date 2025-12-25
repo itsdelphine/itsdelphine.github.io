@@ -202,6 +202,13 @@ window.addEventListener("click", e => {
 
 document.getElementById("infoBtn").addEventListener("click", () => {
   infoModal.style.display = "block";
+
+  const container = document.getElementById("infoText");
+  container.textContent = "Chargement…";
+
+  fetch("texts/infos.txt")
+    .then(r => r.text())
+    .then(text => container.textContent = text);
 });
 
 /* =========================
