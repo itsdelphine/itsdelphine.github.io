@@ -1,3 +1,6 @@
+modal.style.display = "none";
+infoModal.style.display = "none";
+
 /* =========================
    GLOBAL STATE & ELEMENTS
 ========================= */
