@@ -207,6 +207,7 @@ header {
 .modal-body {
     overflow-y: auto;
     padding-right: 8px;
+    flex: 1; 
 }
 
 .close {
