@@ -56,15 +56,13 @@ header {
 #scene {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   padding-top: 56px;
 }
 
 #sceneImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
 }
 
