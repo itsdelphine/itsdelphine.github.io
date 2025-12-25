@@ -172,7 +172,7 @@ function setModalState(isOpen) {
 
 function openModal(entry) {
   setModalState(true);
-  modal.style.display = "block";
+  modal.classList.add("is-open");
 
   document.getElementById("modalTitle").textContent = entry.title;
   document.getElementById("modalAuthor").textContent = entry.author;
@@ -201,15 +201,15 @@ function openModal(entry) {
 
 document.querySelectorAll(".close").forEach(btn => {
   btn.addEventListener("click", () => {
-    btn.closest(".modal").style.display = "none";
+    btn.closest(".modal").style.classList.remove("is-open");
     setModalState(false);
   });
 });
 
 window.addEventListener("click", e => {
-  if (e.target === modal) modal.style.display = "none";
+  if (e.target === modal) modal.classList.remove("is-open");
    setModalState(false);
-  if (e.target === infoModal) infoModal.style.display = "none";
+  if (e.target === infoModal) infoModal.classList.remove("is-open");
    setModalState(false);
 });
 
@@ -219,7 +219,7 @@ window.addEventListener("click", e => {
 
 document.getElementById("infoBtn").addEventListener("click", () => {
   setModalState(true);
-  infoModal.style.display = "block";
+  infoModal.classList.add("is-open");
 
   const container = document.getElementById("infoText");
   container.textContent = "Chargement…";
