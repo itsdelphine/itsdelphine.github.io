@@ -117,13 +117,9 @@ function createHotspotGroup(h) {
   /* Base hover */
   base.addEventListener("mouseenter", () => {
     if (closeTimer) clearTimeout(closeTimer);
-    const count = h.entries.length;
-    const label =
-      count > 1
-        ? `Cliquez ici pour découvrir ${count} balades`
-        : h.entries[0].label;
-
-    showTooltip(base, label);
+    if (h.entries.length === 1) {
+    showTooltip(base, h.entries[0].label);
+    }
     openSplit();
   });
 
