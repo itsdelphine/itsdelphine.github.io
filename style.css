@@ -123,6 +123,14 @@ header {
   padding: 20px;
   background: #fff;
   border-radius: 8px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
 .close {
