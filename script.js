@@ -75,6 +75,8 @@ function createHotspotGroup(h) {
   function openSplit() {
     if (children.length > 0 || h.entries.length <= 1) return;
 
+    base.classList.add("hotspot--collapsed");
+
     h.entries.forEach((entry, index) => {
       const angle = (index / h.entries.length) * Math.PI * 2;
       const radius = 34;
@@ -108,13 +110,20 @@ function createHotspotGroup(h) {
     closeTimer = setTimeout(() => {
       children.forEach(c => c.remove());
       children = [];
+      base.classList.remove("hotspot--collapsed");
     }, 500); // ← delay in ms (adjust if needed)
   }
 
   /* Base hover */
   base.addEventListener("mouseenter", () => {
     if (closeTimer) clearTimeout(closeTimer);
-    showTooltip(base, h.entries[0].label);
+    const count = h.entries.length;
+    const label =
+      count > 1
+        ? `Cliquez ici pour découvrir ${count} balades`
+        : h.entries[0].label;
+
+    showTooltip(base, label);
     openSplit();
   });
 
