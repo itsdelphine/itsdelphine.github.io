@@ -238,3 +238,14 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
     loadScene(btn.dataset.scene);
   });
 });
+
+/* =========================
+   MODALS CLOSING WITH x
+========================= */
+
+document.querySelectorAll(".close").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").classList.remove("is-open");
+    document.body.classList.remove("modal-open");
+  });
+});
