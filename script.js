@@ -162,7 +162,12 @@ function hideTooltip() {
    MODAL (MAIN CONTENT)
 ========================= */
 
+function setModalState(isOpen) {
+  document.body.classList.toggle("modal-open", isOpen);
+}
+
 function openModal(entry) {
+  setModalState(true);
   modal.style.display = "block";
 
   document.getElementById("modalTitle").textContent = entry.title;
@@ -193,12 +198,15 @@ function openModal(entry) {
 document.querySelectorAll(".close").forEach(btn => {
   btn.addEventListener("click", () => {
     btn.closest(".modal").style.display = "none";
+    setModalState(false);
   });
 });
 
 window.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
+   setModalState(false);
   if (e.target === infoModal) infoModal.style.display = "none";
+   setModalState(false);
 });
 
 /* =========================
