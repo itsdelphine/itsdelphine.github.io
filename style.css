@@ -187,35 +187,50 @@ header {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 100; /* higher than hotspots */
-  background: rgba(255,255,255,0.7);
+  z-index: 100;
+
+  background: rgba(255,255,255,0.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
   position: relative;
   z-index: 101;
-  max-width: 520px;
-  margin: 8% auto;
-  padding: 20px;
+
+  width: min(520px, 90vw);
+  max-height: 80vh;
+
   background: #fff;
   border-radius: 8px;
-  max-height: 80vh;
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
 }
 
+/* Scrollable body */
 .modal-body {
+  flex: 1;
   overflow-y: auto;
   padding-right: 8px;
 }
 
+/* Close button */
 .close {
-  float: right;
+  position: absolute;
+  top: 12px;
+  right: 12px;
   cursor: pointer;
+  font-size: 18px;
 }
 
+/* Disable hotspots when modal is open */
 body.modal-open #hotspotLayer {
   pointer-events: none;
+  opacity: 0.2; /* optional visual dim */
 }
 
 /* PDF button */
