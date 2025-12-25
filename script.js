@@ -57,6 +57,10 @@ function loadScene(key) {
     // Fade in
     sceneEl.classList.remove("hidden");
   }, 400);
+
+   document.querySelectorAll(".scene-nav button").forEach(btn => {
+  btn.classList.toggle("active", btn.dataset.scene === key);
+});
 }
 
 /* =========================
