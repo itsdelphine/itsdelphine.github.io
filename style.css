@@ -117,12 +117,17 @@ header {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: rgba(255,0,0,0.5);
+  background: rgba(28,83,242,0.8);
   animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
   to { transform: scale(2.5); opacity: 0; }
+}
+
+.hotspot--collapsed {
+  transform: scale(0.6);
+  opacity: 0.6;
 }
 
 /* Tooltip */
