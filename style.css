@@ -106,7 +106,7 @@ header {
   position: absolute;
   width: 16px;
   height: 16px;
-  background: red;
+  background: rgba(28,83,242,0.8);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
