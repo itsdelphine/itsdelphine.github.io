@@ -160,10 +160,17 @@ function createHotspotGroup(h) {
 
 function showTooltip(el, text) {
   hideTooltip();
+
   tooltip = document.createElement("div");
   tooltip.className = "tooltip";
   tooltip.textContent = text;
-  el.appendChild(tooltip);
+
+  // Attach to hotspotLayer, NOT to the hotspot
+  layer.appendChild(tooltip);
+
+  // Position tooltip at the hotspot coordinates
+  tooltip.style.left = el.style.left;
+  tooltip.style.top = el.style.top;
 }
 
 function hideTooltip() {
