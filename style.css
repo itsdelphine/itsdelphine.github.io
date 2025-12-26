@@ -306,12 +306,18 @@ body.modal-open #hotspotLayer {
   }
 
   #sceneImage {
-    height: 100%;
-    width: auto;       /* critical */
-    object-fit: unset; /* disable cover */
+    height: 100vh;   /* CRITICAL */
+    width: auto;     /* CRITICAL */
+    max-width: none; /* IMPORTANT */
+    object-fit: none;
+    display: block;
   }
 
   #hotspotLayer {
+    height: 100vh;
+    width: auto;
+    max-width: none;
+    pointer-events: auto;
     touch-action: none; /* allow custom pan */
   }
   
