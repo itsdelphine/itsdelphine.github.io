@@ -298,28 +298,10 @@ body.modal-open #hotspotLayer {
   }
   
   #scene {
-    position: fixed;
-    top: 56px;
-    bottom: 72px;
-    left: 0;
-    right: 0;
+    position: relative;
+    height: 100vh;
     background: var(--brand-blue);
-    overflow: hidden;
-  }
-
-  #panViewport {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    touch-action: none;
-  }
-  
-  #panContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: auto;
+    overflow-y: hidden;
   }
   
   #sceneImage {
@@ -327,7 +309,6 @@ body.modal-open #hotspotLayer {
     width: auto !important;
     display: block;
     pointer-events: none;
-    max-width: none;
   }
 
   #hotspotLayer {
