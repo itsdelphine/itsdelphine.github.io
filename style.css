@@ -288,7 +288,7 @@ body.modal-open #hotspotLayer {
 }
 
 .fixed-logo svg {
-  height: 180px;      /* adjust as needed */
+  height: 130px;      /* adjust as needed */
   width: auto;
   display: block;
 }
