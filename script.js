@@ -258,11 +258,23 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
    MOBILE BEHAVIOR
 ========================= */
 
-if (isMobile) enablePan();
+if (isMobile) {
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enablePan);
+  } else {
+    enablePan();
+  }
+}
 
 function enablePan() {
   const viewport = document.getElementById("panViewport");
   const pan = document.getElementById("panContainer");
+
+  if (!viewport || !pan) {
+    console.error("Pan elements not found");
+    return;
+  }
 
   let startX = 0;
   let currentX = 0;
