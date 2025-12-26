@@ -327,13 +327,15 @@ body.modal-open #hotspotLayer {
     top: 0;
     left: 0;
     height: 100%;
+    width: auto;
   }
   
   #sceneImage {
-    height: 100%;
-    width: auto;
+    height: 100% !important;
+    width: auto !important;
     display: block;
     pointer-events: none;
+    max-width: none;
   }
 
   #hotspotLayer {
@@ -357,5 +359,9 @@ body.modal-open #hotspotLayer {
   .scene-nav button {
     padding: 8px 14px;
     font-size: 14px;
+  }
+  
+  header {
+    z-index: 200;
   }
 }
