@@ -1,4 +1,18 @@
 /* =========================
+   FIX MOBILE VIEWPORT HEIGHT
+========================= */
+
+// Set CSS variable for actual viewport height
+function setViewportHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+
+/* =========================
    GLOBAL STATE & ELEMENTS
 ========================= */
 
