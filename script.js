@@ -1,5 +1,3 @@
-const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
 /* =========================
    GLOBAL STATE & ELEMENTS
 ========================= */
@@ -57,19 +55,7 @@ function loadScene(key) {
     // Wait for image to load before creating hotspots
     imgEl.onload = () => {
       scene.hotspots.forEach(h => createHotspotGroup(h));
-      
-      // Reset pan position on mobile
-if (isMobile) {
-  const pan = document.getElementById("panContainer");
-  const viewport = document.getElementById("panViewport");
-
-  const imageWidth = imgEl.offsetWidth;
-  const viewportWidth = viewport.offsetWidth;
-
-  const centerX = Math.min(0, (viewportWidth - imageWidth) / 2);
-
-  pan.style.transform = `translate(${centerX}px, 0px)`;
-}
+    };
 
     // Fade in
     sceneEl.classList.remove("hidden");
@@ -139,7 +125,7 @@ function createHotspotGroup(h) {
   base.addEventListener("mouseenter", () => {
     if (closeTimer) clearTimeout(closeTimer);
     if (h.entries.length === 1) {
-    showTooltip(base, h.entries[0].label);
+      showTooltip(base, h.entries[0].label);
     }
     openSplit();
   });
@@ -158,7 +144,6 @@ function createHotspotGroup(h) {
 
   layer.appendChild(base);
 }
-
 
 /* =========================
    TOOLTIP
@@ -266,82 +251,3 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
     loadScene(btn.dataset.scene);
   });
 });
-
-/* =========================
-   MODALS CLOSING WITH x
-========================= */
-
-document.querySelectorAll(".close").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").classList.remove("is-open");
-    document.body.classList.remove("modal-open");
-  });
-});
-
-/* =========================
-   MOBILE BEHAVIOR
-========================= */
-
-if (isMobile) {
-  // Wait for DOM to be ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', enablePan);
-  } else {
-    enablePan();
-  }
-}
-
-function enablePan() {
-  const viewport = document.getElementById("panViewport");
-  const pan = document.getElementById("panContainer");
-
-  if (!viewport || !pan) {
-    console.error("Pan elements not found");
-    return;
-  }
-
-  let startX = 0;
-  let currentX = 0;
-  let dragging = false;
-
-  viewport.addEventListener("touchstart", e => {
-    e.preventDefault();
-    dragging = true;
-    const t = e.touches[0];
-    startX = t.clientX - currentX;
-  }, { passive: true });
-
-  viewport.addEventListener("touchmove", e => {
-    if (!dragging) return;
-    e.preventDefault();
-
-    const t = e.touches[0];
-    let newX = t.clientX - startX;
-
-    // Get dimensions
-    const viewportWidth = viewport.offsetWidth;
-    const imageWidth = imgEl.offsetWidth;
-
-    // Constrain panning so image doesn't go out of bounds
-    const minX = viewportWidth - imageWidth;
-    const maxX = 0;
-
-    // Only constrain if image is wider than viewport
-    if (imageWidth > viewportWidth) {
-      newX = Math.max(minX, Math.min(maxX, newX));
-    } else {
-      newX = 0; // Center if image is smaller
-    }
-
-    currentX = newX;
-    pan.style.transform = `translate(${currentX}px, 0px)`;
-  }, { passive: false });
-
-  viewport.addEventListener("touchend", () => {
-    dragging = false;
-  });
-
-  viewport.addEventListener("touchcancel", () => {
-    dragging = false;
-  });
-}
