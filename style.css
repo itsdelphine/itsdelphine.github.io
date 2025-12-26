@@ -114,7 +114,6 @@ header {
 /* Hotspots */
 .hotspot {
   position: absolute;
-  z-index: 6;
   width: 16px;
   height: 16px;
 
