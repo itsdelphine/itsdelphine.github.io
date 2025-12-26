@@ -276,3 +276,28 @@ body.modal-open #hotspotLayer {
 .pdf-btn:hover {
   background: var(--brand-blue-dark);
 }
+
+/* MAN logo */
+.fixed-logo {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+
+  z-index: 30; /* above image, below modals */
+}
+
+.fixed-logo img {
+  height: 48px;      /* adjust as needed */
+  width: auto;
+  display: block;
+}
+
+.fixed-logo:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .fixed-logo img {
+    height: 36px;
+  }
+}
