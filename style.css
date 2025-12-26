@@ -298,19 +298,21 @@ body.modal-open #hotspotLayer {
 }
 
 @media (max-width: 768px) {
-
-    html, body {
+  html, body {
     height: 100%;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
   
   #scene {
     position: fixed;
-    top: 56px;          /* header height */
-    bottom: 72px;       /* nav buttons height */
+    top: 56px;
+    bottom: 72px;
     left: 0;
     right: 0;
     background: var(--brand-blue);
+    overflow: hidden;
   }
 
   #panViewport {
@@ -324,23 +326,36 @@ body.modal-open #hotspotLayer {
     position: absolute;
     top: 0;
     left: 0;
-    display: inline-block;
+    height: 100%;
   }
   
   #sceneImage {
     height: 100%;
     width: auto;
     display: block;
+    pointer-events: none;
   }
 
   #hotspotLayer {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
     pointer-events: auto;
-    touch-action: none; /* allow custom pan */
+    touch-action: none;
   }
   
-    .fixed-logo svg {
-    height: 36px;
+  .fixed-logo {
+    display: none;
+  }
+  
+  .scene-nav {
+    bottom: 12px;
+  }
+  
+  .scene-nav button {
+    padding: 8px 14px;
+    font-size: 14px;
   }
 }
