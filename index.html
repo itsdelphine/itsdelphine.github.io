@@ -2,11 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+ 
   <script>
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      window.location.href = "mobile.html";
-    }
+  // Better mobile detection
+  function isMobileDevice() {
+    // Check user agent
+    const userAgent = navigator.userAgent.toLowerCase();
+    const mobileKeywords = ['iphone', 'ipad', 'android', 'mobile', 'webos'];
+    const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword));
+    
+    // Check touch capability
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Check screen size as backup
+    const isSmallScreen = window.innerWidth <= 768;
+    
+    return (isMobileUA && hasTouch) || (hasTouch && isSmallScreen);
+  }
+
+  if (isMobileDevice() && !window.location.pathname.includes('mobile.html')) {
+    window.location.href = 'mobile.html';
+  }
   </script>
+ 
   <title>Balades narratives</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
