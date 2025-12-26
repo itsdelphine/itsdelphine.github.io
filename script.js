@@ -299,6 +299,7 @@ function enablePan() {
   let dragging = false;
 
   viewport.addEventListener("touchstart", e => {
+    e.preventDefault();
     dragging = true;
     const t = e.touches[0];
     startX = t.clientX - currentX;
