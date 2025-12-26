@@ -59,11 +59,17 @@ function loadScene(key) {
       scene.hotspots.forEach(h => createHotspotGroup(h));
       
       // Reset pan position on mobile
-      if (isMobile) {
-        const pan = document.getElementById("panContainer");
-        pan.style.transform = 'translate(0px, 0px)';
-      }
-    };
+if (isMobile) {
+  const pan = document.getElementById("panContainer");
+  const viewport = document.getElementById("panViewport");
+
+  const imageWidth = imgEl.offsetWidth;
+  const viewportWidth = viewport.offsetWidth;
+
+  const centerX = Math.min(0, (viewportWidth - imageWidth) / 2);
+
+  pan.style.transform = `translate(${centerX}px, 0px)`;
+}
 
     // Fade in
     sceneEl.classList.remove("hidden");
