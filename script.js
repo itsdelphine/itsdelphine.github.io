@@ -54,15 +54,24 @@ function loadScene(key) {
     imgEl.src = scene.image;
     layer.innerHTML = "";
 
-    scene.hotspots.forEach(h => createHotspotGroup(h));
+    // Wait for image to load before creating hotspots
+    imgEl.onload = () => {
+      scene.hotspots.forEach(h => createHotspotGroup(h));
+      
+      // Reset pan position on mobile
+      if (isMobile) {
+        const pan = document.getElementById("panContainer");
+        pan.style.transform = 'translate(0px, 0px)';
+      }
+    };
 
     // Fade in
     sceneEl.classList.remove("hidden");
   }, 400);
 
-   document.querySelectorAll(".scene-nav button").forEach(btn => {
-  btn.classList.toggle("active", btn.dataset.scene === key);
-});
+  document.querySelectorAll(".scene-nav button").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.scene === key);
+  });
 }
 
 /* =========================
@@ -117,7 +126,7 @@ function createHotspotGroup(h) {
       children.forEach(c => c.remove());
       children = [];
       base.classList.remove("hotspot--collapsed");
-    }, 500); // ← delay in ms (adjust if needed)
+    }, 500);
   }
 
   /* Base hover */
@@ -203,16 +212,20 @@ function openModal(entry) {
 
 document.querySelectorAll(".close").forEach(btn => {
   btn.addEventListener("click", () => {
-    btn.closest(".modal").style.classList.remove("is-open");
+    btn.closest(".modal").classList.remove("is-open");
     setModalState(false);
   });
 });
 
 window.addEventListener("click", e => {
-  if (e.target === modal) modal.classList.remove("is-open");
-   setModalState(false);
-  if (e.target === infoModal) infoModal.classList.remove("is-open");
-   setModalState(false);
+  if (e.target === modal) {
+    modal.classList.remove("is-open");
+    setModalState(false);
+  }
+  if (e.target === infoModal) {
+    infoModal.classList.remove("is-open");
+    setModalState(false);
+  }
 });
 
 /* =========================
@@ -242,17 +255,6 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
 });
 
 /* =========================
-   MODALS CLOSING WITH x
-========================= */
-
-document.querySelectorAll(".close").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").classList.remove("is-open");
-    document.body.classList.remove("modal-open");
-  });
-});
-
-/* =========================
    MOBILE BEHAVIOR
 ========================= */
 
@@ -262,29 +264,47 @@ function enablePan() {
   const viewport = document.getElementById("panViewport");
   const pan = document.getElementById("panContainer");
 
-  let startX = 0, startY = 0;
-  let x = 0, y = 0;
+  let startX = 0;
+  let currentX = 0;
   let dragging = false;
 
   viewport.addEventListener("touchstart", e => {
     dragging = true;
     const t = e.touches[0];
-    startX = t.clientX - x;
-    startY = t.clientY - y;
-  }, { passive: false });
+    startX = t.clientX - currentX;
+  }, { passive: true });
 
   viewport.addEventListener("touchmove", e => {
     if (!dragging) return;
     e.preventDefault();
 
     const t = e.touches[0];
-    x = t.clientX - startX;
-    y = t.clientY - startY;
+    let newX = t.clientX - startX;
 
-    pan.style.transform = `translate(${x}px, ${y}px)`;
+    // Get dimensions
+    const viewportWidth = viewport.offsetWidth;
+    const imageWidth = imgEl.offsetWidth;
+
+    // Constrain panning so image doesn't go out of bounds
+    const minX = viewportWidth - imageWidth;
+    const maxX = 0;
+
+    // Only constrain if image is wider than viewport
+    if (imageWidth > viewportWidth) {
+      newX = Math.max(minX, Math.min(maxX, newX));
+    } else {
+      newX = 0; // Center if image is smaller
+    }
+
+    currentX = newX;
+    pan.style.transform = `translate(${currentX}px, 0px)`;
   }, { passive: false });
 
   viewport.addEventListener("touchend", () => {
+    dragging = false;
+  });
+
+  viewport.addEventListener("touchcancel", () => {
     dragging = false;
   });
 }
