@@ -288,13 +288,12 @@ body.modal-open #hotspotLayer {
 }
 
 .fixed-logo svg {
-  height: 130px;      /* adjust as needed */
+  height: 100px;      /* adjust as needed */
   width: auto;
   display: block;
 }
 
 .fixed-logo:hover {
-  opacity: 0.85;
   color: var(--brand-blue-dark);
 }
 
