@@ -261,33 +261,29 @@ if (isMobile) {
 }
 
 function enablePan() {
-  let startX = 0, startY = 0;
-  let currentX = 0, currentY = 0;
-  let dragging = false;
-
   const container = document.getElementById("scene");
-  const content = document.getElementById("sceneImage");
-  const hotspots = document.getElementById("hotspotLayer");
+  const pan = document.getElementById("panContainer");
 
-  function setTransform() {
-    content.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    hotspots.style.transform = `translate(${currentX}px, ${currentY}px)`;
-  }
+  let startX = 0;
+  let startY = 0;
+  let x = 0;
+  let y = 0;
+  let dragging = false;
 
   container.addEventListener("touchstart", e => {
     dragging = true;
-    startX = e.touches[0].clientX - currentX;
-    startY = e.touches[0].clientY - currentY;
+    startX = e.touches[0].clientX - x;
+    startY = e.touches[0].clientY - y;
   });
 
   container.addEventListener("touchmove", e => {
     if (!dragging) return;
     e.preventDefault();
 
-    currentX = e.touches[0].clientX - startX;
-    currentY = e.touches[0].clientY - startY;
+    x = e.touches[0].clientX - startX;
+    y = e.touches[0].clientY - startY;
 
-    setTransform();
+    pan.style.transform = `translate(${x}px, ${y}px)`;
   }, { passive: false });
 
   container.addEventListener("touchend", () => {
