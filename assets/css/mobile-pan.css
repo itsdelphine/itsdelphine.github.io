@@ -1,94 +1,17 @@
-:root{
-  --header-height: 56px; /* adjust if your header is taller on mobile */
-  --footer-height: 56px; /* adjust to match .scene-nav height on mobile */
-}
+:root{ --header-height: 56px; /* adjust if your header is taller on mobile / --footer-height: 56px; / adjust to match .scene-nav height on mobile */ }
 
-/* Mobile-only */
-@media (max-width: 900px) {
-  /* Prevent page scrolling on mobile (modals will need to enable overflow when open) */
-  html, body {
-    height: 100%;
-    overflow: hidden;
-  }
+/* Mobile-only — raised breakpoint to include larger phones/tablets / @media (max-width: 1024px) { / Prevent page scrolling on mobile (modals will need to enable overflow when open) */ html, body { height: 100%; overflow: hidden; }
 
-  /* Fix the header so it doesn't move with the pan */
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--header-height);
-    z-index: 1100;
-    background: inherit;
-  }
+/* Fix the header so it doesn't move with the pan */ header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 1100; background: inherit; }
 
-  /* Fix bottom scene nav (your bottom buttons) */
-  .scene-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: var(--footer-height);
-    z-index: 1100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: inherit;
-  }
+/* Fix bottom scene nav (your bottom buttons) */ .scene-nav { position: fixed; bottom: 0; left: 0; right: 0; height: var(--footer-height); z-index: 1100; display: flex; align-items: center; justify-content: center; background: inherit; }
 
-  /* Viewport: area between header and footer where the image is shown and panned */
-  #panViewport {
-    position: fixed;
-    top: var(--header-height);
-    bottom: var(--footer-height);
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    touch-action: none; /* we'll handle touch gestures in JS */
-    background: #000;
-  }
+/* Viewport: area between header and footer where the image is shown and panned / #panViewport { position: fixed; top: var(--header-height); bottom: var(--footer-height); left: 0; right: 0; overflow: hidden; -webkit-touch-callout: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; touch-action: none; / we'll handle touch gestures in JS */ background: #000; }
 
-  /* The inner element that will be translated horizontally.
-     Put the <img> and hotspots inside #panContainer (already present in index.html). */
-  #panContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    will-change: transform;
-    transform: translate3d(0,0,0);
-    pointer-events: none; /* child elements (hotspots) will enable pointer events */
-  }
+/* The inner element that will be translated horizontally. Put the <img> and hotspots inside #panContainer (already present in index.html). / #panContainer { position: absolute; top: 0; left: 0; height: 100%; will-change: transform; transform: translate3d(0,0,0); pointer-events: none; / child elements (hotspots) will enable pointer events */ }
 
-  /* Image should fill viewport height and keep aspect ratio */
-  #panContainer img#sceneImage {
-    height: 100%;
-    width: auto;
-    display: block;
-    -webkit-user-drag: none;
-    user-drag: none;
-    pointer-events: none;
-  }
+/* Force the image to fill the viewport height (override earlier rules) */ #sceneImage, #panContainer img#sceneImage { height: 100% !important; width: auto !important; max-width: none !important; display: block; -webkit-user-drag: none; user-drag: none; pointer-events: none; }
 
-  /* Hotspot layer overlays the image; JS will sync its width to the rendered image */
-  #hotspotLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    pointer-events: none; /* child hotspots will be interactive */
-  }
+/* Hotspot layer overlays the image; JS will sync its width to the rendered image / #hotspotLayer { position: absolute; top: 0; left: 0; height: 100%; pointer-events: none; / child hotspots will be interactive */ }
 
-  /* Individual hotspots are interactive and positioned absolutely within #hotspotLayer */
-  #hotspotLayer .hotspot,
-  .hotspot {
-    position: absolute;
-    pointer-events: auto;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-  }
-}
+/* Individual hotspots are interactive and positioned absolutely within #hotspotLayer */ #hotspotLayer .hotspot, .hotspot { position: absolute; pointer-events: auto; transform: translate(-50%, -50%); z-index: 5; } }
