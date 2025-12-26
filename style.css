@@ -305,6 +305,12 @@ body.modal-open #hotspotLayer {
     background: var(--brand-blue);
   }
 
+  #panContainer {
+    position: relative;
+    height: 100vh;
+    width: max-content; /* ← CRITICAL */
+  }
+  
   #sceneImage {
     height: 100vh;   /* CRITICAL */
     width: auto;     /* CRITICAL */
@@ -314,6 +320,8 @@ body.modal-open #hotspotLayer {
   }
 
   #hotspotLayer {
+    position: absolute;
+    inset: 0;
     height: 100vh;
     width: auto;
     max-width: none;
