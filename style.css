@@ -286,8 +286,12 @@ body.modal-open #hotspotLayer {
   z-index: 30; /* above image, below modals */
 }
 
-.fixed-logo img {
-  height: 48px;      /* adjust as needed */
+.fixed-logo {
+  color: var(--brand-blue);
+}
+
+.fixed-logo svg {
+  height: 180px;      /* adjust as needed */
   width: auto;
   display: block;
 }
