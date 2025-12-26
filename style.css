@@ -297,8 +297,25 @@ body.modal-open #hotspotLayer {
   color: var(--brand-blue-dark);
 }
 
-@media (max-width: 600px) {
-  .fixed-logo svg {
+@media (max-width: 768px) {
+  #scene {
+    height: 100vh;
+    padding-top: 56px; /* header height */
+    overflow: hidden;
+    background: var(--brand-blue);
+  }
+
+  #sceneImage {
+    height: 100%;
+    width: auto;       /* critical */
+    object-fit: unset; /* disable cover */
+  }
+
+  #hotspotLayer {
+    touch-action: none; /* allow custom pan */
+  }
+  
+    .fixed-logo svg {
     height: 36px;
   }
 }
