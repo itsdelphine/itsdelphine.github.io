@@ -251,3 +251,46 @@ document.querySelectorAll(".close").forEach(btn => {
     document.body.classList.remove("modal-open");
   });
 });
+
+/* =========================
+   MOBILE BEHAVIOR
+========================= */
+
+if (isMobile) {
+  enablePan();
+}
+
+function enablePan() {
+  let startX = 0, startY = 0;
+  let currentX = 0, currentY = 0;
+  let dragging = false;
+
+  const container = document.getElementById("scene");
+  const content = document.getElementById("sceneImage");
+  const hotspots = document.getElementById("hotspotLayer");
+
+  function setTransform() {
+    content.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    hotspots.style.transform = `translate(${currentX}px, ${currentY}px)`;
+  }
+
+  container.addEventListener("touchstart", e => {
+    dragging = true;
+    startX = e.touches[0].clientX - currentX;
+    startY = e.touches[0].clientY - currentY;
+  });
+
+  container.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    e.preventDefault();
+
+    currentX = e.touches[0].clientX - startX;
+    currentY = e.touches[0].clientY - startY;
+
+    setTransform();
+  }, { passive: false });
+
+  container.addEventListener("touchend", () => {
+    dragging = false;
+  });
+}
