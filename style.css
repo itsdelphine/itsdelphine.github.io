@@ -67,6 +67,7 @@ header {
   height: auto;
 }
 
+/* Navigation */
 .scene-nav {
   position: fixed;
   bottom: 24px;
@@ -171,15 +172,6 @@ header {
   pointer-events: none;
   white-space: nowrap;
   transform: translate(-50%, -120%);
-}
-
-/* Navigation */
-.scene-nav {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
 }
 
 /* Modal */
