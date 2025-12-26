@@ -16,6 +16,8 @@ html, body {
   width: 100%;
   font-family: 'Nunito Sans', Arial, sans-serif;
   background: var(--brand-blue);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Header */
@@ -46,15 +48,18 @@ header {
   font-size: 24px;
   cursor: pointer;
   padding: 8px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Scene container */
+/* Scene container - full viewport */
 #scene {
   position: fixed;
-  top: 56px;
-  bottom: 80px;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: var(--brand-blue);
   overflow: hidden;
 }
@@ -65,7 +70,7 @@ header {
   height: 100%;
   overflow: hidden;
   position: relative;
-  touch-action: none;
+  touch-action: pan-x;
 }
 
 /* Pan container - movable area */
@@ -73,39 +78,41 @@ header {
   position: relative;
   height: 100%;
   width: auto;
-  transition: transform 0.1s ease-out;
+  will-change: transform;
 }
 
-/* Image fills height, width auto */
+/* Image fills height, width extends beyond viewport */
 #sceneImage {
   height: 100%;
   width: auto;
   display: block;
   pointer-events: none;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* Hotspot layer matches image dimensions */
+/* Hotspot layer matches image dimensions and moves with it */
 #hotspotLayer {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: auto;
   pointer-events: none;
 }
 
 /* Hotspots */
 .hotspot {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   background: var(--brand-blue);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 10;
   pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hotspot::before {
@@ -135,54 +142,52 @@ header {
   opacity: 0.7;
 }
 
-/* Tooltip */
-.tooltip {
-  position: absolute;
-  z-index: 50;
-  background: var(--brand-blue-dark);
-  color: white;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 4px;
-  pointer-events: none;
-  white-space: nowrap;
-  transform: translate(-50%, -150%);
-  max-width: 200px;
-  text-align: center;
-}
-
-/* Navigation */
+/* Navigation - fixed over image */
 .scene-nav {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: var(--brand-blue);
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 8px;
-  padding: 16px;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  gap: 10px;
+  padding: 0;
+  z-index: 200;
 }
 
 .scene-nav button {
-  flex: 1;
-  max-width: 120px;
-  padding: 12px 8px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 14px 20px;
+  background: var(--brand-blue);
   color: white;
   font-weight: 600;
-  font-size: 13px;
-  border: none;
-  border-radius: 8px;
+  font-size: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .scene-nav button.active {
   background: var(--brand-blue-dark);
   color: #cfe2ff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Logo - fixed over image */
+.fixed-logo {
+  position: fixed;
+  bottom: 100px;
+  left: 16px;
+  z-index: 200;
+  color: white;
+  opacity: 0.9;
+}
+
+.fixed-logo svg {
+  height: 60px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* Modal */
@@ -256,6 +261,7 @@ header {
   font-size: 28px;
   line-height: 1;
   color: #666;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pdf-btn {
@@ -268,6 +274,7 @@ header {
   text-decoration: none;
   border-radius: 8px;
   font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pdf-btn:active {
