@@ -100,17 +100,16 @@ function loadScene(key) {
 }
 
 /* =========================
-   CENTER IMAGE IF SMALLER
+   CENTER IMAGE
 ========================= */
 
-function centerImageIfNeeded() {
+function centerImage() {
   const viewportWidth = viewport.offsetWidth;
   const imageWidth = imgEl.offsetWidth;
 
-  if (imageWidth <= viewportWidth) {
-    currentX = (viewportWidth - imageWidth) / 2;
-    panContainer.style.transform = `translate(${currentX}px, 0px)`;
-  }
+  // Always center the image on load
+  currentX = (viewportWidth - imageWidth) / 2;
+  panContainer.style.transform = `translate(${currentX}px, 0px)`;
 }
 
 /* =========================
