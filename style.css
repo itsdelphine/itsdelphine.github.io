@@ -63,8 +63,8 @@ header {
 
 #sceneImage {
   width: 100%;
-  display: block;
   height: auto;
+  display: block;
 }
 
 /* Navigation */
@@ -96,6 +96,21 @@ header {
 .scene-nav button:hover {
   background: var(--brand-blue-dark);
   color: #cfe2ff;
+}
+
+#panViewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;   /* 👈 this is essential */
+  touch-action: pan-y;
+}
+
+#panContainer {
+  position: relative;
+  height: 100%;
+  width: max-content; /* 👈 key */
+  display: flex;
 }
 
 #hotspotLayer {
@@ -295,44 +310,37 @@ body.modal-open #hotspotLayer {
     position: fixed;
     width: 100%;
   }
-  
+
   #scene {
-    position: relative;
+    width: 100%;
     height: 100vh;
-    background: var(--brand-blue);
-    overflow-y: hidden;
+    overflow: hidden;
   }
-  
+
   #sceneImage {
-    height: 100% !important;
-    width: auto !important;
-    display: block;
+    height: 100vh;
+    width: auto;
+    max-width: none;
     pointer-events: none;
   }
 
   #hotspotLayer {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    width: auto;
     pointer-events: auto;
     touch-action: none;
   }
-  
+
   .fixed-logo {
     display: none;
   }
-  
+
   .scene-nav {
     bottom: 12px;
   }
-  
-  .scene-nav button {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-  
+
   header {
     z-index: 200;
   }
