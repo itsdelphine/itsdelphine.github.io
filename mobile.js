@@ -15,13 +15,15 @@ const panContainer = document.getElementById("panContainer");
 const modal = document.getElementById("modal");
 const infoModal = document.getElementById("infoModal");
 
-/* Tooltip */
-let tooltip = null;
-
-/* Pan state */
+/* Pan state - Google Maps style */
 let startX = 0;
+let startY = 0;
 let currentX = 0;
+let currentY = 0;
 let isDragging = false;
+let velocityX = 0;
+let lastX = 0;
+let lastTime = 0;
 
 /* =========================
    LOAD JSON DATA
@@ -61,10 +63,15 @@ function loadScene(key) {
 
     // Reset pan position
     currentX = 0;
+    currentY = 0;
+    velocityX = 0;
     panContainer.style.transform = 'translate(0px, 0px)';
 
     // Wait for image to load before creating hotspots
     imgEl.onload = () => {
+      // Update hotspot layer width to match image
+      layer.style.width = imgEl.offsetWidth + 'px';
+      
       scene.hotspots.forEach(h => createHotspotGroup(h));
       centerImageIfNeeded();
     };
@@ -93,13 +100,22 @@ function centerImageIfNeeded() {
 }
 
 /* =========================
-   PAN FUNCTIONALITY
+   PAN FUNCTIONALITY - GOOGLE MAPS STYLE
 ========================= */
 
 viewport.addEventListener("touchstart", (e) => {
+  // Don't pan if touching a hotspot
+  if (e.target.classList.contains('hotspot')) {
+    return;
+  }
+
   isDragging = true;
+  velocityX = 0;
+  
   const touch = e.touches[0];
   startX = touch.clientX - currentX;
+  lastX = touch.clientX;
+  lastTime = Date.now();
 }, { passive: true });
 
 viewport.addEventListener("touchmove", (e) => {
@@ -108,19 +124,35 @@ viewport.addEventListener("touchmove", (e) => {
   e.preventDefault();
 
   const touch = e.touches[0];
+  const now = Date.now();
+  const dt = now - lastTime;
+  
+  if (dt > 0) {
+    velocityX = (touch.clientX - lastX) / dt;
+  }
+  
+  lastX = touch.clientX;
+  lastTime = now;
+
   let newX = touch.clientX - startX;
 
   // Get dimensions
   const viewportWidth = viewport.offsetWidth;
   const imageWidth = imgEl.offsetWidth;
 
-  // Constrain panning
+  // Add elastic resistance at edges
   const minX = viewportWidth - imageWidth;
   const maxX = 0;
 
-  // Only constrain if image is wider than viewport
   if (imageWidth > viewportWidth) {
-    newX = Math.max(minX, Math.min(maxX, newX));
+    // Apply elastic effect when dragging beyond bounds
+    if (newX > maxX) {
+      const overDrag = newX - maxX;
+      newX = maxX + overDrag * 0.3;
+    } else if (newX < minX) {
+      const overDrag = minX - newX;
+      newX = minX - overDrag * 0.3;
+    }
   } else {
     // Center if image is smaller
     newX = (viewportWidth - imageWidth) / 2;
@@ -130,13 +162,89 @@ viewport.addEventListener("touchmove", (e) => {
   panContainer.style.transform = `translate(${currentX}px, 0px)`;
 }, { passive: false });
 
-viewport.addEventListener("touchend", () => {
+viewport.addEventListener("touchend", (e) => {
+  if (!isDragging) return;
+  
   isDragging = false;
+
+  const viewportWidth = viewport.offsetWidth;
+  const imageWidth = imgEl.offsetWidth;
+  const minX = viewportWidth - imageWidth;
+  const maxX = 0;
+
+  // Apply momentum/inertia
+  if (Math.abs(velocityX) > 0.1 && imageWidth > viewportWidth) {
+    applyMomentum(minX, maxX);
+  } else {
+    // Snap back if beyond bounds
+    snapToBounds(minX, maxX);
+  }
 });
 
 viewport.addEventListener("touchcancel", () => {
   isDragging = false;
 });
+
+/* =========================
+   MOMENTUM AND SNAP BACK
+========================= */
+
+function applyMomentum(minX, maxX) {
+  const deceleration = 0.95;
+  let momentum = velocityX * 16; // Convert to pixels
+
+  function momentumStep() {
+    momentum *= deceleration;
+    currentX += momentum;
+
+    // Check bounds
+    if (currentX > maxX || currentX < minX) {
+      snapToBounds(minX, maxX);
+      return;
+    }
+
+    panContainer.style.transform = `translate(${currentX}px, 0px)`;
+
+    if (Math.abs(momentum) > 0.5) {
+      requestAnimationFrame(momentumStep);
+    }
+  }
+
+  requestAnimationFrame(momentumStep);
+}
+
+function snapToBounds(minX, maxX) {
+  if (currentX > maxX) {
+    animateToPosition(maxX);
+  } else if (currentX < minX) {
+    animateToPosition(minX);
+  }
+}
+
+function animateToPosition(targetX) {
+  const startPos = currentX;
+  const distance = targetX - startPos;
+  const duration = 300;
+  const startTime = Date.now();
+
+  function animate() {
+    const now = Date.now();
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Ease out
+    const easeProgress = 1 - Math.pow(1 - progress, 3);
+    
+    currentX = startPos + distance * easeProgress;
+    panContainer.style.transform = `translate(${currentX}px, 0px)`;
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
 
 /* =========================
    HOTSPOTS
@@ -158,7 +266,7 @@ function createHotspotGroup(h) {
 
     h.entries.forEach((entry, index) => {
       const angle = (index / h.entries.length) * Math.PI * 2;
-      const radius = 40;
+      const radius = 45;
 
       const child = document.createElement("div");
       child.className = "hotspot";
@@ -296,5 +404,8 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
 ========================= */
 
 window.addEventListener("resize", () => {
-  centerImageIfNeeded();
+  if (imgEl.complete) {
+    layer.style.width = imgEl.offsetWidth + 'px';
+    centerImageIfNeeded();
+  }
 });
