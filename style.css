@@ -284,9 +284,6 @@ body.modal-open #hotspotLayer {
   left: 16px;
 
   z-index: 30; /* above image, below modals */
-}
-
-.fixed-logo {
   color: var(--brand-blue);
 }
 
@@ -298,10 +295,11 @@ body.modal-open #hotspotLayer {
 
 .fixed-logo:hover {
   opacity: 0.85;
+  color: var(--brand-blue-dark);
 }
 
 @media (max-width: 600px) {
-  .fixed-logo img {
+  .fixed-logo svg {
     height: 36px;
   }
 }
