@@ -256,37 +256,35 @@ document.querySelectorAll(".close").forEach(btn => {
    MOBILE BEHAVIOR
 ========================= */
 
-if (isMobile) {
-  enablePan();
-}
+if (isMobile) enablePan();
 
 function enablePan() {
-  const container = document.getElementById("scene");
+  const viewport = document.getElementById("panViewport");
   const pan = document.getElementById("panContainer");
 
-  let startX = 0;
-  let startY = 0;
-  let x = 0;
-  let y = 0;
+  let startX = 0, startY = 0;
+  let x = 0, y = 0;
   let dragging = false;
 
-  container.addEventListener("touchstart", e => {
+  viewport.addEventListener("touchstart", e => {
     dragging = true;
-    startX = e.touches[0].clientX - x;
-    startY = e.touches[0].clientY - y;
-  });
+    const t = e.touches[0];
+    startX = t.clientX - x;
+    startY = t.clientY - y;
+  }, { passive: false });
 
-  container.addEventListener("touchmove", e => {
+  viewport.addEventListener("touchmove", e => {
     if (!dragging) return;
     e.preventDefault();
 
-    x = e.touches[0].clientX - startX;
-    y = e.touches[0].clientY - startY;
+    const t = e.touches[0];
+    x = t.clientX - startX;
+    y = t.clientY - startY;
 
     pan.style.transform = `translate(${x}px, ${y}px)`;
   }, { passive: false });
 
-  container.addEventListener("touchend", () => {
+  viewport.addEventListener("touchend", () => {
     dragging = false;
   });
 }
