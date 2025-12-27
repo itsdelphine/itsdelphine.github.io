@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
 
   padding: 0 20px;
-  z-index: 20;
+  z-index: 200;
 }
 
 /* Title SVG */
