@@ -56,6 +56,15 @@ function loadScene(key) {
     imgEl.src = scene.image;
     layer.innerHTML = "";
 
+    // Update sidepanel content
+    if (scene.sidepanelContent) {
+      sidepanelTitle.textContent = scene.sidepanelContent.title;
+      sidepanelText.innerHTML = scene.sidepanelContent.text;
+    } else {
+      sidepanelTitle.textContent = "Information";
+      sidepanelText.innerHTML = "<p>Aucune information disponible pour cette scène.</p>";
+    }
+
     // Wait for image to load before creating hotspots
     imgEl.onload = () => {
       scene.hotspots.forEach(h => createHotspotGroup(h));
