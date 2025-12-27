@@ -22,6 +22,11 @@ html, body {
   overscroll-behavior: none;
 }
 
+/* SVG styles */
+.cls-1 {
+    fill: #fff;
+}
+
 /* Header */
 header {
   position: fixed;
