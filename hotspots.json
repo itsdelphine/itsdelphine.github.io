@@ -8,7 +8,7 @@
       "image": "images/BN_C0.jpg",
         "sidepanelContent": {
         "title": "Rez-de-chaussée",
-        "text": "<p>Découvrez le rez-de-chaussée du château avec ses magnifiques salles d'exposition.</p><p>Ce niveau abrite les collections principales du musée.</p>"
+        "textFile": "texts/sidepanel_BN_C0.html"
         },
       "hotspots": [
         {
@@ -124,7 +124,7 @@
       "image": "images/BN_C1-4.jpg",
         "sidepanelContent": {
         "title": "Premier étage",
-        "text": "<p>Le premier étage présente des œuvres exceptionnelles de l'archéologie nationale.</p><p>Explorez les différentes périodes historiques à travers ces collections uniques.</p>"
+        "textFile": "texts/sidepanel_BN_C1-4.html"
       },
       "hotspots": [
         {
@@ -270,7 +270,7 @@
       "image": "images/BN_D.jpg",
         "sidepanelContent": {
         "title": "Domaine national",
-        "text": "<p>Le domaine national offre une vue panoramique sur les jardins historiques.</p><p>Un espace privilégié pour comprendre l'architecture et le paysage du site.</p>"
+        "textFile": "texts/sidepanel_BN_D.html"
         },
       "hotspots": [
         {
