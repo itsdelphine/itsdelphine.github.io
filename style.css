@@ -315,3 +315,128 @@ body.modal-open #hotspotLayer {
 .fixed-logo:hover {
   color: var(--brand-blue-dark);
 }
+
+
+/* Sidepanel */
+.sidepanel {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 320px;
+  max-height: 80vh;
+  
+  background: white;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  
+  z-index: 50;
+  
+  transition: transform 0.4s ease;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+/* Closed state */
+.sidepanel:not(.sidepanel--open) {
+  transform: translateY(-50%) translateX(100%);
+}
+
+/* Toggle button */
+.sidepanel-toggle {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 40px;
+  height: 80px;
+  
+  background: white;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: background-color 0.2s;
+}
+
+.sidepanel-toggle:hover {
+  background: #f0f0f0;
+}
+
+.sidepanel-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-blue);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.sidepanel--open .sidepanel-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Sidepanel content */
+.sidepanel-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.sidepanel-content h3 {
+  margin-top: 0;
+  color: var(--brand-blue);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.sidepanel-content p {
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Scrollbar styling for sidepanel */
+.sidepanel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidepanel-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.sidepanel-content::-webkit-scrollbar-thumb {
+  background-color: var(--brand-blue);
+  border-radius: 3px;
+}
+
+.sidepanel-content {
+  scrollbar-color: var(--brand-blue) #f0f0f0;
+}
+
+/* Scene container adjustment */
+#panViewport {
+  transition: width 0.4s ease, margin-right 0.4s ease;
+  width: 100%;
+  margin-right: 0;
+}
+
+/* When sidepanel is open, reduce viewport */
+.sidepanel--open ~ main #panViewport {
+  width: calc(100% - 320px);
+  margin-right: 320px;
+}
+
+/* Ensure #panContainer adjusts */
+#panContainer {
+  width: 100%;
+  position: relative;
+}
