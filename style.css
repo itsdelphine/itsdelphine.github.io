@@ -27,18 +27,46 @@ header {
   z-index: 20;
 }
 
+/* Title SVG */
+
 .title {
-  color: white;
-  font-family: 'Nunito Sans';
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
+
+.title-logo {
+  height: 38px;          /* adjust visually */
+  width: auto;
+  display: block;
+}
+
+/* ensure white fill */
+.title-logo .cls-1 {
+  fill: #fff;
+}
+
+/* Infos button SVG */
 
 #infoBtn {
   background: none;
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
+  padding: 8px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+#infoBtn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.cls-1 {
+    fill: #fff;
 }
 
 /* <weight>: Use a value from 200 to 1000
