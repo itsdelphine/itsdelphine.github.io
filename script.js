@@ -59,7 +59,23 @@ function loadScene(key) {
     // Update sidepanel content
     if (scene.sidepanelContent) {
       sidepanelTitle.textContent = scene.sidepanelContent.title;
-      sidepanelText.innerHTML = scene.sidepanelContent.text;
+      
+      // Show loading message while fetching
+      sidepanelText.innerHTML = "<p>Chargement...</p>";
+      
+      // Fetch the external HTML file
+      fetch(scene.sidepanelContent.textFile)
+        .then(res => {
+          if (!res.ok) throw new Error("Cannot load sidepanel text file");
+          return res.text();
+        })
+        .then(html => {
+          sidepanelText.innerHTML = html;
+        })
+        .catch(err => {
+          console.error(err);
+          sidepanelText.innerHTML = "<p>Erreur de chargement du contenu.</p>";
+        });
     } else {
       sidepanelTitle.textContent = "Information";
       sidepanelText.innerHTML = "<p>Aucune information disponible pour cette scène.</p>";
