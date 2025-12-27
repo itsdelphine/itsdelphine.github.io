@@ -24,6 +24,11 @@ const imgEl = document.getElementById("sceneImage");
 const layer = document.getElementById("hotspotLayer");
 const viewport = document.getElementById("panViewport");
 const panContainer = document.getElementById("panContainer");
+/* Sidepanel */
+const sidepanel = document.getElementById("sidepanel");
+const sidepanelTitle = document.getElementById("sidepanelTitle");
+const sidepanelText = document.getElementById("sidepanelText");
+const sidepanelToggle = document.getElementById("sidepanelToggle");
 
 /* Modals */
 const modal = document.getElementById("modal");
@@ -80,6 +85,36 @@ function loadScene(key) {
     currentY = 0;
     velocityX = 0;
     panContainer.style.transform = 'translate(0px, 0px)';
+
+    // Update sidepanel content
+    if (scene.sidepanelContent) {
+      sidepanelTitle.textContent = scene.sidepanelContent.title;
+      
+      // Show loading message while fetching
+      sidepanelText.innerHTML = "<p>Chargement...</p>";
+      
+      // Calculate the number of hotspots
+      const hotspotCount = scene.hotspots.length;
+      
+      // Fetch the external HTML file
+      fetch(scene.sidepanelContent.textFile)
+        .then(res => {
+          if (!res.ok) throw new Error("Cannot load sidepanel text file");
+          return res.text();
+        })
+        .then(html => {
+          // Replace placeholder with actual hotspot count
+          const processedHtml = html.replace(/{{hotspotCount}}/g, hotspotCount);
+          sidepanelText.innerHTML = processedHtml;
+        })
+        .catch(err => {
+          console.error(err);
+          sidepanelText.innerHTML = "<p>Erreur de chargement du contenu.</p>";
+        });
+    } else {
+      sidepanelTitle.textContent = "Information";
+      sidepanelText.innerHTML = "<p>Aucune information disponible pour cette scène.</p>";
+    }
 
     // Wait for image to load before creating hotspots
     imgEl.onload = () => {
@@ -422,3 +457,35 @@ window.addEventListener("resize", () => {
     centerImage();
   }
 });
+
+/* =========================
+   SIDEPANEL TOGGLE
+========================= */
+
+// Create overlay element
+const sidepanelOverlay = document.createElement('div');
+sidepanelOverlay.className = 'sidepanel-overlay';
+document.body.appendChild(sidepanelOverlay);
+
+// Toggle sidepanel
+sidepanelToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  sidepanel.classList.toggle("sidepanel--open");
+  sidepanelOverlay.classList.toggle("active");
+});
+
+// Close sidepanel when tapping overlay
+sidepanelOverlay.addEventListener("click", () => {
+  sidepanel.classList.remove("sidepanel--open");
+  sidepanelOverlay.classList.remove("active");
+});
+
+// Close sidepanel when opening a modal
+const originalSetModalState = setModalState;
+setModalState = function(isOpen) {
+  originalSetModalState(isOpen);
+  if (isOpen) {
+    sidepanel.classList.remove("sidepanel--open");
+    sidepanelOverlay.classList.remove("active");
+  }
+};
