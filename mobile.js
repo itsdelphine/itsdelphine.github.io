@@ -394,9 +394,9 @@ document.getElementById("infoBtn").addEventListener("click", () => {
   const container = document.getElementById("infoText");
   container.textContent = "Chargement…";
 
-  fetch("texts/infos.txt")
+  fetch("texts/infos.html")
     .then(r => r.text())
-    .then(text => container.textContent = text)
+    .then(html => container.innerHTML = html)
     .catch(() => {
       container.textContent = "Erreur de chargement.";
     });
