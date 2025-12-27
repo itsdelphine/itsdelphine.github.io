@@ -244,13 +244,17 @@ header {
 }
 
 .modal-body {
-    overflow-y: auto;
-    padding-right: 8px;
-    flex: 1; 
+  overflow-y: scroll !important;
+  flex: 1;
+  padding-right: 8px;
+  line-height: 1.6;
+  font-size: 15px;
+  scrollbar-color: var(--brand-blue) #e6ecf7;
+  scrollbar-width: thin;
 }
 
 .modal-body::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .modal-body::-webkit-scrollbar-track {
@@ -259,15 +263,8 @@ header {
 
 .modal-body::-webkit-scrollbar-thumb {
   background-color: var(--brand-blue);
-  border-radius: 4px;
+  border-radius: 3px;
   min-height: 40px;
-}
-
-/* Force scrollbar to always be visible */
-.modal-body {
-  scrollbar-color: var(--brand-blue) #e6ecf7; /* Firefox */
-  scrollbar-width: thin; /* Firefox */
-  overflow-y: scroll !important; /* Force scrollbar space */
 }
 
 .close {
