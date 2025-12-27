@@ -388,8 +388,8 @@ function openModal(entry) {
       if (!res.ok) throw new Error("Cannot load text file");
       return res.text();
     })
-    .then(text => {
-      textContainer.textContent = text;
+    .then(html => {
+    textContainer.innerHTML = html;
     })
     .catch(() => {
       textContainer.textContent = "Erreur de chargement du texte.";
