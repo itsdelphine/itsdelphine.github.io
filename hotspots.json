@@ -20,7 +20,7 @@
               "label": "Alerte dosettes",
               "title": "Alerte dosettes",
               "author": "Vincent A. (Arraud)",
-              "text": "texts/C0-HS-01-A.txt",
+              "text": "texts/C0-HS-01-A.html",
               "pdf": "pdfs/BN_Alerte-dosettes.pdf"
             }
           ]
@@ -34,7 +34,7 @@
               "label": "Le passage du portique",
               "title": "Le passage du portique",
               "author": "Michel",
-              "text": "texts/C0-HS-02-A.txt",
+              "text": "texts/C0-HS-02-A.html",
               "pdf": "pdfs/BN_Passage-portique.pdf"
             }
           ]
@@ -48,7 +48,7 @@
               "label": "Le médaillon",
               "title": "Le médaillon",
               "author": "Daniel Roger",
-              "text": "texts/C0-HS-03-A.txt",
+              "text": "texts/C0-HS-03-A.html",
               "pdf": "pdfs/BN_Medaillon.pdf"
             }
           ]
@@ -62,7 +62,7 @@
               "label": "Un immense privilège",
               "title": "Un immense privilège",
               "author": "Didier Skrobala",
-              "text": "texts/C0-HS-04-A.txt",
+              "text": "texts/C0-HS-04-A.html",
               "pdf": "pdfs/BN_Immense-privilege.pdf"
             }
           ]
@@ -76,7 +76,7 @@
               "label": "Un jeune couple, pendant la Nuit des musées",
               "title": "Un jeune couple, pendant la Nuit des musées",
               "author": "Brian et Lisa",
-              "text": "texts/C0-HS-05-A.txt",
+              "text": "texts/C0-HS-05-A.html",
               "pdf": "pdfs/BN_Jeune-couple.pdf"
             }
           ]
@@ -90,7 +90,7 @@
               "label": "Aujourd’hui les Barbares",
               "title": "Aujourd’hui les Barbares",
               "author": "Eric Moraud",
-              "text": "texts/C0-HS-06-A.txt",
+              "text": "texts/C0-HS-06-A.html",
               "pdf": "pdfs/BN_Barbares.pdf"
             }
           ]
@@ -104,7 +104,7 @@
               "label": "Histoire d’Hérisson",
               "title": "Histoire d’Hérisson",
               "author": "Jean-Philippe Lagarde",
-              "text": "texts/C0-HS-07-A.txt",
+              "text": "texts/C0-HS-07-A.html",
               "pdf": "pdfs/BN_Histoire-herisson.pdf"
             },
             {
@@ -112,7 +112,7 @@
               "label": "Les fantômes de la boutique",
               "title": "Les fantômes de la boutique",
               "author": "Yannick Lefloch",
-              "text": "texts/C0-HS-07-B.txt",
+              "text": "texts/C0-HS-07-B.html",
               "pdf": "pdfs/BN_Fantome-boutique.pdf"
             }
           ]
@@ -136,7 +136,7 @@
               "label": "Ils nous ont précédé sur le chemin de la vie",
               "title": "Ils nous ont précédé sur le chemin de la vie",
               "author": "Dimitri",
-              "text": "texts/C1-4-HS-01-A.txt",
+              "text": "texts/C1-4-HS-01-A.html",
               "pdf": "pdfs/BN_Chemin-vie.pdf"
             },
             {
@@ -144,7 +144,7 @@
               "label": "Ma première impression au musée d’archéologie",
               "title": "Ma première impression au musée d’archéologie",
               "author": "Isabelle Fichter",
-              "text": "texts/C1-4-HS-01-B.txt",
+              "text": "texts/C1-4-HS-01-B.html",
               "pdf": "pdfs/BN_Premiere-impression.pdf"
             },
             {
@@ -152,7 +152,7 @@
               "label": "Le magdalénien",
               "title": "Le magdalénien",
               "author": "Arlette Millard",
-              "text": "texts/C1-4-HS-01-C.txt",
+              "text": "texts/C1-4-HS-01-C.html",
               "pdf": "pdfs/BN_Magdalenien.pdf"
             }
           ]
@@ -167,7 +167,7 @@
               "label": "Wanted !",
               "title": "Wanted !",
               "author": "Delphine Peschard",
-              "text": "texts/C1-4-HS-02-A.txt",
+              "text": "texts/C1-4-HS-02-A.html",
               "pdf": "pdfs/BN_Wanted.pdf"
             }
           ]
@@ -182,7 +182,7 @@
               "label": "Un musée qui m’a marquée",
               "title": "Un musée qui m’a marquée",
               "author": "Véronique Masson",
-              "text": "texts/C1-4-HS-03-A.txt",
+              "text": "texts/C1-4-HS-03-A.html",
               "pdf": "pdfs/BN_Marquee.pdf"
             }
           ]
@@ -197,7 +197,7 @@
               "label": "Récit de fantôme",
               "title": "Récit de fantôme",
               "author": "Bénédicte Malard",
-              "text": "texts/C1-4-HS-04-A.txt",
+              "text": "texts/C1-4-HS-04-A.html",
               "pdf": "pdfs/BN_Recit-fantome.pdf"
             },
             {
@@ -205,7 +205,7 @@
               "label": "Balade narrative remonte les temps, rencontre les gens",
               "title": "Balade narrative remonte les temps, rencontre les gens",
               "author": "Xavier Lemaître",
-              "text": "texts/C1-4-HS-04-B.txt",
+              "text": "texts/C1-4-HS-04-B.html",
               "pdf": "pdfs/BN_Rencontre.pdf"
             },
             {
@@ -213,7 +213,7 @@
               "label": "Un lieu réconfortant",
               "title": "Un lieu réconfortant",
               "author": "Benoit Dercy",
-              "text": "texts/C1-4-HS-04-C.txt",
+              "text": "texts/C1-4-HS-04-C.html",
               "pdf": "pdfs/BN_Lieu-reconfortant.pdf"
             }
           ]
@@ -228,7 +228,7 @@
               "label": "Et toi tu feras quoi plus tard ?",
               "title": "Et toi tu feras quoi plus tard ?",
               "author": "Marie Wiegelt",
-              "text": "texts/C1-4-HS-05-A.txt",
+              "text": "texts/C1-4-HS-05-A.html",
               "pdf": "pdfs/BN_Plus-tard.pdf"
             }
           ]
@@ -243,7 +243,7 @@
               "label": "Salle des bals",
               "title": "Salle des bals",
               "author": "Xavier Lemaître",
-              "text": "texts/C1-4-HS-06-A.txt",
+              "text": "texts/C1-4-HS-06-A.html",
               "pdf": "pdfs/BN_Salle-bals.pdf"
             }
           ]
@@ -258,7 +258,7 @@
               "label": "Le toit du château",
               "title": "Le toit du château",
               "author": "Frédéric R. (Rink)",
-              "text": "texts/C1-4-HS-07-A.txt",
+              "text": "texts/C1-4-HS-07-A.html",
               "pdf": "pdfs/BN_Toit-chateau.pdf"
             }
           ]
@@ -282,7 +282,7 @@
               "label": "Une aventure collective",
               "title": "Une aventure collective",
               "author": "Anabelle Palignac",
-              "text": "texts/D-HS-01-A.txt",
+              "text": "texts/D-HS-01-A.html",
               "pdf": "pdfs/BN_Aventure-collective.pdf"
             }
           ]
@@ -296,7 +296,7 @@
               "label": "Crise d’adolescence",
               "title": "Crise d’adolescence",
               "author": "Françoise Douxami",
-              "text": "texts/D-HS-02-A.txt",
+              "text": "texts/D-HS-02-A.html",
               "pdf": "pdfs/BN_Crise-adolescence.pdf"
             }
           ]
@@ -310,7 +310,7 @@
               "label": "Souvenirs d’enfance",
               "title": "Souvenirs d’enfance",
               "author": "Myriam Splemkes",
-              "text": "texts/D-HS-03-A.txt",
+              "text": "texts/D-HS-03-A.html",
               "pdf": "pdfs/BN_Souvenirs-enfance.pdf"
             }
           ]
@@ -324,7 +324,7 @@
               "label": "Un adulte en devenir",
               "title": "Un adulte en devenir",
               "author": "Hélène",
-              "text": "texts/D-HS-04-A.txt",
+              "text": "texts/D-HS-04-A.html",
               "pdf": "pdfs/BN_Adulte-devenir.pdf"
             }
           ]
@@ -338,7 +338,7 @@
               "label": "Les coqs",
               "title": "Les coqs",
               "author": "Nicole Ruyer",
-              "text": "texts/D-HS-05-A.txt",
+              "text": "texts/D-HS-05-A.html",
               "pdf": "pdfs/BN_Coqs.pdf"
             }
           ]
@@ -352,7 +352,7 @@
               "label": "Les foulées royales",
               "title": "Les foulées royales",
               "author": "Aude Alexandre",
-              "text": "texts/D-HS-06-A.txt",
+              "text": "texts/D-HS-06-A.html",
               "pdf": "pdfs/BN_Foulees-royales.pdf"
             }
           ]
@@ -366,7 +366,7 @@
               "label": "Notre déjeuner sur l’herbe",
               "title": "Notre déjeuner sur l’herbe",
               "author": "Grégory Chaillou",
-              "text": "texts/D-HS-07-A.txt",
+              "text": "texts/D-HS-07-A.html",
               "pdf": "pdfs/BN_Dejeuner-herbe.pdf"
             }
           ]
@@ -380,7 +380,7 @@
               "label": "Une promesse",
               "title": "Une promesse",
               "author": "Elise Hermann",
-              "text": "texts/D-HS-08-A.txt",
+              "text": "texts/D-HS-08-A.html",
               "pdf": "pdfs/BN_Promesse.pdf"
             }
           ]
