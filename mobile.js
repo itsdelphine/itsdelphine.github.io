@@ -87,7 +87,7 @@ function loadScene(key) {
       layer.style.width = imgEl.offsetWidth + 'px';
       
       scene.hotspots.forEach(h => createHotspotGroup(h));
-      centerImageIfNeeded();
+      centerImage();
     };
 
     // Fade in
@@ -419,6 +419,6 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
 window.addEventListener("resize", () => {
   if (imgEl.complete) {
     layer.style.width = imgEl.offsetWidth + 'px';
-    centerImageIfNeeded();
+    centerImage();
   }
 });
