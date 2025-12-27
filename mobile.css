@@ -44,9 +44,6 @@ header {
 }
 
 /* Infos button SVG */
-.cls-1 {
-    fill: #fff;
-}
 
 #infoBtn {
   background: none;
@@ -56,6 +53,18 @@ header {
   cursor: pointer;
   padding: 8px;
   -webkit-tap-highlight-color: transparent;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+#infoBtn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.cls-1 {
+    fill: #fff;
 }
 
 /* Scene container - full viewport */
