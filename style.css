@@ -260,10 +260,14 @@ header {
 .modal-body::-webkit-scrollbar-thumb {
   background-color: var(--brand-blue);
   border-radius: 4px;
+  min-height: 40px;
 }
 
+/* Force scrollbar to always be visible */
 .modal-body {
   scrollbar-color: var(--brand-blue) #e6ecf7; /* Firefox */
+  scrollbar-width: thin; /* Firefox */
+  overflow-y: scroll !important; /* Force scrollbar space */
 }
 
 .close {
