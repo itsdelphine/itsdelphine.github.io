@@ -377,11 +377,12 @@ body.modal-open #hotspotLayer {
   height: 20px;
   color: var(--brand-blue);
   transition: transform 0.3s ease;
+  transform: rotate(180deg); 
 }
 
 /* Rotate arrow when open */
 .sidepanel--open .sidepanel-toggle svg {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
 /* Sidepanel content */
