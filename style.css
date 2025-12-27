@@ -394,8 +394,15 @@ body.modal-open #hotspotLayer {
 .sidepanel-content h3 {
   margin-top: 0;
   color: var(--brand-blue);
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 16px;
+}
+
+.sidepanel-content h6 {
+  color: var(--brand-blue);
+  font-weight: 600;
+  margin-top: 0;
 }
 
 .sidepanel-content p {
