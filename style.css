@@ -324,7 +324,7 @@ body.modal-open #hotspotLayer {
   top: 50%;
   transform: translateY(-50%);
   
-  width: 420px;
+  width: 450px;
   max-height: 80vh;
   
   background: white;
@@ -351,7 +351,7 @@ body.modal-open #hotspotLayer {
   top: 50%;
   transform: translateY(-50%);
   
-  width: 40px;
+  width: 30px;
   height: 80px;
   
   background: white;
@@ -441,7 +441,7 @@ body.modal-open #hotspotLayer {
 /* When sidepanel is open, reduce viewport */
 .sidepanel--open ~ main #panViewport {
   width: calc(100% - 320px);
-  margin-right: 320px;
+  margin-right: 450px;
 }
 
 /* Ensure #panContainer adjusts */
