@@ -264,3 +264,11 @@ document.querySelectorAll(".scene-nav button").forEach(btn => {
     loadScene(btn.dataset.scene);
   });
 });
+
+/* =========================
+   SIDEPANEL TOGGLE
+========================= */
+
+sidepanelToggle.addEventListener("click", () => {
+  sidepanel.classList.toggle("sidepanel--open");
+});
