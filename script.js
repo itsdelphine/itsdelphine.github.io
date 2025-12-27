@@ -7,6 +7,10 @@ let currentSceneKey = null;
 
 const sceneEl = document.getElementById("scene");
 const imgEl = document.getElementById("sceneImage");
+const sidepanel = document.getElementById("sidepanel");
+const sidepanelTitle = document.getElementById("sidepanelTitle");
+const sidepanelText = document.getElementById("sidepanelText");
+const sidepanelToggle = document.getElementById("sidepanelToggle");
 const layer = document.getElementById("hotspotLayer");
 
 /* Modals */
