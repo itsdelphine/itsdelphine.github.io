@@ -328,3 +328,136 @@ body.modal-open #hotspotLayer {
 .fade.hidden {
   opacity: 0;
 }
+
+/* Sidepanel - Mobile Optimized */
+.sidepanel {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  
+  width: 85%;
+  max-width: 320px;
+  max-height: 70vh;
+  
+  background: white;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.3);
+  
+  z-index: 250;
+  
+  transition: transform 0.3s ease;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+/* Open state */
+.sidepanel.sidepanel--open {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Toggle button */
+.sidepanel-toggle {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 40px;
+  height: 80px;
+  
+  background: white;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+  
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: background-color 0.2s;
+}
+
+.sidepanel-toggle:active {
+  background: #f0f0f0;
+}
+
+.sidepanel-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-blue);
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+}
+
+/* Rotate arrow when open */
+.sidepanel--open .sidepanel-toggle svg {
+  transform: rotate(0deg);
+}
+
+/* Sidepanel content */
+.sidepanel-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidepanel-content h3 {
+  margin-top: 0;
+  color: var(--brand-blue);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sidepanel-content h6 {
+  color: var(--brand-blue);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.sidepanel-content p {
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Scrollbar styling for sidepanel */
+.sidepanel-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidepanel-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.sidepanel-content::-webkit-scrollbar-thumb {
+  background-color: var(--brand-blue);
+  border-radius: 3px;
+}
+
+.sidepanel-content {
+  scrollbar-color: var(--brand-blue) #f0f0f0;
+}
+
+/* Overlay when sidepanel is open */
+.sidepanel-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 240;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidepanel-overlay.active {
+  display: block;
+}
