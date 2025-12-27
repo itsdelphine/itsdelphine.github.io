@@ -347,7 +347,7 @@ body.modal-open #hotspotLayer {
 /* Toggle button */
 .sidepanel-toggle {
   position: absolute;
-  left: -40px;
+  left: -30px;
   top: 50%;
   transform: translateY(-50%);
   
