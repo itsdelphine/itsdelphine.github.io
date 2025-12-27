@@ -324,7 +324,7 @@ body.modal-open #hotspotLayer {
   top: 50%;
   transform: translateY(-50%);
   
-  width: 320px;
+  width: 420px;
   max-height: 80vh;
   
   background: white;
