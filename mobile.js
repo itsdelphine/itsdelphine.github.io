@@ -381,7 +381,13 @@ function openModal(entry) {
   document.getElementById("modalPdf").href = entry.pdf;
 
   const textContainer = document.getElementById("modalText");
+  const modalBody = document.querySelector("#modal .modal-body");
+  const scrollIndicator = document.querySelector("#modal .scroll-indicator");
+  
   textContainer.textContent = "Chargement…";
+
+  // Hide indicator while loading
+  scrollIndicator.classList.remove("visible");
 
   fetch(entry.text)
     .then(res => {
@@ -389,11 +395,37 @@ function openModal(entry) {
       return res.text();
     })
     .then(html => {
-    textContainer.innerHTML = html;
+      textContainer.innerHTML = html;
+      
+      // Check if content is scrollable after a brief delay
+      setTimeout(() => {
+        checkScrollIndicator(modalBody, scrollIndicator);
+      }, 100);
     })
     .catch(() => {
       textContainer.textContent = "Erreur de chargement du texte.";
     });
+}
+
+// Function to check if scroll indicator should be visible
+function checkScrollIndicator(container, indicator) {
+  if (container.scrollHeight > container.clientHeight) {
+    // Content is scrollable
+    indicator.classList.add("visible");
+    
+    // Hide indicator when scrolled to bottom
+    container.addEventListener("scroll", function checkScroll() {
+      const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 10;
+      if (isAtBottom) {
+        indicator.classList.remove("visible");
+      } else {
+        indicator.classList.add("visible");
+      }
+    });
+  } else {
+    // Content fits, no need for indicator
+    indicator.classList.remove("visible");
+  }
 }
 
 /* =========================
