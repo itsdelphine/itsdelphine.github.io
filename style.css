@@ -399,7 +399,7 @@ body.modal-open #hotspotLayer {
   width: 30px;
   height: 80px;
   
-  background: white;
+  background: var(--brand-blue);
   border: none;
   border-radius: 8px 0 0 8px;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
@@ -414,13 +414,13 @@ body.modal-open #hotspotLayer {
 }
 
 .sidepanel-toggle:hover {
-  background: #f0f0f0;
+  background: var(--brand-blue-dark);
 }
 
 .sidepanel-toggle svg {
   width: 20px;
   height: 20px;
-  color: var(--brand-blue);
+  color: white;
   transition: transform 0.3s ease;
   transform: rotate(180deg); 
 }
