@@ -245,7 +245,7 @@ header {
 
 .modal-body {
     overflow-y: scroll !important;
-    padding-right: 8px;
+    padding-right: 16px;
     flex: 1;
     scrollbar-color: var(--brand-blue) #e6ecf7;
     scrollbar-width: thin;
@@ -308,7 +308,7 @@ body.modal-open #hotspotLayer {
 /* Scroll indicator arrow */
 .scroll-indicator {
   position: absolute;
-  bottom: 80px;
+  bottom: 20px;
   right: 20px;
   width: 32px;
   height: 32px;
