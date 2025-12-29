@@ -128,9 +128,23 @@
 <main id="scene" class="fade">
   <div id="panViewport">
   <div id="panContainer">
-    <img id="sceneImage" alt="" />
-    <div id="hotspotLayer"></div>
+  <img id="sceneImage" alt="" />
+  <div id="hotspotLayer"></div>
+  
+  <!-- Floor navigation arrows -->
+  <div class="floor-nav-arrows">
+    <button id="floorUp" class="floor-arrow floor-arrow-up" aria-label="Étage supérieur">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+    <button id="floorDown" class="floor-arrow floor-arrow-down" aria-label="Étage inférieur">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
   </div>
+</div>
   </div>
 </main>
 
