@@ -88,7 +88,20 @@
 
 <nav class="scene-nav">
   <button data-scene="BN_C0">Rez-de-chaussée</button>
-  <button data-scene="BN_C1-4">Étages supérieurs</button>
+  <div class="scene-nav-dropdown">
+    <button data-scene="BN_E" class="dropdown-trigger">
+      Étages supérieurs
+      <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+    <div class="dropdown-menu">
+      <button data-scene="BN_E">Entresol</button>
+      <button data-scene="BN_1">Premier étage</button>
+      <button data-scene="BN_2">Deuxième étage</button>
+      <button data-scene="BN_T">Toits du château</button>
+    </div>
+  </div>
   <button data-scene="BN_D">Domaine national</button>
 </nav>
 
