@@ -579,7 +579,7 @@ body.modal-open #hotspotLayer {
 
 /* Floor navigation arrows */
 .floor-nav-arrows {
-  position: absolute;
+  position: fixed;           /* Changed from absolute to fixed */
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
