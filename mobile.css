@@ -524,10 +524,11 @@ body.modal-open #hotspotLayer {
   width: 12px;
   height: 12px;
   transition: transform 0.3s ease;
+  transform: rotate(180deg);  /* Added: arrow points up when closed */
 }
 
 .scene-nav-dropdown.open .dropdown-arrow {
-  transform: rotate(180deg);
+  transform: rotate(0deg);    /* Changed: arrow points down when open */
 }
 
 .dropdown-menu {
