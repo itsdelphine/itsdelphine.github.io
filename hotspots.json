@@ -120,12 +120,14 @@
       ]
     },
 
-    "BN_C1-4": {
-      "image": "images/BN_C1-4.jpg",
-        "sidepanelContent": {
-        "title": "Premier étage",
-        "textFile": "texts/sidepanel_BN_C1-4.html"
+    "BN_E": {
+      "image": "images/BN_E.jpg",
+      "sidepanelContent": {
+        "title": "Entresol",
+        "textFile": "texts/sidepanel_BN_E.html"
       },
+      "floorGroup": "upper_floors",
+      "floorOrder": 0,
       "hotspots": [
         {
           "id": "C1-4-HS-01",
@@ -171,8 +173,19 @@
               "pdf": "pdfs/BN_Wanted.pdf"
             }
           ]
-        },
+        }
 
+              ]
+    },
+    "BN_1": {
+      "image": "images/BN_1.jpg",
+      "sidepanelContent": {
+        "title": "Premier étage",
+        "textFile": "texts/sidepanel_BN_1.html"
+      },
+      "floorGroup": "upper_floors",
+      "floorOrder": 1,
+      "hotspots": [
         {
           "id": "C1-4-HS-03",
           "position": { "x": 32, "y": 56 },
@@ -217,8 +230,19 @@
               "pdf": "pdfs/BN_Lieu-reconfortant.pdf"
             }
           ]
-        },
-
+        }
+      ]
+    },
+    
+    "BN_2": {
+      "image": "images/BN_2.jpg",
+      "sidepanelContent": {
+        "title": "Deuxième étage",
+        "textFile": "texts/sidepanel_BN_2.html"
+      },
+      "floorGroup": "upper_floors",
+      "floorOrder": 2,
+      "hotspots": [
         {
           "id": "C1-4-HS-05",
           "position": { "x": 44, "y": 25 },
@@ -247,8 +271,19 @@
               "pdf": "pdfs/BN_Salle-bals.pdf"
             }
           ]
-        },
-
+        }
+      ]
+    },
+    
+    "BN_T": {
+      "image": "images/BN_T.jpg",
+      "sidepanelContent": {
+        "title": "Toits du château",
+        "textFile": "texts/sidepanel_BN_T.html"
+      },
+      "floorGroup": "upper_floors",
+      "floorOrder": 3,
+      "hotspots": [
         {
           "id": "C1-4-HS-07",
           "position": { "x": 66, "y": 35 },
