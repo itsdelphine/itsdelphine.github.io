@@ -495,3 +495,116 @@ body.modal-open #hotspotLayer {
   width: 100%;
   position: relative;
 }
+
+/* Dropdown navigation */
+.scene-nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.scene-nav-dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  background: var(--brand-blue);
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  min-width: 100%;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scene-nav-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 12px 18px;
+  background: var(--brand-blue);
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dropdown-menu button:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu button:hover,
+.dropdown-menu button.active {
+  background: var(--brand-blue-dark);
+  color: #cfe2ff;
+}
+
+/* Floor navigation arrows */
+.floor-nav-arrows {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 15;
+}
+
+.floor-nav-arrows.visible {
+  display: flex;
+}
+
+.floor-arrow {
+  width: 48px;
+  height: 48px;
+  background: var(--brand-blue);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.floor-arrow:hover {
+  background: var(--brand-blue-dark);
+  transform: scale(1.1);
+}
+
+.floor-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.floor-arrow svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
