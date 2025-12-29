@@ -491,6 +491,149 @@ window.addEventListener("resize", () => {
 });
 
 /* =========================
+   FLOOR NAVIGATION SYSTEM
+========================= */
+
+const floorNavArrows = document.querySelector(".floor-nav-arrows");
+const floorUpBtn = document.getElementById("floorUp");
+const floorDownBtn = document.getElementById("floorDown");
+const dropdownContainer = document.querySelector(".scene-nav-dropdown");
+const dropdownTrigger = dropdownContainer.querySelector(".dropdown-trigger");
+
+// Get all scenes in the floor group
+function getFloorScenes() {
+  if (!data) return [];
+  return Object.keys(data.scenes)
+    .filter(key => data.scenes[key].floorGroup === "upper_floors")
+    .sort((a, b) => data.scenes[a].floorOrder - data.scenes[b].floorOrder);
+}
+
+// Check if current scene is in floor group
+function isFloorScene() {
+  return data.scenes[currentSceneKey]?.floorGroup === "upper_floors";
+}
+
+// Update floor arrow visibility and state
+function updateFloorNavigation() {
+  if (!isFloorScene()) {
+    floorNavArrows.classList.remove("visible");
+    return;
+  }
+
+  floorNavArrows.classList.add("visible");
+
+  const floors = getFloorScenes();
+  const currentIndex = floors.indexOf(currentSceneKey);
+
+  // Update button states
+  floorUpBtn.disabled = currentIndex >= floors.length - 1;
+  floorDownBtn.disabled = currentIndex <= 0;
+
+  // Update dropdown active state
+  updateDropdownActiveState();
+}
+
+// Navigate to adjacent floor
+function navigateFloor(direction) {
+  const floors = getFloorScenes();
+  const currentIndex = floors.indexOf(currentSceneKey);
+  const newIndex = currentIndex + direction;
+
+  if (newIndex >= 0 && newIndex < floors.length) {
+    loadScene(floors[newIndex]);
+  }
+}
+
+// Update dropdown active state
+function updateDropdownActiveState() {
+  document.querySelectorAll(".dropdown-menu button").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.scene === currentSceneKey);
+  });
+}
+
+// Floor arrow click handlers
+floorUpBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navigateFloor(1);
+});
+
+floorDownBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navigateFloor(-1);
+});
+
+// Dropdown toggle
+dropdownTrigger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdownContainer.classList.toggle("open");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  if (!dropdownContainer.contains(e.target)) {
+    dropdownContainer.classList.remove("open");
+  }
+});
+
+// Dropdown menu item clicks
+document.querySelectorAll(".dropdown-menu button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    loadScene(btn.dataset.scene);
+    dropdownContainer.classList.remove("open");
+  });
+});
+
+// Swipe gesture navigation for floors
+let swipeStartY = 0;
+let swipeStartTime = 0;
+
+viewport.addEventListener("touchstart", (e) => {
+  if (!isFloorScene()) return;
+  if (e.target.classList.contains('hotspot')) return;
+  
+  swipeStartY = e.touches[0].clientY;
+  swipeStartTime = Date.now();
+}, { passive: true });
+
+viewport.addEventListener("touchend", (e) => {
+  if (!isFloorScene()) return;
+  if (isDragging) return; // Don't trigger if user was panning
+  
+  const swipeEndY = e.changedTouches[0].clientY;
+  const swipeEndTime = Date.now();
+  const swipeDistance = swipeStartY - swipeEndY;
+  const swipeTime = swipeEndTime - swipeStartTime;
+  
+  // Quick vertical swipe detection (min 50px, max 500ms)
+  if (Math.abs(swipeDistance) > 50 && swipeTime < 500) {
+    if (swipeDistance > 0) {
+      // Swiped up
+      navigateFloor(1);
+    } else {
+      // Swiped down
+      navigateFloor(-1);
+    }
+  }
+}, { passive: true });
+
+/* =========================
+   UPDATE LOAD SCENE TO HANDLE FLOORS
+========================= */
+
+// Store the original loadScene function
+const originalLoadScene = loadScene;
+
+// Override loadScene to include floor navigation updates
+loadScene = function(key) {
+  originalLoadScene(key);
+  
+  // Update floor navigation after scene loads
+  setTimeout(() => {
+    updateFloorNavigation();
+  }, 100);
+};
+
+/* =========================
    SIDEPANEL TOGGLE
 ========================= */
 
