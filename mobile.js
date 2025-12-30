@@ -93,8 +93,10 @@ function loadScene(key) {
       // Show loading message while fetching
       sidepanelText.innerHTML = "<p>Chargement...</p>";
       
-      // Calculate the number of hotspots
-      const hotspotCount = scene.hotspots.length;
+      // Calculate the total number of hotspot entries (including splits)
+      const hotspotCount = scene.hotspots.reduce((total, hotspot) => {
+      return total + hotspot.entries.length;
+      }, 0);
       
       // Fetch the external HTML file
       fetch(scene.sidepanelContent.textFile)
