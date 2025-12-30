@@ -341,6 +341,42 @@ body.modal-open #hotspotLayer {
   }
 }
 
+/* Scroll indicator for info modal */
+#infoModal .scroll-indicator {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Scroll indicator for sidepanel */
+.scroll-indicator-sidepanel {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  background: var(--brand-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-indicator-sidepanel.visible {
+  opacity: 1;
+  animation: bounce-arrow 1.5s ease-in-out infinite;
+}
+
+.scroll-indicator-sidepanel svg {
+  width: 14px;
+  height: 14px;
+  color: white;
+}
+
 /* MAN logo */
 .fixed-logo {
   position: fixed;
