@@ -261,6 +261,11 @@ header {
   margin-bottom: 10px;
 }
 
+.modal-content ul {
+  list-style-type: disc;
+  padding-left: 1.2em;
+}
+
 #modalAuthor {
   color: var(--brand-blue);
   font-weight: 600;
