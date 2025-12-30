@@ -76,6 +76,12 @@ function loadScene(key) {
           // Replace placeholder with actual hotspot count
           const processedHtml = html.replace(/{{hotspotCount}}/g, hotspotCount);
           sidepanelText.innerHTML = processedHtml;
+  
+         // Check sidepanel scroll indicator
+         const sidepanelScrollIndicator = document.querySelector(".scroll-indicator-sidepanel");
+         setTimeout(() => {
+         checkScrollIndicator(sidepanelText, sidepanelScrollIndicator);
+         }, 100);
         })
         .catch(err => {
           console.error(err);
@@ -300,11 +306,24 @@ document.getElementById("infoBtn").addEventListener("click", () => {
   infoModal.classList.add("is-open");
 
   const container = document.getElementById("infoText");
+  const scrollIndicator = document.querySelector("#infoModal .scroll-indicator");
+  
   container.textContent = "Chargement…";
+  scrollIndicator.classList.remove("visible");
 
   fetch("texts/infos.html")
     .then(r => r.text())
-    .then(html => container.innerHTML = html)
+    .then(html => {
+      container.innerHTML = html;
+      
+      // Check scroll after content loads
+      setTimeout(() => {
+        checkScrollIndicator(container, scrollIndicator);
+      }, 100);
+    })
+    .catch(() => {
+      container.textContent = "Erreur de chargement.";
+    });
 });
 
 /* =========================
