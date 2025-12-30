@@ -80,10 +80,11 @@ function loadScene(key) {
           sidepanelText.innerHTML = processedHtml;
   
          // Check sidepanel scroll indicator
+         const sidepanelContent = document.querySelector(".sidepanel-content");
          const sidepanelScrollIndicator = document.querySelector(".scroll-indicator-sidepanel");
          setTimeout(() => {
-         checkScrollIndicator(sidepanelText, sidepanelScrollIndicator);
-         }, 100);
+          checkScrollIndicator(sidepanelContent, sidepanelScrollIndicator);
+        }, 100);
         })
         .catch(err => {
           console.error(err);
