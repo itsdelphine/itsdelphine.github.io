@@ -459,11 +459,20 @@ document.getElementById("infoBtn").addEventListener("click", () => {
   infoModal.classList.add("is-open");
 
   const container = document.getElementById("infoText");
+  const scrollIndicator = document.querySelector("#infoModal .scroll-indicator");
+  
   container.textContent = "Chargement…";
+  scrollIndicator.classList.remove("visible");
 
   fetch("texts/infos.html")
     .then(r => r.text())
-    .then(html => container.innerHTML = html)
+    .then(html => {
+      container.innerHTML = html;
+      
+      setTimeout(() => {
+        checkScrollIndicator(container, scrollIndicator);
+      }, 100);
+    })
     .catch(() => {
       container.textContent = "Erreur de chargement.";
     });
