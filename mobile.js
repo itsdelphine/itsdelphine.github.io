@@ -108,11 +108,12 @@ function loadScene(key) {
   const processedHtml = html.replace(/{{hotspotCount}}/g, hotspotCount);
   sidepanelText.innerHTML = processedHtml;
   
-  // Check sidepanel scroll indicator
-  const sidepanelScrollIndicator = document.querySelector(".scroll-indicator-sidepanel");
-  setTimeout(() => {
-    checkScrollIndicator(sidepanelText, sidepanelScrollIndicator);
-  }, 100);
+// Check sidepanel scroll indicator
+const sidepanelContent = document.querySelector(".sidepanel-content");
+const sidepanelScrollIndicator = document.querySelector(".scroll-indicator-sidepanel");
+setTimeout(() => {
+  checkScrollIndicator(sidepanelContent, sidepanelScrollIndicator);
+}, 100);
 })
         .catch(err => {
           console.error(err);
