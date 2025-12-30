@@ -475,6 +475,9 @@ document.getElementById("infoBtn").addEventListener("click", () => {
 
 document.querySelectorAll(".scene-nav button").forEach(btn => {
   btn.addEventListener("click", () => {
+    // Skip if it's the dropdown trigger (has no data-scene)
+    if (!btn.dataset.scene) return;
+    
     loadScene(btn.dataset.scene);
   });
 });
