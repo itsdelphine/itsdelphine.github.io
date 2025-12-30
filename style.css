@@ -238,6 +238,12 @@ header {
   color: var(--brand-blue);
 }
 
+.modal-content p {
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 6px;
+}
+
 #modalAuthor {
   color: var(--brand-blue);
   font-weight: 600;
