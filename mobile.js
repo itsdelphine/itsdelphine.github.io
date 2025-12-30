@@ -103,10 +103,15 @@ function loadScene(key) {
           return res.text();
         })
         .then(html => {
-          // Replace placeholder with actual hotspot count
-          const processedHtml = html.replace(/{{hotspotCount}}/g, hotspotCount);
-          sidepanelText.innerHTML = processedHtml;
-        })
+  const processedHtml = html.replace(/{{hotspotCount}}/g, hotspotCount);
+  sidepanelText.innerHTML = processedHtml;
+  
+  // Check sidepanel scroll indicator
+  const sidepanelScrollIndicator = document.querySelector(".scroll-indicator-sidepanel");
+  setTimeout(() => {
+    checkScrollIndicator(sidepanelText, sidepanelScrollIndicator);
+  }, 100);
+})
         .catch(err => {
           console.error(err);
           sidepanelText.innerHTML = "<p>Erreur de chargement du contenu.</p>";
