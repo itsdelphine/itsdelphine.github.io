@@ -37,20 +37,57 @@ body {
 }
 
 /* Header */
-.site-header {
-  background-color: var(--main-color);
-  padding: 16px 24px;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--main-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 200;
 }
 
-.logo img {
-  height: 32px;
-  fill: var(--main-color);
+/* Title SVG */
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
-.mail-btn img {
+
+.logo {
+  height: 42px;          /* adjust visually */
+  width: auto;
+  display: block;
+}
+
+/* ensure white fill */
+.logo .cls-1 {
+  fill: var(--support-color);
+}
+
+/* Infos button SVG */
+
+#mailBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+#mailBtn svg {
+  width: 32px;
   height: 32px;
+  display: block;
 }
 
 /* Main */
