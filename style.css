@@ -95,7 +95,7 @@ header {
 .content-wrapper {
   position: relative;
   width: 100%;
-  margin: 0 22%;
+  margin: 0 28%;
   padding: 40px 0;
 }
 
@@ -147,7 +147,7 @@ header {
   color: var(--main-color);
   font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
   display: inline;
   color: var(--main-color);
 }
