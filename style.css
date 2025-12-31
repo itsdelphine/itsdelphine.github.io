@@ -65,6 +65,7 @@ header {
 .logo img {
   height: 100%;
   width: auto;
+  fill: var(--support-color);
 }
 
 /* Mail button */
