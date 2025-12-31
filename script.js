@@ -6,6 +6,9 @@ fetch("texts/main.html")
   .then(res => res.text())
   .then(html => {
     textContainer.innerHTML = html;
+  })
+  .catch(err => {
+    console.error("Error loading text content:", err);
   });
 
 // Language switch
@@ -15,8 +18,7 @@ langButtons.forEach(btn => {
     const blocks = textContainer.querySelectorAll("[data-lang]");
 
     blocks.forEach(block => {
-      block.style.display =
-        block.dataset.lang === lang ? "block" : "none";
+      block.style.display = block.dataset.lang === lang ? "block" : "none";
     });
   });
 });
