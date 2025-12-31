@@ -12,30 +12,25 @@
   --support-color: #faebe3;
 }
 
-/* Reset */
-* {
+html, body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base */
-body {
-  min-height: 100vh;
-  background-color: var(--support-color);
+  height: 100%;
   font-family: "Nunito Sans", sans-serif;
-  color: #222;
-  display: flex;
-  flex-direction: column;
+  background: var(--support-color);
 }
 
-/* Header */
-.site-header {
-  background-color: var(--main-color);
-  padding: 16px 24px;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--main-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 200;
 }
 
 .logo,
