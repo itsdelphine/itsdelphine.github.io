@@ -128,7 +128,6 @@ header {
 
 .lang-flag.active {
   opacity: 1;
-  border: 2px solid var(--main-color);
   border-radius: 4px;
 }
 
@@ -139,7 +138,7 @@ header {
 
 #text-container p {
   font-size: 1.5rem;
-  line-height: 2;
+  line-height: 1.6;
   color: #333;
 }
 
@@ -148,7 +147,7 @@ header {
   color: var(--main-color);
   font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.6rem;
   display: inline;
   color: var(--main-color);
 }
