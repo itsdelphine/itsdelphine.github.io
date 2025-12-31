@@ -45,7 +45,10 @@ body {
   align-items: center;
 }
 
-.logo,
+.logo img {
+  height: 32px;
+  fill: var(--main-color);
+}
 .mail-btn img {
   height: 32px;
 }
