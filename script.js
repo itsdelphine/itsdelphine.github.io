@@ -15,7 +15,7 @@ fetch("texts/main.html")
 langButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;
-    const blocks = textContainer.querySelectorAll("[data-lang]");
+    const blocks = document.querySelectorAll("[data-lang]");
 
     blocks.forEach(block => {
       block.style.display = block.dataset.lang === lang ? "block" : "none";
