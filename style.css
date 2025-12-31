@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
   font-family: "Caros Soft";
-  src: url("../fonts/carossoft-bold.woff") format("woff");
+  src: url("fonts/carossoft-bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -12,13 +12,6 @@
   --support-color: #faebe3;
 }
 
-html, body {
-  margin: 0;
-  height: 100%;
-  font-family: "Nunito Sans", sans-serif;
-  background: var(--support-color);
-}
-
 /* Reset */
 * {
   margin: 0;
@@ -27,17 +20,22 @@ html, body {
 }
 
 /* Base */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  background: var(--support-color);
+}
+
 body {
   min-height: 100vh;
   background-color: var(--support-color);
-  font-family: "Nunito Sans", sans-serif;
   color: #222;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
-
 header {
   position: fixed;
   top: 0;
@@ -52,8 +50,6 @@ header {
   z-index: 200;
 }
 
-/* Title SVG */
-
 .title {
   display: flex;
   align-items: center;
@@ -61,30 +57,27 @@ header {
 }
 
 .logo {
-  height: 42px;          /* adjust visually */
+  height: 42px;
   width: auto;
   display: block;
 }
 
-/* ensure white fill */
-.logo .cls-1 {
-  fill: var(--support-color);
+.logo img {
+  height: 100%;
+  width: auto;
 }
 
-/* Infos button SVG */
-
+/* Mail button */
 #mailBtn {
   background: none;
   border: none;
-  color: white;
-  font-size: 24px;
   cursor: pointer;
   padding: 8px;
   line-height: 0;
   flex-shrink: 0;
 }
 
-#mailBtn svg {
+#mailBtn img {
   width: 32px;
   height: 32px;
   display: block;
@@ -95,11 +88,14 @@ header {
   flex: 1;
   display: flex;
   align-items: center;
+  margin-top: 56px;
 }
 
 .content-wrapper {
   position: relative;
+  width: 100%;
   margin: 0 22%;
+  padding: 40px 0;
 }
 
 @media (max-width: 768px) {
@@ -111,22 +107,28 @@ header {
 /* Language switch */
 .lang-switch {
   position: absolute;
-  top: -40px;
+  top: 0;
   right: 0;
   display: flex;
   gap: 8px;
 }
 
 .lang-switch img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.lang-switch img:hover {
+  opacity: 0.7;
 }
 
 /* Text */
 #text-container {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-top: 40px;
 }
 
 .accent-txt {
@@ -135,19 +137,22 @@ header {
 
 /* Buttons */
 .download-buttons {
-  margin-top: 24px;
+  margin-top: 32px;
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border: 2px solid var(--main-color);
+  border-radius: 8px;
   color: var(--main-color);
   font-weight: 600;
   transition: all 0.2s ease;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -160,4 +165,5 @@ header {
   text-align: center;
   padding: 16px;
   font-size: 0.9rem;
+  color: #666;
 }
