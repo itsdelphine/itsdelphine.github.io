@@ -19,56 +19,35 @@ html, body {
   background: var(--support-color);
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 56px;
-  background: var(--main-color);
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  min-height: 100vh;
+  background-color: var(--support-color);
+  font-family: "Nunito Sans", sans-serif;
+  color: #222;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--main-color);
+  padding: 16px 24px;
+  display: flex;
   justify-content: space-between;
-  padding: 0 20px;
-  z-index: 200;
-}
-
-/* Title SVG */
-
-.title {
-  display: flex;
   align-items: center;
-  height: 100%;
 }
 
-.title-logo {
-  height: 42px;          /* adjust visually */
-  width: auto;
-  display: block;
-}
-
-/* ensure color fill */
-.title-logo .cls-1 {
-  fill: var(--support-color);
-}
-
-/* Infos button SVG */
-
-#infoBtn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px;
-  line-height: 0;
-  flex-shrink: 0;
-}
-
-#infoBtn svg {
-  width: 24px;
-  height: 24px;
-  display: block;
+.logo,
+.mail-btn img {
+  height: 32px;
 }
 
 /* Main */
