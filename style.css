@@ -186,7 +186,7 @@ header {
   padding: 12px 24px;
   background-color: var(--main-color);
   border-radius: 8px;
-  color: var(--accent-color);
+  color: var(--support-color);
   font-weight: 600;
   transition: all 0.2s ease;
   display: inline-block;
@@ -194,7 +194,7 @@ header {
 
 .btn:hover {
   background-color: var(--dark-main);
-  color: white;
+  color: var(--support-color);
 }
 
 /* Footer */
