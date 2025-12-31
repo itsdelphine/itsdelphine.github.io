@@ -52,8 +52,23 @@ header {
   fill: var(--support-color);
 }
 
-.mail-btn img {
-  height: 32px;
+/* Mail button SVG */
+
+#mailBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+#mailBtn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 /* Main */
