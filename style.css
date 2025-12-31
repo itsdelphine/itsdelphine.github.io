@@ -127,13 +127,23 @@ header {
 
 /* Text */
 #text-container {
-  font-size: 1.1rem;
-  line-height: 1.6;
   margin-top: 40px;
 }
 
-.accent-txt {
+#text-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+#text-container h1 {
   font-family: "Caros Soft", sans-serif;
+  color: var(--main-color);
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  display: inline;
+  color: var(--main-color);
 }
 
 /* Buttons */
