@@ -100,11 +100,8 @@ header {
 }
 
 @media (max-width: 768px) {
-  .main-content {
-  margin-top: 70px;
-}
   .content-wrapper {
-    margin: 0 8%;
+    margin: 20% 8%;
   }
 }
 
