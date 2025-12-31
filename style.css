@@ -114,15 +114,22 @@ header {
   gap: 8px;
 }
 
-.lang-switch img {
+.lang-flag {
   width: 24px;
   height: 24px;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  opacity: 0.5;
 }
 
-.lang-switch img:hover {
-  opacity: 0.7;
+.lang-flag:hover {
+  opacity: 0.8;
+}
+
+.lang-flag.active {
+  opacity: 1;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
 }
 
 /* Text */
