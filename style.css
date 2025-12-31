@@ -10,6 +10,7 @@
 :root {
   --main-color: #ea5659;
   --support-color: #faebe3;
+  --dark-main: #c64249;
 }
 
 /* Reset */
@@ -183,16 +184,16 @@ header {
 .btn {
   text-decoration: none;
   padding: 12px 24px;
-  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
   border-radius: 8px;
-  color: var(--main-color);
+  color: var(--accent-color);
   font-weight: 600;
   transition: all 0.2s ease;
   display: inline-block;
 }
 
 .btn:hover {
-  background-color: var(--main-color);
+  background-color: var(--dark-main);
   color: white;
 }
 
