@@ -138,17 +138,17 @@ header {
 }
 
 #text-container p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.5rem;
+  line-height: 2;
   color: #333;
 }
 
 #text-container h1 {
   font-family: "Caros Soft", sans-serif;
   color: var(--main-color);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.1rem;
   display: inline;
   color: var(--main-color);
 }
