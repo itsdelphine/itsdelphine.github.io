@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-e8cf5143-f3e6-4e9a-bda1-2f56f984a24c" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .uuid-d3ce3efe-61db-47fd-a90f-fca7585bd413 {
+        fill: #005ec4;
+      }
+
+      .uuid-c8654d86-dd28-416d-9905-d20bda6236c3 {
+        fill: #f1f0f0;
+      }
+
+      .uuid-e028059c-2724-4966-914e-ee52b5805e64 {
+        fill: #f90805;
+      }
+    </style>
+  </defs>
+  <path class="uuid-c8654d86-dd28-416d-9905-d20bda6236c3" d="M35.56,6.73c-3.11-1.8-6.71-2.85-10.56-2.85s-7.45,1.05-10.56,2.85v36.54c3.11,1.8,6.71,2.85,10.56,2.85s7.45-1.05,10.56-2.85V6.73Z"/>
+  <path class="uuid-e028059c-2724-4966-914e-ee52b5805e64" d="M32.58,5.31v39.38c7.91-3.05,13.54-10.7,13.54-19.69s-5.63-16.64-13.54-19.69Z"/>
+  <path class="uuid-d3ce3efe-61db-47fd-a90f-fca7585bd413" d="M17.42,5.31c-7.91,3.05-13.54,10.7-13.54,19.69s5.62,16.64,13.54,19.69V5.31Z"/>
+</svg>
