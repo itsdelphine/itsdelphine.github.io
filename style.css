@@ -33,7 +33,25 @@ header {
   z-index: 200;
 }
 
-.logo,
+/* Title SVG */
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.title-logo {
+  height: 42px;          /* adjust visually */
+  width: auto;
+  display: block;
+}
+
+/* ensure color fill */
+.title-logo .cls-1 {
+  fill: var(--support-color);
+}
+
 .mail-btn img {
   height: 32px;
 }
