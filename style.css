@@ -120,7 +120,7 @@ header {
   height: 24px;
   cursor: pointer;
   transition: opacity 0.2s ease;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .lang-flag:hover {
@@ -128,7 +128,7 @@ header {
 }
 
 .lang-flag.active {
-  opacity: 1;
+  opacity: 0.5;
   border-radius: 4px;
 }
 
@@ -142,7 +142,7 @@ header {
   color: var(--main-color);
   font-size: 1.8rem;
   font-weight: normal;
-  margin-bottom: 2rem;
+  margin-bottom: 2.3rem;
   display: inline;
   color: var(--main-color);
 }
