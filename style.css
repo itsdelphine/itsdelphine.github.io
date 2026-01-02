@@ -137,12 +137,6 @@ header {
   margin-top: 40px;
 }
 
-#text-container p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #333;
-}
-
 #text-container h1 {
   font-family: "Caros Soft", sans-serif;
   color: var(--main-color);
@@ -153,14 +147,15 @@ header {
   color: var(--main-color);
 }
 
-@media (max-width: 768px) {
-  #text-container p {
-  font-size: 1.1rem;
+#text-container p {
+  font-size: 1.2rem;
   line-height: 1.4;
-  color: #333;
+  color: var(--dark-main);
 }
 
-#text-container h1 {
+@media (max-width: 768px) {
+
+  #text-container h1 {
   font-family: "Caros Soft", sans-serif;
   color: var(--main-color);
   font-size: 1.4rem;
@@ -169,6 +164,12 @@ header {
   display: inline;
   color: var(--main-color);
  }
+  
+  #text-container p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--dark-main);
+}
 }
 
 
