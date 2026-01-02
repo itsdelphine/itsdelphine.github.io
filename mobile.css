@@ -90,14 +90,14 @@ header {
   flex: 1;
   display: flex;
   align-items: center;
-  margin-top: 56px;
+  margin-top: 46px;
 }
 
 .content-wrapper {
   position: relative;
   width: 100%;
-  margin: 0 8%;
-  padding: 10px 0
+  margin: 10px 8%;
+  padding: 40px 0
 }
 
 /* Language switch */
