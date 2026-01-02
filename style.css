@@ -86,7 +86,7 @@ header {
 }
 
 #mailBtn:hover {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 
 #mailBtn img {
