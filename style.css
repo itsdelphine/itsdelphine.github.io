@@ -9,6 +9,7 @@
 /* CSS Variables */
 :root {
   --main-color: #ea5659;
+  --main-color-rgb: 234, 86, 89;
   --support-color: #faebe3;
   --dark-main: #c64249;
 }
@@ -43,7 +44,12 @@ header {
   left: 0;
   right: 0;
   height: 56px;
-  background: var(--main-color);
+    background: linear-gradient(
+    to bottom,
+    var(--main-color) 0%,
+    var(--main-color) 50%,
+    rgba(var(--main-color-rgb), 0) 100%
+    );
   display: flex;
   align-items: center;
   justify-content: space-between;
