@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents - Delphine Taverne</title>
 
+  <!-- Google Font: Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* Fonts */
+@font-face {
+  font-family: "Caros Soft";
+  src: url("fonts/carossoft-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CSS Variables */
+:root {
+  --main-color: #ea5659;
+  --support-color: #faebe3;
+  --dark-main: #c64249;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  background: var(--support-color);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--support-color);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 200;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  fill: var(--support-color);
+}
+
+/* Mail button */
+#mailBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+#mailBtn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 28%;
+  padding: 40px 0;
+}
+
+/* Text */
+#text-container {
+  margin-top: 40px;
+}
+
+#text-container h1 {
+  font-family: "Caros Soft", sans-serif;
+  color: var(--main-color);
+  font-size: 29px;
+  font-weight: normal;
+  margin-bottom: 24px;
+  display: block;
+}
+
+#text-container p {
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--dark-main);
+  margin-top: 16px;
+}
+
+#text-container p:first-of-type {
+  margin-top: 0;
+}
+
+/* Buttons */
+.download-buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  background-color: var(--main-color);
+  border-radius: 8px;
+  color: var(--support-color);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--dark-main);
+  color: var(--support-color);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin: 22px 8% 0 8%;
+  }
+
+  #text-container h1 {
+    font-size: 22px;
+  }
+
+  #text-container p {
+    font-size: 18px;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+}
+</style>
+  
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="title">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-id.svg" alt="Delphine Taverne Logo">
+      </a>
+    </div>
+
+    <button id="mailBtn" aria-label="Contact">
+      <a href="mailto:delphinetaverne@outlook.com">
+        <img src="assets/mail.svg" alt="Contact">
+      </a>
+    </button>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-wrapper">
+
+      <!-- Text injected from texts/documents.html -->
+      <div id="text-container"></div>
+
+      <!-- Download buttons -->
+      <div class="download-buttons">
+        <a href="pdfs/resume-anon.pdf" target="_blank" class="btn">
+          CV anonymisé
+        </a>
+        <a href="pdfs/portfolio-anon.pdf" target="_blank" class="btn">
+          Portfolio anonymisé
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Delphine – All rights reserved</p>
+  </footer>
+
+  <script>
+    // Load text content from texts/documents.html
+    const textContainer = document.getElementById("text-container");
+    
+    fetch("texts/documents.html")
+      .then(res => res.text())
+      .then(html => {
+        textContainer.innerHTML = html;
+      })
+      .catch(err => {
+        console.error("Error loading text content:", err);
+      });
+  </script>
+</body>
+</html>
