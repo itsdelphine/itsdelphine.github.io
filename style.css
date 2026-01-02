@@ -100,12 +100,6 @@ header {
   padding: 40px 0;
 }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    margin: 22px 8% 0 8%;
-  }
-}
-
 /* Language switch */
 .lang-switch {
   position: absolute;
@@ -140,38 +134,22 @@ header {
 #text-container h1 {
   font-family: "Caros Soft", sans-serif;
   color: var(--main-color);
-  font-size: 1.8rem;
+  font-size: 29px;
   font-weight: normal;
-  margin-bottom: 2.3rem;
-  display: inline;
-  color: var(--main-color);
+  margin-bottom: 24px;
+  display: block;
 }
 
 #text-container p {
-  font-size: 1.2rem;
+  font-size: 19px;
   line-height: 1.4;
   color: var(--dark-main);
+  margin-top: 16px;
 }
 
-@media (max-width: 768px) {
-
-  #text-container h1 {
-  font-family: "Caros Soft", sans-serif;
-  color: var(--main-color);
-  font-size: 1.4rem;
-  font-weight: normal;
-  margin-bottom: 2.2rem;
-  display: inline;
-  color: var(--main-color);
- }
-  
-  #text-container p {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: var(--dark-main);
+#text-container p:first-of-type {
+  margin-top: 0;
 }
-}
-
 
 /* Buttons */
 .download-buttons {
@@ -179,7 +157,7 @@ header {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .btn {
