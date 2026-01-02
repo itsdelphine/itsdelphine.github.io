@@ -128,7 +128,7 @@ header {
 
 /* Text */
 #text-container {
-  margin-top: 25px;
+  margin-top: 25px !important;
 }
 
 #text-container h1 {
