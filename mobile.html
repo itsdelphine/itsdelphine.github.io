@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delphine Taverne - Multidisciplinary designer</title>
+
+  <!-- Google Font: Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="mobile-style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="title">
+      <a href="#" class="logo">
+        <img src="assets/logo-id.svg" alt="Delphine Taverne Logo">
+      </a>
+    </div>
+
+    <button id="mailBtn" aria-label="Contact">
+      <a href="mailto:delphinetaverne@outlook.com">
+        <img src="assets/mail.svg" alt="Contact">
+      </a>
+    </button>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-wrapper">
+
+      <!-- Language switch -->
+      <div class="lang-switch">
+        <img src="assets/flag-fr.svg" alt="Français" data-lang="fr" class="lang-flag">
+        <img src="assets/flag-en.svg" alt="English" data-lang="en" class="lang-flag active">
+      </div>
+
+      <!-- Text injected from texts/main.html -->
+      <div id="text-container"></div>
+
+      <!-- Download buttons -->
+      <div class="download-buttons">
+        <a href="https://itsdelphine.github.io/pdfs/delphine-resume-en.pdf" target="_blank" class="btn" data-lang="en">
+          Download resume
+        </a>
+        <a href="https://itsdelphine.github.io/pdfs/delphine-resume-fr.pdf" target="_blank" class="btn" data-lang="fr" style="display: none;">
+          Télécharger mon CV
+        </a>
+        <a href="https://itsdelphine.github.io/pdfs/delphine-portfolio.pdf" target="_blank" class="btn" data-lang="en">
+          Download portfolio
+        </a>
+        <a href="https://itsdelphine.github.io/pdfs/delphine-portfolio.pdf" target="_blank" class="btn" data-lang="fr" style="display: none;">
+          Télécharger mon portfolio
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 Delphine Taverne – All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
