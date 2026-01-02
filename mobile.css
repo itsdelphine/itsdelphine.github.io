@@ -97,7 +97,7 @@ header {
   position: relative;
   width: 100%;
   margin: 22px 8% 0 8%;
-  padding: 30px 0;
+  padding: 30px 0 !important;
 }
 
 /* Language switch */
@@ -138,6 +138,7 @@ header {
   font-weight: normal;
   margin-bottom: 24px;
   display: block;
+  margin-top: 10px;
 }
 
 #text-container p {
