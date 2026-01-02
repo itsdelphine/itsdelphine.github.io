@@ -47,7 +47,6 @@ header {
     background: linear-gradient(
     to bottom,
     var(--main-color) 0%,
-    var(--main-color) 50%,
     rgba(var(--main-color-rgb), 0) 100%
     );
   display: flex;
@@ -83,6 +82,11 @@ header {
   padding: 8px;
   line-height: 0;
   flex-shrink: 0;
+  transition: transform 1s;
+}
+
+#mailBtn:hover {
+  transform: rotate(180deg);
 }
 
 #mailBtn img {
