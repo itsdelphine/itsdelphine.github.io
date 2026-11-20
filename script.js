@@ -286,8 +286,12 @@
   });
 
   /* ---------- Changement de langue ----------------------------------- */
+  /* CV à télécharger selon la langue (fichiers à placer à la racine du site) */
+  const CV = { fr: "CV_Delphine-Taverne_FR.pdf", en: "CV_Delphine-Taverne_EN.pdf" };
+
   function translateStatic() {
     document.documentElement.lang = lang;
+    document.querySelectorAll(".pdf-link, .pdf-button").forEach((a) => { a.href = CV[lang]; });
     document.querySelectorAll("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
     document.querySelectorAll("[data-i18n-label]").forEach((el) => {
       el.setAttribute("aria-label", t(el.dataset.i18nLabel));
