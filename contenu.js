@@ -2,6 +2,7 @@
   CONTENU DU PORTFOLIO
   --------------------
   Un objet par projet, dans l'ordre du PDF.
+  - masque : true = projet caché sur le site (rien n'est supprimé) ; false = visible.
   - texte_fr / texte_en : un élément de la liste = un paragraphe.
   - categories_* : 3 maximum, utilisées pour les filtres du site.
   - vignette : image affichée sur la page d'accueil (recadrée au format 10:7).
@@ -16,6 +17,7 @@ const PORTFOLIO = [
   {
     "id": "livrets-age-du-bronze",
     "page_pdf": 1,
+    "masque": false,
     "titre_fr": "Livrets de découverte âge du Bronze",
     "titre_en": "The bronze age trails",
     "categories_fr": [
@@ -53,8 +55,9 @@ const PORTFOLIO = [
   {
     "id": "archeomuse",
     "page_pdf": 2,
-    "titre_fr": "Identité des 10 ans ArchéoMuse",
-    "titre_en": "10 years of ArchéoMuse",
+    "masque": false,
+    "titre_fr": "Identité des 10e rencontres ArchéoMuse",
+    "titre_en": "ArchéoMuse days’ branding and communication",
     "categories_fr": [
       "DESIGN",
       "MISE EN PAGE"
@@ -86,6 +89,7 @@ const PORTFOLIO = [
   {
     "id": "marvellous-moons",
     "page_pdf": 3,
+    "masque": false,
     "titre_fr": "Exposition Marvellous Moons",
     "titre_en": "Marvellous Moons exhibition",
     "categories_fr": [
@@ -125,6 +129,7 @@ const PORTFOLIO = [
   {
     "id": "balades-narratives",
     "page_pdf": 4,
+    "masque": false,
     "titre_fr": "Balades narratives avec Mathieu Simonet",
     "titre_en": "Mathieu Simonet’s workshops",
     "categories_fr": [
@@ -164,6 +169,7 @@ const PORTFOLIO = [
   {
     "id": "livret-falc",
     "page_pdf": 5,
+    "masque": false,
     "titre_fr": "Livret de visite FALC",
     "titre_en": "Easy to Read and Understand brochure",
     "categories_fr": [
@@ -201,6 +207,7 @@ const PORTFOLIO = [
   {
     "id": "expo-maitres-du-feu",
     "page_pdf": 6,
+    "masque": false,
     "titre_fr": "Exposition Les Maîtres du Feu",
     "titre_en": "The Bronze age exhibition",
     "categories_fr": [
@@ -240,6 +247,7 @@ const PORTFOLIO = [
   {
     "id": "identite-maitres-du-feu",
     "page_pdf": 7,
+    "masque": false,
     "titre_fr": "Identité Les Maîtres du Feu",
     "titre_en": "Bronze age exhibition’s visual identity",
     "categories_fr": [
@@ -279,6 +287,7 @@ const PORTFOLIO = [
   {
     "id": "objet-du-mois",
     "page_pdf": 8,
+    "masque": false,
     "titre_fr": "L’Objet du Mois",
     "titre_en": "The Object of the Month",
     "categories_fr": [
@@ -312,6 +321,7 @@ const PORTFOLIO = [
   {
     "id": "baltic-exchange",
     "page_pdf": 9,
+    "masque": false,
     "titre_fr": "Baltic Exchange Memorial Glass",
     "titre_en": "Baltic Exchange Memorial Glass",
     "categories_fr": [
@@ -351,8 +361,9 @@ const PORTFOLIO = [
   {
     "id": "observatoire-greenwich",
     "page_pdf": 10,
-    "titre_fr": "Rénovation de l’observatoire",
-    "titre_en": "Refurbishment of the Observatory",
+    "masque": false,
+    "titre_fr": "Rénovation de l’observatoire de Greenwich",
+    "titre_en": "Refurbishment of the Royal Greenwich Observatory",
     "categories_fr": [
       "GRAPHISME",
       "EXPOSITION",
@@ -386,6 +397,7 @@ const PORTFOLIO = [
   {
     "id": "family-trails-nmm",
     "page_pdf": 11,
+    "masque": false,
     "titre_fr": "Livrets de découverte NMM",
     "titre_en": "NMM family trails",
     "categories_fr": [
@@ -433,6 +445,7 @@ const PORTFOLIO = [
   {
     "id": "packaging-askul",
     "page_pdf": 12,
+    "masque": false,
     "titre_fr": "Gamme packaging Askul",
     "titre_en": "Askul packaging series",
     "categories_fr": [
@@ -472,8 +485,9 @@ const PORTFOLIO = [
   {
     "id": "world-of-whisky",
     "page_pdf": 13,
-    "titre_fr": "Dispositif World of Whisky",
-    "titre_en": "World of Whisky display",
+    "masque": false,
+    "titre_fr": "Dispositif de présentation World of Whisky",
+    "titre_en": "World of Whisky presentation display",
     "categories_fr": [
       "GRAPHISME",
       "MISE EN PAGE",
@@ -513,6 +527,7 @@ const PORTFOLIO = [
   {
     "id": "you-are-here",
     "page_pdf": 14,
+    "masque": false,
     "titre_fr": "You are here, un dispositif itinérant",
     "titre_en": "Community project touring South London",
     "categories_fr": [
@@ -550,6 +565,7 @@ const PORTFOLIO = [
   {
     "id": "plateforme-biodiversite",
     "page_pdf": 15,
+    "masque": false,
     "titre_fr": "Plateforme biodiversité",
     "titre_en": "Biodiversity online platform",
     "categories_fr": [
@@ -582,6 +598,7 @@ const PORTFOLIO = [
   {
     "id": "livre-autobahn",
     "page_pdf": 16,
+    "masque": false,
     "titre_fr": "Le livre du studio Autobahn",
     "titre_en": "Autobahn Studio Book",
     "categories_fr": [
@@ -621,6 +638,7 @@ const PORTFOLIO = [
   {
     "id": "carte-de-voeux",
     "page_pdf": 17,
+    "masque": true,
     "titre_fr": "Carte de voeux animée",
     "titre_en": "Animated greeting card",
     "categories_fr": [
@@ -666,6 +684,7 @@ const PORTFOLIO = [
   {
     "id": "dalle-saint-belec",
     "page_pdf": 18,
+    "masque": false,
     "titre_fr": "La dalle de Saint-Belec",
     "titre_en": "The Saint-Belec slab",
     "categories_fr": [
@@ -705,6 +724,7 @@ const PORTFOLIO = [
   {
     "id": "gaule-romaine",
     "page_pdf": 19,
+    "masque": false,
     "titre_fr": "Journée d’actualité sur la Gaule Romaine",
     "titre_en": "Roman Gaul annual conference",
     "categories_fr": [
@@ -736,8 +756,9 @@ const PORTFOLIO = [
   {
     "id": "cartes-age-du-bronze",
     "page_pdf": 20,
-    "titre_fr": "Ressources à l’âge du Bronze",
-    "titre_en": "Resources during the Bronze age",
+    "masque": false,
+    "titre_fr": "Ressources et échanges à l’âge du Bronze",
+    "titre_en": "Resources and trade during the Bronze age",
     "categories_fr": [
       "GRAPHISME",
       "CARTOGRAPHIE"
@@ -767,6 +788,7 @@ const PORTFOLIO = [
   {
     "id": "plan-du-domaine",
     "page_pdf": 21,
+    "masque": false,
     "titre_fr": "Dépliant et plan du domaine",
     "titre_en": "Domain’s map and brochure",
     "categories_fr": [
@@ -806,6 +828,7 @@ const PORTFOLIO = [
   {
     "id": "guide-promenades-man",
     "page_pdf": 22,
+    "masque": true,
     "titre_fr": "Redesign d’un guide de visite",
     "titre_en": "Museum visit guide redesign",
     "categories_fr": [
@@ -843,6 +866,7 @@ const PORTFOLIO = [
   {
     "id": "catalogue-scolaire",
     "page_pdf": 23,
+    "masque": false,
     "titre_fr": "Catalogue d’activités scolaires",
     "titre_en": "School workshops’ brochure",
     "categories_fr": [
@@ -874,6 +898,7 @@ const PORTFOLIO = [
   {
     "id": "cahiers-du-man",
     "page_pdf": 24,
+    "masque": false,
     "titre_fr": "Série de publications scientifiques",
     "titre_en": "Series of scientific publications",
     "categories_fr": [

@@ -3,7 +3,7 @@
    Le contenu vient de contenu.js (variable PORTFOLIO).
    ========================================================================= */
 (() => {
-  const projects = PORTFOLIO;
+  const projects = PORTFOLIO.filter((p) => !p.masque); // les projets « masque: true » sont ignorés
 
 
   /* ---------- Textes de l'interface dans les deux langues ------------- */
