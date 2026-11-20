@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delphine Taverne — Portfolio</title>
+  <meta name="description" content="Portfolio — design graphique, scénographie, cartographie, identité visuelle.">
+  <meta name="theme-color" content="#f3eee6">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE ------------------------------------------------------------ -->
+  <header class="site-header" id="top">
+    <a class="logo" href="#top" data-close-modal>Delphine Taverne</a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#projets" data-i18n="nav_projects">Projets</a>
+      <a href="#apropos" data-i18n="nav_about">À propos</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a class="pdf-link" href="cv.pdf" download data-i18n="download">Télécharger le CV</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- INTRO ------------------------------------------------------------- -->
+    <section class="intro">
+      <p class="intro-text" data-i18n="intro">
+        Designer spécialisée en édition,<br>en graphisme d’exposition, en cartographie<br>et en stratégie de communication.
+      </p>
+    </section>
+
+    <!-- FILTRES + GRILLE -------------------------------------------------- -->
+    <section id="projets" class="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="visually-hidden" data-i18n="nav_projects">Projets</h2>
+      <div class="filters" role="toolbar" aria-label="Filtrer par catégorie"></div>
+      <ul class="grid"></ul>
+    </section>
+
+    <!-- À PROPOS ---------------------------------------------------------- -->
+    <section id="apropos" class="about">
+      <h2 data-i18n="nav_about">À propos</h2>
+      <div class="about-cols">
+        <p data-i18n="about_text">
+          Je crée avec des images, des graphiques, des cartes, du texte<br>et des données, dans une optique de valorisation et de transmission<br>de l’information, auprès d’un utilisateur ou d’un public.<br>Je suis impliquée dans chaque projet, de la conception à la production. Mon travail se décline sur tout type de support, imprimés ou numériques,<br>et sur une grande variété de formats.<br>Je prône une pratique éthique du design et soutiens sa valeur d’utilité publique.
+        </p>
+        <p>
+          <a class="pdf-button" href="cv.pdf" download data-i18n="download_full">Télécharger le CV (PDF)</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT ----------------------------------------------------------- -->
+    <section id="contact" class="contact">
+      <h2 data-i18n="nav_contact">Contact</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:prenom.nom@email.fr">delphinetaverne@outlook.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Delphine Taverne</span>
+    <a href="#top" data-i18n="back_top">Haut de page ↑</a>
+  </footer>
+
+  <!-- FENÊTRE PROJET (modale) ---------------------------------------------- -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-bar">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="modal-close" data-i18n="close" aria-label="Fermer">Fermer ✕</button>
+    </div>
+    <article class="modal-inner">
+      <div class="modal-text">
+        <p class="modal-index"></p>
+        <h2 id="modal-title"></h2>
+        <ul class="modal-cats"></ul>
+        <div class="modal-desc"></div>
+        <div class="modal-link"></div>
+      </div>
+      <div class="modal-images"></div>
+    </article>
+    <nav class="modal-nav" aria-label="Projets">
+      <button type="button" class="prev"><span aria-hidden="true">←</span> <span data-i18n="prev">Projet précédent</span></button>
+      <button type="button" class="next"><span data-i18n="next">Projet suivant</span> <span aria-hidden="true">→</span></button>
+    </nav>
+  </div>
+
+  <!-- AGRANDISSEMENT D'IMAGE ---------------------------------------------- -->
+  <div class="lightbox" id="lightbox" hidden>
+    <img alt="">
+  </div>
+
+  <!-- DESSIN ------------------------------------------------------------ -->
+  <canvas class="draw-layer" id="draw-layer" aria-hidden="true"></canvas>
+
+  <div class="draw-tools" id="draw-tools" role="toolbar" aria-label="Dessiner sur la page">
+    <p class="draw-hint" role="status" aria-live="polite" data-i18n="draw_hint">Cliquez-glissez pour dessiner</p>
+    <div class="swatches" role="radiogroup" data-i18n-label="draw_colors" aria-label="Couleur du crayon"></div>
+    <span class="draw-sep" aria-hidden="true"></span>
+    <button type="button" class="draw-btn draw-clear" data-i18n-label="draw_clear" aria-label="Effacer le dessin" title="Effacer le dessin">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button type="button" class="draw-btn draw-download" data-i18n-label="draw_download" aria-label="Télécharger le dessin" title="Télécharger le dessin">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <script src="contenu.js"></script>
+  <script src="ambiance.js"></script>
+  <script src="script.js"></script>
+  <script src="dessin.js"></script>
+</body>
+</html>

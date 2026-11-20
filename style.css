@@ -1,0 +1,277 @@
+/* =========================================================================
+   PORTFOLIO — feuille de style
+   Pour changer l'apparence générale, modifiez les variables ci-dessous.
+   ========================================================================= */
+:root {
+  /* Couleurs de départ : elles sont ensuite animées par ambiance.js */
+  --bg: #f3eee6;
+  --bg-rgb: 243 238 230;
+  --text: #241d14;
+  --muted: #5c5345;
+  --accent: #1f5e8c;
+  --placeholder: #e6ddd0;
+  --pen-cursor: crosshair;
+
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --margin: 5vw;              /* marges latérales */
+  --gap-x: 3.4vw;             /* espace entre colonnes */
+  --gap-y: 4.5vw;             /* espace entre rangées */
+  --thumb-ratio: 10 / 7;      /* format des vignettes de la page d'accueil */
+  --header-h: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+body.no-scroll { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+h1, h2, h3, p { margin: 0; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- En-tête ---------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  height: var(--header-h);
+  padding: 0 var(--margin);
+  background: rgb(var(--bg-rgb) / .92);
+  backdrop-filter: blur(8px);
+}
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; }
+.main-nav { display: flex; gap: 22px; font-weight: 700; }
+.main-nav a { transition: color .2s; }
+.main-nav a:hover, .main-nav a.is-active { color: var(--muted); }
+.header-right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; font-weight: 700; }
+.pdf-link { border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
+.pdf-link:hover { color: var(--accent); }
+.lang-switch { display: flex; gap: 6px; color: var(--muted); }
+.lang-switch button { color: var(--muted); font-weight: 700; }
+.lang-switch button[aria-pressed="true"] { color: var(--text); }
+
+/* ---------- Intro ------------------------------------------------------ */
+.intro { padding: 9vh var(--margin) 7vh; }
+.intro-text {
+  max-width: 22em;
+  font-size: clamp(24px, 2.6vw, 40px);
+  line-height: 1.18; font-weight: 700; letter-spacing: -.015em;
+}
+
+/* ---------- Filtres ---------------------------------------------------- */
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  padding: 0 var(--margin) 40px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+.filters button { color: var(--muted); transition: color .2s; }
+.filters button:hover { color: var(--text); }
+.filters button[aria-pressed="true"] { color: var(--text); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1.5px; }
+
+/* ---------- Grille ----------------------------------------------------- */
+.grid {
+  list-style: none; margin: 0;
+  padding: 0 var(--margin);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-y) var(--gap-x);
+}
+.grid li[hidden] { display: none; }
+.card { display: block; width: 100%; text-align: left; position: relative; }
+.thumb {
+  aspect-ratio: var(--thumb-ratio);
+  overflow: hidden;
+  background: var(--placeholder);
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.card:hover .thumb img { transform: scale(1.025); }
+
+/* Vignette provisoire tant que l'image n'est pas déposée */
+.thumb.is-empty, .modal-images .is-empty {
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px; text-align: center;
+  color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .04em;
+}
+
+/* Titre + catégories : apparaissent au survol, sous l'image (comme Paprika) */
+.caption {
+  position: absolute; left: 0; right: 0; top: 100%;
+  padding-top: 10px;
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+}
+.card:hover .caption, .card:focus-visible .caption { opacity: 1; transform: none; }
+.caption-title { font-weight: 700; font-size: 15px; line-height: 1.25; }
+.caption-cats { margin-top: 4px; font-size: 12px; color: var(--text); display: flex; flex-wrap: wrap; align-items: center; }
+/* Petit cercle plein entre les catégories */
+.caption-cats span + span::before {
+  content: ""; display: inline-block;
+  width: 4px; height: 4px; border-radius: 50%;
+  background: currentColor;
+  margin: 0 7px; vertical-align: middle; transform: translateY(-1px);
+}
+
+/* Apparition au défilement, décalée par colonne */
+.reveal { opacity: 0; transform: translateY(60px); transition: opacity .8s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- À propos / Contact ---------------------------------------- */
+.about, .contact { padding: 14vh var(--margin) 0; }
+.about h2, .contact h2 { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.about-cols { display: grid; grid-template-columns: 2fr 1fr; gap: var(--gap-x); align-items: start; }
+.about-cols p:first-child { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.35; max-width: 34em; }
+.pdf-button {
+  display: inline-block; padding: 14px 22px;
+  background: var(--text); color: var(--bg); font-weight: 700;
+  transition: background .2s;
+}
+.pdf-button:hover { background: var(--accent); }
+.contact-list { list-style: none; padding: 0; margin: 0; font-size: clamp(22px, 2.4vw, 36px); font-weight: 700; line-height: 1.3; }
+.contact-list a:hover { color: var(--accent); }
+
+.site-footer {
+  display: flex; justify-content: space-between;
+  padding: 14vh var(--margin) 32px;
+  font-size: 13px; color: var(--muted);
+}
+.site-footer a:hover { color: var(--text); }
+
+/* ---------- Fenêtre projet -------------------------------------------- */
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  background: var(--bg);
+  overflow-y: auto; overscroll-behavior: contain;
+  animation: modal-in .35s cubic-bezier(.2,.7,.2,1);
+}
+.modal[hidden] { display: none; }
+@keyframes modal-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.modal-bar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; justify-content: space-between; align-items: center;
+  height: var(--header-h); padding: 0 var(--margin);
+  background: rgb(var(--bg-rgb) / .94);
+}
+.modal-close { font-weight: 700; }
+.modal-close:hover { color: var(--accent); }
+
+.modal-inner {
+  display: grid; grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: var(--gap-x);
+  padding: 2vh var(--margin) 0;
+}
+.modal-text { position: sticky; top: calc(var(--header-h) + 16px); align-self: start; }
+.modal-index { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.modal-text h2 { color: var(--accent); font-size: clamp(22px, 1.9vw, 30px); line-height: 1.15; letter-spacing: -.01em; }
+.modal-cats { list-style: none; padding: 0; margin: 22px 0 26px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.modal-desc p + p { margin-top: 1em; }
+.modal-desc { max-width: 32em; }
+.modal-link a { display: inline-block; margin-top: 26px; font-weight: 700; border-bottom: 1.5px solid currentColor; }
+.modal-link a:hover { color: var(--accent); }
+
+.modal-images { display: flex; flex-direction: column; gap: 2.4vw; }
+.modal-images figure { margin: 0; cursor: zoom-in; }
+.modal-images img { width: 100%; height: auto; }
+/* Images de petite taille : affichées plus petites pour rester nettes (voir script.js) */
+.modal-images img.is-small { width: auto; }
+.modal-images .is-empty { aspect-ratio: 3 / 2; cursor: default; background: var(--placeholder); }
+
+.modal-nav {
+  display: flex; justify-content: space-between;
+  padding: 12vh var(--margin) 40px;
+  font-weight: 700;
+}
+.modal-nav button:hover { color: var(--accent); }
+
+/* ---------- Agrandissement -------------------------------------------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgb(var(--bg-rgb) / .97);
+  display: flex; align-items: center; justify-content: center;
+  padding: 3vw; cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-height: 94vh; width: auto; object-fit: contain; }
+
+/* ---------- Dessin ---------------------------------------------------- */
+html.can-draw, html.can-draw body { cursor: var(--pen-cursor); }
+html.can-draw a, html.can-draw button, html.can-draw .card { cursor: var(--pen-cursor); }
+html.can-draw .draw-tools button { cursor: pointer; }
+body.is-drawing { user-select: none; -webkit-user-select: none; }
+img { -webkit-user-drag: none; user-select: none; }
+
+.draw-layer {
+  position: fixed; inset: 0; z-index: 45;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+}
+.draw-tools {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: rgb(var(--bg-rgb) / .9);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  color: var(--text);
+}
+.draw-hint {
+  position: absolute; right: 8px; bottom: calc(100% + 8px);
+  font-size: 12px; font-weight: 700; white-space: nowrap; color: var(--text);
+  transition: opacity .4s;
+}
+.draw-tools.has-drawn .draw-hint { opacity: 0; }
+.draw-tools.show-hint .draw-hint { opacity: 1; }
+.swatches { display: flex; gap: 7px; }
+.swatch {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1.5px rgb(0 0 0 / .15);
+  transition: transform .15s;
+}
+.swatch:hover { transform: scale(1.15); }
+.swatch[aria-checked="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--text); }
+.draw-sep { width: 1.5px; height: 20px; background: currentColor; opacity: .3; }
+.draw-btn { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; transition: background .15s; }
+.draw-btn:hover { background: rgb(0 0 0 / .07); }
+.draw-btn:disabled { opacity: .35; cursor: default; }
+
+body.no-scroll .draw-tools { display: none; }
+
+/* ---------- Responsive ------------------------------------------------- */
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 860px) {
+  :root { --margin: 6vw; --gap-x: 5vw; --gap-y: 12vw; }
+  .site-header { grid-template-columns: 1fr auto; }
+  .main-nav { display: none; }
+  .pdf-link { display: none; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .modal-inner { grid-template-columns: 1fr; }
+  .modal-text { position: static; }
+  .modal-images { gap: 4vw; }
+  .about-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+/* Écrans tactiles : pas de survol, donc légende toujours visible */
+@media (hover: none) {
+  .caption { position: static; opacity: 1; transform: none; }
+  .draw-tools { display: none; } /* le dessin est réservé à la souris et au stylet */
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .modal { animation: none; }
+}
