@@ -77,8 +77,8 @@ const PORTFOLIO = [
     "vignette": "images/02-archeomuse-vignette.jpg",
     "images": [
       {
-        "fichier": "images/02-archeomuse-1.jpg",
-        "format": "portrait (affiche)"
+        "fichier": "images/02-archeomuse-1.png",
+        "format": "portrait (affiche) (fond transparent)"
       },
       {
         "fichier": "images/02-archeomuse-2.jpg",
@@ -157,12 +157,8 @@ const PORTFOLIO = [
         "format": "paysage (capture écran ordinateur)"
       },
       {
-        "fichier": "images/04-balades-narratives-2.jpg",
-        "format": "portrait (capture mobile)"
-      },
-      {
-        "fichier": "images/04-balades-narratives-3.png",
-        "format": "carré (carte en médaillon rond)"
+        "fichier": "images/04-balades-narratives-2-3.png",
+        "format": "composition (fond transparent)"
       }
     ]
   },
@@ -309,8 +305,8 @@ const PORTFOLIO = [
     "vignette": "images/08-objet-du-mois-vignette.jpg",
     "images": [
       {
-        "fichier": "images/08-objet-du-mois-1.jpg",
-        "format": "paysage (grille de 6 affiches — en partie vectorielle, à exporter en une image)"
+        "fichier": "images/08-objet-du-mois-1.png",
+        "format": "paysage (grille de 6 affiches — en partie vectorielle, à exporter en une image) (fond transparent)"
       },
       {
         "fichier": "images/08-objet-du-mois-2.jpg",
@@ -469,16 +465,8 @@ const PORTFOLIO = [
         "format": "paysage 4:3"
       },
       {
-        "fichier": "images/12-packaging-askul-2.jpg",
-        "format": "paysage 3:2"
-      },
-      {
-        "fichier": "images/12-packaging-askul-3.jpg",
-        "format": "paysage 3:2"
-      },
-      {
-        "fichier": "images/12-packaging-askul-4.jpg",
-        "format": "paysage 3:2"
+        "fichier": "images/12-packaging-askul-2-4.png",
+        "format": "composition (fond transparent)"
       }
     ]
   },
@@ -744,8 +732,8 @@ const PORTFOLIO = [
     "vignette": "images/19-gaule-romaine-vignette.jpg",
     "images": [
       {
-        "fichier": "images/19-gaule-romaine-1.jpg",
-        "format": "portrait (affiche)"
+        "fichier": "images/19-gaule-romaine-1.png",
+        "format": "portrait (affiche) (fond transparent)"
       },
       {
         "fichier": "images/19-gaule-romaine-2.jpg",
