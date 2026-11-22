@@ -61,6 +61,7 @@ h1, h2, h3, p { margin: 0; }
 
 /* ---------- Intro ------------------------------------------------------ */
 .intro { padding: 9vh var(--margin) 7vh; }
+/* <br class="mef"> = retour à la ligne de mise en forme, ignoré sur téléphone */
 .intro-text {
   max-width: 22em;
   font-size: clamp(24px, 2.6vw, 40px);
@@ -128,8 +129,9 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- À propos / Contact ---------------------------------------- */
 .about, .contact { padding: 14vh var(--margin) 0; }
 .about h2, .contact h2 { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-.about-cols { display: grid; grid-template-columns: 2fr 1fr; gap: var(--gap-x); align-items: start; }
-.about-cols p:first-child { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.35; max-width: 34em; }
+.about-cols { display: grid; grid-template-columns: 3fr 1fr; gap: var(--gap-x); align-items: start; }
+/* taille proportionnelle à la largeur de l'écran pour que les lignes de mise en forme tiennent */
+.about-cols p:first-child { font-size: clamp(16px, 1.42vw, 24px); line-height: 1.4; }
 .pdf-button {
   display: inline-block; padding: 14px 22px;
   background: var(--text); color: var(--bg); font-weight: 700;
@@ -250,7 +252,7 @@ body.no-scroll .draw-tools { display: none; }
 /* ---------- Flèche « faites défiler » --------------------------------- */
 .scroll-hint {
   position: fixed; left: 50%; bottom: 22px; z-index: 55;
-  width: 44px; height: 56px; margin-left: -22px;
+  width: 44px; height: 46px; margin-left: -22px;
   display: grid; place-items: center;
   color: var(--text);
   border-radius: 999px;
@@ -263,12 +265,15 @@ body.no-scroll .draw-tools { display: none; }
 .scroll-hint[hidden] { display: none; }
 @keyframes hint-bob { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(5px); } }
 body.no-scroll #scroll-hint-home { display: none; }
+/* Pages projet : fond collé au bas de l'écran, seul le haut est arrondi */
+#scroll-hint-modal { bottom: 0; height: 56px; padding-bottom: 8px; border-radius: 22px 22px 0 0; }
 
 /* ---------- Responsive ------------------------------------------------- */
 @media (max-width: 1200px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 860px) {
+  br.mef { display: none; }
   :root { --margin: 6vw; --gap-x: 5vw; --gap-y: 12vw; }
   .site-header { grid-template-columns: 1fr auto; }
   .main-nav { display: none; }
