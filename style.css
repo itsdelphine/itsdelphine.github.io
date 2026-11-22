@@ -247,6 +247,23 @@ img { -webkit-user-drag: none; user-select: none; }
 
 body.no-scroll .draw-tools { display: none; }
 
+/* ---------- Flèche « faites défiler » --------------------------------- */
+.scroll-hint {
+  position: fixed; left: 50%; bottom: 22px; z-index: 55;
+  width: 44px; height: 56px; margin-left: -22px;
+  display: grid; place-items: center;
+  color: var(--text);
+  border-radius: 999px;
+  background: rgb(var(--bg-rgb) / .72);
+  backdrop-filter: blur(6px);
+  transition: opacity .4s;
+}
+.scroll-hint svg { animation: hint-bob 1.8s ease-in-out infinite; }
+.scroll-hint.is-off { opacity: 0; pointer-events: none; }
+.scroll-hint[hidden] { display: none; }
+@keyframes hint-bob { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(5px); } }
+body.no-scroll #scroll-hint-home { display: none; }
+
 /* ---------- Responsive ------------------------------------------------- */
 @media (max-width: 1200px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
@@ -274,4 +291,5 @@ body.no-scroll .draw-tools { display: none; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .modal { animation: none; }
+  .scroll-hint svg { animation: none; }
 }

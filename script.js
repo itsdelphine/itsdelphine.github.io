@@ -17,6 +17,7 @@
       all: "Tous", close: "Fermer ✕", prev: "Projet précédent", next: "Projet suivant",
       back_top: "Haut de page ↑", image_missing: "Image à venir",
       draw_hint: "Cliquez-glissez pour dessiner", draw_colors: "Couleur du crayon",
+      scroll_more: "Voir la suite",
       draw_clear: "Effacer le dessin", draw_download: "Télécharger le dessin",
       draw_empty: "Dessinez d'abord quelque chose", draw_saved: "Dessin téléchargé",
     },
@@ -29,6 +30,7 @@
       all: "All", close: "Close ✕", prev: "Previous project", next: "Next project",
       back_top: "Back to top ↑", image_missing: "Image coming soon",
       draw_hint: "Click and drag to draw", draw_colors: "Pen colour",
+      scroll_more: "See more",
       draw_clear: "Clear drawing", draw_download: "Download drawing",
       draw_empty: "Draw something first", draw_saved: "Drawing downloaded",
     },
@@ -316,6 +318,38 @@
     })
   );
 
+  /* ---------- Flèches « faites défiler » ---------------------------- */
+  const hintHome = document.getElementById("scroll-hint-home");
+  const hintModal = document.getElementById("scroll-hint-modal");
+
+  // Accueil : visible tant que l'avant-dernière rangée de vignettes n'est pas entièrement à l'écran
+  function updateHomeHint() {
+    const items = [...grid.querySelectorAll("li:not([hidden])")];
+    const tops = [...new Set(items.map((li) => li.offsetTop))].sort((a, b) => a - b);
+    if (tops.length < 2) { hintHome.hidden = true; return; }
+    const penultimate = items.filter((li) => li.offsetTop === tops[tops.length - 2]);
+    const bottom = Math.max(...penultimate.map((li) => li.getBoundingClientRect().bottom));
+    hintHome.hidden = false;
+    hintHome.classList.toggle("is-off", bottom <= innerHeight);
+  }
+  // Fenêtre projet : visible tant que la dernière image n'est pas apparue à l'écran
+  function updateModalHint() {
+    const figs = modal.querySelectorAll(".modal-images figure");
+    const last = figs[figs.length - 1];
+    if (modal.hidden || figs.length < 2 || !last) { hintModal.hidden = true; return; }
+    hintModal.hidden = false;
+    hintModal.classList.toggle("is-off", last.getBoundingClientRect().top < innerHeight * 0.75);
+  }
+  hintHome.addEventListener("click", () => scrollBy({ top: innerHeight * 0.8, behavior: "smooth" }));
+  hintModal.addEventListener("click", () => modal.scrollBy({ top: innerHeight * 0.8, behavior: "smooth" }));
+  addEventListener("scroll", updateHomeHint, { passive: true });
+  addEventListener("resize", () => { updateHomeHint(); updateModalHint(); });
+  modal.addEventListener("scroll", updateModalHint, { passive: true });
+  // recalcul quand le contenu change (filtres, images qui se chargent, ouverture d'un projet)
+  new MutationObserver(updateHomeHint).observe(grid, { subtree: true, attributes: true, attributeFilter: ["hidden"] });
+  new MutationObserver(() => requestAnimationFrame(updateModalHint)).observe(modal, { attributes: true, attributeFilter: ["hidden"], childList: true, subtree: true });
+  modal.addEventListener("load", updateModalHint, true);
+
   /* ---------- Démarrage ---------------------------------------------- */
   document.getElementById("year").textContent = new Date().getFullYear();
   translateStatic();
@@ -324,4 +358,5 @@
   buildFilters();
   buildGrid();
   syncWithHash();
+  updateHomeHint();
 })();
