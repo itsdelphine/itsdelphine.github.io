@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ece5da1b-fdcb-48cb-8b4f-e726cfa15989" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .uuid-f802ff55-c3ba-4cb6-a0cf-26cbbf68f1e3 {
+        fill: #193519;
+      }
+
+      .uuid-3db3cf39-f4a5-40ee-b82e-5426f51dc10a {
+        fill: #ade5b1;
+      }
+    </style>
+  </defs>
+  <circle class="uuid-3db3cf39-f4a5-40ee-b82e-5426f51dc10a" cx="16" cy="16" r="16"/>
+  <path class="uuid-f802ff55-c3ba-4cb6-a0cf-26cbbf68f1e3" d="M27,10.22h-3.99V3h-4.45v10q-1.79-1.94-4.89-1.95-2.27,0-4.07,1.11t-2.82,3.05-1.03,4.39,1.03,4.39,2.82,3.05,4.07,1.11q1.69,0,3.06-.63,1.36-.62,2.19-1.78v2.01h4.09v-13.13h3.99V10.22ZM17.11,22.95q-1.29,1.14-3.08,1.14-1.93,0-3.2-1.24-1.28-1.23-1.28-3.28,0-2.01,1.29-3.25,1.3-1.24,3.19-1.24,1.79,0,3.08,1.17,1.3,1.17,1.3,3.35Q18.41,21.81,17.11,22.95Z"/>
+  <circle class="uuid-f802ff55-c3ba-4cb6-a0cf-26cbbf68f1e3" cx="15.45" cy="18.47" r="1.59"/>
+</svg>
