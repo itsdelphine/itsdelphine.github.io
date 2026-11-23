@@ -1,7 +1,8 @@
 /*
   CONTENU DU PORTFOLIO
   --------------------
-  Un objet par projet, dans l'ordre du PDF.
+  Un objet par projet, dans l'ordre d'affichage sur le site
+  (page_pdf = numéro d'origine du projet, utilisé dans les noms d'images).
   - masque : true = projet caché sur le site (rien n'est supprimé) ; false = visible.
   - texte_fr / texte_en : un élément de la liste = un paragraphe.
   - categories_* : 3 maximum, utilisées pour les filtres du site.
@@ -127,6 +128,104 @@ const PORTFOLIO = [
     ]
   },
   {
+    "id": "port-epic",
+    "page_pdf": 25,
+    "masque": false,
+    "titre_fr": "Roadbook Antwerp Port Epic",
+    "titre_en": "Antwerp Port Epic Roadbook",
+    "categories_fr": [
+      "CARTOGRAPHIE",
+      "MISE EN PAGE",
+      "IDENTITÉ"
+    ],
+    "categories_en": [
+      "CARTOGRAPHY",
+      "LAYOUT",
+      "IDENTITY"
+    ],
+    "texte_fr": [
+      "Création graphique, mise en page et cartographie pour le roadbook de l’édition 2026 d’Antwerp Port Epic, pour Procyclingmaps.",
+      "Cette brochure A4 a été imprimée et diffusée sur le web.",
+      "Contenu : itinéraire des épreuves avec POI et profils altimétriques, plan des derniers kilomètres, plans d’accès et plans de situation, illustration des directions routières."
+    ],
+    "texte_en": [
+      "Graphic design, layout and cartography for the roadbook of the 2026 edition of Antwerp Port Epic, for Procyclingmaps.",
+      "This A4 brochure was printed and also published online.",
+      "Contents: race routes with points of interest and elevation profiles, final-kilometre maps, access and location maps, and illustrated road directions."
+    ],
+    "vignette": "images/25-port-epic-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/25-port-epic-1.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-2.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-3.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-4.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-5.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-6.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-7.jpg",
+        "format": ""
+      }
+    ]
+  },
+  {
+    "id": "identite-maitres-du-feu",
+    "page_pdf": 7,
+    "masque": false,
+    "titre_fr": "Identité Les Maîtres du Feu",
+    "titre_en": "Bronze age exhibition’s visual identity",
+    "categories_fr": [
+      "DIRECTION ARTISTIQUE",
+      "GRAPHISME",
+      "IDENTITÉ"
+    ],
+    "categories_en": [
+      "ART DIRECTION",
+      "GRAPHICS",
+      "IDENTITY"
+    ],
+    "texte_fr": [
+      "L’identité visuelle s’attache à replacer dans notre histoire la période de l’âge du Bronze. Par l’empreinte, elle met en avant ses objets iconiques, qui ont marqué leur époque et qui se distinguent par leur forme.",
+      "L’identité se décline sur des bâches et affiches, des objets promotionnels (tote bag, stylo, ...), des contremarques et invitations, des supports presse et réseaux sociaux."
+    ],
+    "texte_en": [
+      "The aim of the identity is to place the Bronze Age period back in our history by highlighting its iconic objects, those that marked their era and stand out because of their shape.",
+      "It is displayed on tarpaulins and posters, promotional items (tote bags, pens, etc.), countermarks and invitations, press advertising and social networks."
+    ],
+    "vignette": "images/07-identite-maitres-du-feu-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/07-identite-maitres-du-feu-1.jpg",
+        "format": "paysage 4:3"
+      },
+      {
+        "fichier": "images/07-identite-maitres-du-feu-2.jpg",
+        "format": "carré"
+      },
+      {
+        "fichier": "images/07-identite-maitres-du-feu-3.jpg",
+        "format": "paysage 16:10"
+      }
+    ]
+  },
+  {
     "id": "balades-narratives",
     "page_pdf": 4,
     "masque": false,
@@ -159,6 +258,40 @@ const PORTFOLIO = [
       {
         "fichier": "images/04-balades-narratives-2-3.png",
         "format": "composition (fond transparent)"
+      }
+    ]
+  },
+  {
+    "id": "objet-du-mois",
+    "page_pdf": 8,
+    "masque": false,
+    "titre_fr": "L’Objet du Mois",
+    "titre_en": "The Object of the Month",
+    "categories_fr": [
+      "GRAPHISME",
+      "MISE EN PAGE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "LAYOUT"
+    ],
+    "texte_fr": [
+      "L’objet du mois est une exposition temporaire mensuelle mettant en lumière un objet choisi par les conservateurs du musée d’Archéologie nationale.",
+      "Le graphisme comprend deux kakémonos grand format présentés autour de l’objet, une affiche et des visuels pour supports numériques."
+    ],
+    "texte_en": [
+      "The object of the Month is a temporary monthly exhibition highlighting an object chosen by the curators of the Musée d’Archéologie Nationale.",
+      "The graphics includes two large-format kakemonos displayed around the object, a poster and additional visuals for digital use."
+    ],
+    "vignette": "images/08-objet-du-mois-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/08-objet-du-mois-1.png",
+        "format": "paysage (grille de 6 affiches — en partie vectorielle, à exporter en une image) (fond transparent)"
+      },
+      {
+        "fichier": "images/08-objet-du-mois-2.jpg",
+        "format": "portrait 3:4"
       }
     ]
   },
@@ -196,6 +329,188 @@ const PORTFOLIO = [
       },
       {
         "fichier": "images/05-livret-falc-3.jpg",
+        "format": "paysage 16:10"
+      }
+    ]
+  },
+  {
+    "id": "plan-du-domaine",
+    "page_pdf": 21,
+    "masque": false,
+    "titre_fr": "Dépliant et plan du domaine",
+    "titre_en": "Domain’s map and brochure",
+    "categories_fr": [
+      "GRAPHISME",
+      "CARTOGRAPHIE",
+      "MISE EN PAGE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "CARTOGRAPHY",
+      "LAYOUT"
+    ],
+    "texte_fr": [
+      "Création du plan du domaine national de Saint-Germain-en-Laye.",
+      "Mise en page d’un dépliant présentant l’histoire du lieu, et conception et installation de panneaux dans le domaine."
+    ],
+    "texte_en": [
+      "Design of the map of the national domain of Saint-Germain-en-Laye.",
+      "Layout of a leaflet presenting the history of the site, and design and installation of information panels on the estate."
+    ],
+    "vignette": "images/21-plan-du-domaine-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/21-plan-du-domaine-1.jpg",
+        "format": "paysage 3:2"
+      },
+      {
+        "fichier": "images/21-plan-du-domaine-2.jpg",
+        "format": "paysage 5:4"
+      },
+      {
+        "fichier": "images/21-plan-du-domaine-3.jpg",
+        "format": "portrait (panneau)"
+      }
+    ]
+  },
+  {
+    "id": "gaule-romaine",
+    "page_pdf": 19,
+    "masque": false,
+    "titre_fr": "Journée d’actualité sur la Gaule Romaine",
+    "titre_en": "Roman Gaul annual conference",
+    "categories_fr": [
+      "DESIGN",
+      "MISE EN PAGE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "LAYOUT"
+    ],
+    "texte_fr": [
+      "Création et déploiement d’une identité graphique pour la rencontre annuelle consacrée à l’actualité de la recherche sur la Gaule romaine. Le design est décliné sur l’affiche, le programme, le site internet et les badges."
+    ],
+    "texte_en": [
+      "Creation and roll-out of a visual identity for the annual conference focusing on the latest research into Roman Gaul. The design is featured on the poster, the programme, the website and the badges."
+    ],
+    "vignette": "images/19-gaule-romaine-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/19-gaule-romaine-1.png",
+        "format": "portrait (affiche) (fond transparent)"
+      },
+      {
+        "fichier": "images/19-gaule-romaine-2.jpg",
+        "format": "paysage 4:3"
+      }
+    ]
+  },
+  {
+    "id": "dalle-saint-belec",
+    "page_pdf": 18,
+    "masque": false,
+    "titre_fr": "La dalle de Saint-Belec",
+    "titre_en": "The Saint-Belec slab",
+    "categories_fr": [
+      "DESIGN",
+      "CARTOGRAPHIE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "CARTOGRAPHY"
+    ],
+    "texte_fr": [
+      "Installées sur une tablette numérique à proximité de la dalle de Saint-Belec, les cartographies thématiques permettent de replacer l’objet au sein de son territoire et de présenter au public une lecture possible de cette carte gravée dans la pierre."
+    ],
+    "texte_en": [
+      "Displayed on a digital tablet near the slab in Saint-Belec, the thematic maps replace the object within its territory and offer the public a possible interpretation of this map engraved in stone."
+    ],
+    "vignette": "images/18-dalle-saint-belec-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/18-dalle-saint-belec-1.jpg",
+        "format": "paysage 16:9"
+      },
+      {
+        "fichier": "images/18-dalle-saint-belec-2.jpg",
+        "format": "paysage 16:9"
+      },
+      {
+        "fichier": "images/18-dalle-saint-belec-3.jpg",
+        "format": "paysage 16:9"
+      },
+      {
+        "fichier": "images/18-dalle-saint-belec-4.png",
+        "format": "paysage 4:3"
+      }
+    ]
+  },
+  {
+    "id": "catalogue-scolaire",
+    "page_pdf": 23,
+    "masque": false,
+    "titre_fr": "Catalogue d’activités scolaires",
+    "titre_en": "School workshops’ brochure",
+    "categories_fr": [
+      "GRAPHISME",
+      "MISE EN PAGE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "LAYOUT"
+    ],
+    "texte_fr": [
+      "Le musée d’Archéologie nationale accueille classes et groupes d’enfants de la maternelle au lycée, et propose des activités variées. Ce programme met en avant les ateliers proposés, et permet, grâce à un jeu de couleurs et de pictogrammes, de repérer facilement les activités adaptées, par tranche d’âge ou par thématique."
+    ],
+    "texte_en": [
+      "The National Archaeology Museum welcomes school classes and groups of children from nursery school to sixth form, and offers a variety of activities. This brochure highlights the workshops on offer and, through the use of a colour-coded system and pictograms, makes it easy to identify suitable activities, either by age group or by theme."
+    ],
+    "vignette": "images/23-catalogue-scolaire-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/23-catalogue-scolaire-1.jpg",
+        "format": "paysage 3:2"
+      },
+      {
+        "fichier": "images/23-catalogue-scolaire-2.jpg",
+        "format": "paysage 4:3"
+      }
+    ]
+  },
+  {
+    "id": "cahiers-du-man",
+    "page_pdf": 24,
+    "masque": false,
+    "titre_fr": "Série de publications scientifiques",
+    "titre_en": "Series of scientific publications",
+    "categories_fr": [
+      "IDENTITÉ",
+      "DESIGN",
+      "MISE EN PAGE"
+    ],
+    "categories_en": [
+      "IDENTITY",
+      "GRAPHICS",
+      "LAYOUT"
+    ],
+    "texte_fr": [
+      "Re-design de l’identité de la publication des Cahiers du musée d’Archéologie nationale qui constitue une contribution active à la diffusion des recherches en archéologie et à l’histoire de la discipline. Le design se démarque des autres séries publiées par la MAN, tout en reprenant les codes graphiques de l’institution."
+    ],
+    "texte_en": [
+      "Redesign of the visual identity for the publication series Cahiers du musée d’Archéologie nationale, which makes an active contribution to the dissemination of archaeological research and the history of the discipline. The design stands out from the other series published by the MAN, whilst retaining the institution’s graphic style."
+    ],
+    "vignette": "images/24-cahiers-du-man-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/24-cahiers-du-man-1.jpg",
+        "format": "paysage 4:3"
+      },
+      {
+        "fichier": "images/24-cahiers-du-man-2.jpg",
+        "format": "paysage 16:10"
+      },
+      {
+        "fichier": "images/24-cahiers-du-man-3.jpg",
         "format": "paysage 16:10"
       }
     ]
@@ -253,156 +568,6 @@ const PORTFOLIO = [
     ]
   },
   {
-    "id": "identite-maitres-du-feu",
-    "page_pdf": 7,
-    "masque": false,
-    "titre_fr": "Identité Les Maîtres du Feu",
-    "titre_en": "Bronze age exhibition’s visual identity",
-    "categories_fr": [
-      "DIRECTION ARTISTIQUE",
-      "GRAPHISME",
-      "IDENTITÉ"
-    ],
-    "categories_en": [
-      "ART DIRECTION",
-      "GRAPHICS",
-      "IDENTITY"
-    ],
-    "texte_fr": [
-      "L’identité visuelle s’attache à replacer dans notre histoire la période de l’âge du Bronze. Par l’empreinte, elle met en avant ses objets iconiques, qui ont marqué leur époque et qui se distinguent par leur forme.",
-      "L’identité se décline sur des bâches et affiches, des objets promotionnels (tote bag, stylo, ...), des contremarques et invitations, des supports presse et réseaux sociaux."
-    ],
-    "texte_en": [
-      "The aim of the identity is to place the Bronze Age period back in our history by highlighting its iconic objects, those that marked their era and stand out because of their shape.",
-      "It is displayed on tarpaulins and posters, promotional items (tote bags, pens, etc.), countermarks and invitations, press advertising and social networks."
-    ],
-    "vignette": "images/07-identite-maitres-du-feu-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/07-identite-maitres-du-feu-1.jpg",
-        "format": "paysage 4:3"
-      },
-      {
-        "fichier": "images/07-identite-maitres-du-feu-2.jpg",
-        "format": "carré"
-      },
-      {
-        "fichier": "images/07-identite-maitres-du-feu-3.jpg",
-        "format": "paysage 16:10"
-      }
-    ]
-  },
-  {
-    "id": "objet-du-mois",
-    "page_pdf": 8,
-    "masque": false,
-    "titre_fr": "L’Objet du Mois",
-    "titre_en": "The Object of the Month",
-    "categories_fr": [
-      "GRAPHISME",
-      "MISE EN PAGE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "LAYOUT"
-    ],
-    "texte_fr": [
-      "L’objet du mois est une exposition temporaire mensuelle mettant en lumière un objet choisi par les conservateurs du musée d’Archéologie nationale.",
-      "Le graphisme comprend deux kakémonos grand format présentés autour de l’objet, une affiche et des visuels pour supports numériques."
-    ],
-    "texte_en": [
-      "The object of the Month is a temporary monthly exhibition highlighting an object chosen by the curators of the Musée d’Archéologie Nationale.",
-      "The graphics includes two large-format kakemonos displayed around the object, a poster and additional visuals for digital use."
-    ],
-    "vignette": "images/08-objet-du-mois-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/08-objet-du-mois-1.png",
-        "format": "paysage (grille de 6 affiches — en partie vectorielle, à exporter en une image) (fond transparent)"
-      },
-      {
-        "fichier": "images/08-objet-du-mois-2.jpg",
-        "format": "portrait 3:4"
-      }
-    ]
-  },
-  {
-    "id": "baltic-exchange",
-    "page_pdf": 9,
-    "masque": false,
-    "titre_fr": "Baltic Exchange Memorial Glass",
-    "titre_en": "Baltic Exchange Memorial Glass",
-    "categories_fr": [
-      "IDENTITÉ",
-      "GRAPHISME",
-      "EXPOSITION"
-    ],
-    "categories_en": [
-      "IDENTITY",
-      "GRAPHICS",
-      "EXHIBITION"
-    ],
-    "texte_fr": [
-      "Pour la rénovation de l’espace du Baltic Exchange Memorial Glass le travail en design graphique comprend la création d’une nouvelle identité visuelle, de panneaux et d’encarts descriptifs, ainsi que leur mise en espace.",
-      "Une sérigraphie murale a été réalisée pour l’identité. Les textes et les images sont imprimés sur une surface MDF vernis."
-    ],
-    "texte_en": [
-      "For the refurbishment of the Baltic Exchange Memorial Glass space, the graphic work includes the creation of a new visual identity, descriptive panels and labels, as well as the overall set design.",
-      "The gallery’s identity was screenprinted on the wall. The text and images are printed on a varnished MDF surface."
-    ],
-    "vignette": "images/09-baltic-exchange-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/09-baltic-exchange-1.jpg",
-        "format": "paysage 4:3"
-      },
-      {
-        "fichier": "images/09-baltic-exchange-2.jpg",
-        "format": "carré"
-      },
-      {
-        "fichier": "images/09-baltic-exchange-3.jpg",
-        "format": "paysage légèrement"
-      }
-    ]
-  },
-  {
-    "id": "observatoire-greenwich",
-    "page_pdf": 10,
-    "masque": false,
-    "titre_fr": "Rénovation de l’observatoire de Greenwich",
-    "titre_en": "Refurbishment of the Royal Greenwich Observatory",
-    "categories_fr": [
-      "GRAPHISME",
-      "EXPOSITION",
-      "SIGNALÉTIQUE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "EXHIBITION",
-      "WAYFINDING"
-    ],
-    "texte_fr": [
-      "Le re-design scénographique de l’observatoire a fait partie d’une série de travaux de réfection du bâtiment.",
-      "Le projet consiste en la création et la mise en espace du design graphique d’interprétation pour orienter les visiteurs dans l’espace de l’observatoire Meridian. Cela inclut une série de panneaux muraux en aluminium Dibond et PVC expansé Forex."
-    ],
-    "texte_en": [
-      "The graphic redesign of the observatory was part of a series of renovation works on the building.",
-      "The project consists of creating and installing graphic design elements to guide visitors around the Meridian observatory. This includes a series of wall panels made of Dibond aluminium and Forex expanded PVC."
-    ],
-    "vignette": "images/10-observatoire-greenwich-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/10-observatoire-greenwich-1-3.jpg",
-        "format": "portrait (panneau + 2 photos)"
-      },
-      {
-        "fichier": "images/10-observatoire-greenwich-4.jpg",
-        "format": "paysage 4:3"
-      }
-    ]
-  },
-  {
     "id": "family-trails-nmm",
     "page_pdf": 11,
     "masque": false,
@@ -447,6 +612,82 @@ const PORTFOLIO = [
       {
         "fichier": "images/11-family-trails-nmm-5.jpg",
         "format": "paysage 4:3"
+      }
+    ]
+  },
+  {
+    "id": "observatoire-greenwich",
+    "page_pdf": 10,
+    "masque": false,
+    "titre_fr": "Rénovation de l’observatoire de Greenwich",
+    "titre_en": "Refurbishment of the Royal Greenwich Observatory",
+    "categories_fr": [
+      "GRAPHISME",
+      "EXPOSITION",
+      "SIGNALÉTIQUE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "EXHIBITION",
+      "WAYFINDING"
+    ],
+    "texte_fr": [
+      "Le re-design scénographique de l’observatoire a fait partie d’une série de travaux de réfection du bâtiment.",
+      "Le projet consiste en la création et la mise en espace du design graphique d’interprétation pour orienter les visiteurs dans l’espace de l’observatoire Meridian. Cela inclut une série de panneaux muraux en aluminium Dibond et PVC expansé Forex."
+    ],
+    "texte_en": [
+      "The graphic redesign of the observatory was part of a series of renovation works on the building.",
+      "The project consists of creating and installing graphic design elements to guide visitors around the Meridian observatory. This includes a series of wall panels made of Dibond aluminium and Forex expanded PVC."
+    ],
+    "vignette": "images/10-observatoire-greenwich-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/10-observatoire-greenwich-1-3.jpg",
+        "format": "portrait (panneau + 2 photos)"
+      },
+      {
+        "fichier": "images/10-observatoire-greenwich-4.jpg",
+        "format": "paysage 4:3"
+      }
+    ]
+  },
+  {
+    "id": "baltic-exchange",
+    "page_pdf": 9,
+    "masque": false,
+    "titre_fr": "Baltic Exchange Memorial Glass",
+    "titre_en": "Baltic Exchange Memorial Glass",
+    "categories_fr": [
+      "IDENTITÉ",
+      "GRAPHISME",
+      "EXPOSITION"
+    ],
+    "categories_en": [
+      "IDENTITY",
+      "GRAPHICS",
+      "EXHIBITION"
+    ],
+    "texte_fr": [
+      "Pour la rénovation de l’espace du Baltic Exchange Memorial Glass le travail en design graphique comprend la création d’une nouvelle identité visuelle, de panneaux et d’encarts descriptifs, ainsi que leur mise en espace.",
+      "Une sérigraphie murale a été réalisée pour l’identité. Les textes et les images sont imprimés sur une surface MDF vernis."
+    ],
+    "texte_en": [
+      "For the refurbishment of the Baltic Exchange Memorial Glass space, the graphic work includes the creation of a new visual identity, descriptive panels and labels, as well as the overall set design.",
+      "The gallery’s identity was screenprinted on the wall. The text and images are printed on a varnished MDF surface."
+    ],
+    "vignette": "images/09-baltic-exchange-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/09-baltic-exchange-1.jpg",
+        "format": "paysage 4:3"
+      },
+      {
+        "fichier": "images/09-baltic-exchange-2.jpg",
+        "format": "carré"
+      },
+      {
+        "fichier": "images/09-baltic-exchange-3.jpg",
+        "format": "paysage légèrement"
       }
     ]
   },
@@ -563,39 +804,6 @@ const PORTFOLIO = [
     ]
   },
   {
-    "id": "plateforme-biodiversite",
-    "page_pdf": 15,
-    "masque": false,
-    "titre_fr": "Plateforme biodiversité",
-    "titre_en": "Biodiversity online platform",
-    "categories_fr": [
-      "WEB",
-      "CARTOGRAPHIE"
-    ],
-    "categories_en": [
-      "WEB",
-      "CARTOGRAPHY"
-    ],
-    "texte_fr": [
-      "Pour découvrir mon projet de refonte et de valorisation des données de biodiversité pour le SIG de la Direction Territoriale de Paris chez HAROPA PORT. Avec la présentation de mon outil cartographique destiné à l’utilisation des salariés du port."
-    ],
-    "texte_en": [
-      "Click here to discover my project to redesign and enhance biodiversity data for the GIS platform of the Paris Regional Office at HAROPA PORT, with a presentation of my cartographic tool intended for use by port employees."
-    ],
-    "lien": {
-      "url": "https://www.dropbox.com/scl/fi/hb26iuu0e7e7j0flk2iz9/Rapport_biodiversite_DT.pdf?rlkey=owxctvhfuxa8568evsiawzbn8&st=1ztdnzj2&dl=1",
-      "libelle_fr": "Télécharger le rapport (PDF)",
-      "libelle_en": "Download the report (PDF)"
-    },
-    "vignette": "images/15-plateforme-biodiversite-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/15-plateforme-biodiversite-1.png",
-        "format": "paysage ~2:1 (interface annotée — composite, à exporter en une image)"
-      }
-    ]
-  },
-  {
     "id": "livre-autobahn",
     "page_pdf": 16,
     "masque": false,
@@ -632,6 +840,71 @@ const PORTFOLIO = [
       {
         "fichier": "images/16-livre-autobahn-3.png",
         "format": "paysage 3:2"
+      }
+    ]
+  },
+  {
+    "id": "plateforme-biodiversite",
+    "page_pdf": 15,
+    "masque": false,
+    "titre_fr": "Plateforme biodiversité",
+    "titre_en": "Biodiversity online platform",
+    "categories_fr": [
+      "WEB",
+      "CARTOGRAPHIE"
+    ],
+    "categories_en": [
+      "WEB",
+      "CARTOGRAPHY"
+    ],
+    "texte_fr": [
+      "Pour découvrir mon projet de refonte et de valorisation des données de biodiversité pour le SIG de la Direction Territoriale de Paris chez HAROPA PORT. Avec la présentation de mon outil cartographique destiné à l’utilisation des salariés du port."
+    ],
+    "texte_en": [
+      "Click here to discover my project to redesign and enhance biodiversity data for the GIS platform of the Paris Regional Office at HAROPA PORT, with a presentation of my cartographic tool intended for use by port employees."
+    ],
+    "lien": {
+      "url": "https://www.dropbox.com/scl/fi/hb26iuu0e7e7j0flk2iz9/Rapport_biodiversite_DT.pdf?rlkey=owxctvhfuxa8568evsiawzbn8&st=1ztdnzj2&dl=1",
+      "libelle_fr": "Télécharger le rapport (PDF)",
+      "libelle_en": "Download the report (PDF)"
+    },
+    "vignette": "images/15-plateforme-biodiversite-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/15-plateforme-biodiversite-1.png",
+        "format": "paysage ~2:1 (interface annotée — composite, à exporter en une image)"
+      }
+    ]
+  },
+  {
+    "id": "cartes-age-du-bronze",
+    "page_pdf": 20,
+    "masque": false,
+    "titre_fr": "Ressources à l’âge du Bronze",
+    "titre_en": "Trade during the Bronze age",
+    "categories_fr": [
+      "GRAPHISME",
+      "CARTOGRAPHIE"
+    ],
+    "categories_en": [
+      "GRAPHICS",
+      "CARTOGRAPHY"
+    ],
+    "texte_fr": [
+      "Cartographies thématiques publiées dans un ouvrage d’archéologie aux éditions Faton."
+    ],
+    "texte_en": [
+      "Thematic maps published by Faton publishing in a book dedicated to archaeology."
+    ],
+    "vignette": "images/20-cartes-age-du-bronze-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/20-cartes-age-du-bronze-1.jpg",
+        "format": "paysage (carte — vectorielle, à exporter)"
+      },
+      {
+        "fichier": "images/20-cartes-age-du-bronze-2.jpg",
+        "format": "paysage (carte — vectorielle, à exporter)"
       }
     ]
   },
@@ -682,150 +955,6 @@ const PORTFOLIO = [
     ]
   },
   {
-    "id": "dalle-saint-belec",
-    "page_pdf": 18,
-    "masque": false,
-    "titre_fr": "La dalle de Saint-Belec",
-    "titre_en": "The Saint-Belec slab",
-    "categories_fr": [
-      "DESIGN",
-      "CARTOGRAPHIE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "CARTOGRAPHY"
-    ],
-    "texte_fr": [
-      "Installées sur une tablette numérique à proximité de la dalle de Saint-Belec, les cartographies thématiques permettent de replacer l’objet au sein de son territoire et de présenter au public une lecture possible de cette carte gravée dans la pierre."
-    ],
-    "texte_en": [
-      "Displayed on a digital tablet near the slab in Saint-Belec, the thematic maps replace the object within its territory and offer the public a possible interpretation of this map engraved in stone."
-    ],
-    "vignette": "images/18-dalle-saint-belec-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/18-dalle-saint-belec-1.jpg",
-        "format": "paysage 16:9"
-      },
-      {
-        "fichier": "images/18-dalle-saint-belec-2.jpg",
-        "format": "paysage 16:9"
-      },
-      {
-        "fichier": "images/18-dalle-saint-belec-3.jpg",
-        "format": "paysage 16:9"
-      },
-      {
-        "fichier": "images/18-dalle-saint-belec-4.png",
-        "format": "paysage 4:3"
-      }
-    ]
-  },
-  {
-    "id": "gaule-romaine",
-    "page_pdf": 19,
-    "masque": false,
-    "titre_fr": "Journée d’actualité sur la Gaule Romaine",
-    "titre_en": "Roman Gaul annual conference",
-    "categories_fr": [
-      "DESIGN",
-      "MISE EN PAGE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "LAYOUT"
-    ],
-    "texte_fr": [
-      "Création et déploiement d’une identité graphique pour la rencontre annuelle consacrée à l’actualité de la recherche sur la Gaule romaine. Le design est décliné sur l’affiche, le programme, le site internet et les badges."
-    ],
-    "texte_en": [
-      "Creation and roll-out of a visual identity for the annual conference focusing on the latest research into Roman Gaul. The design is featured on the poster, the programme, the website and the badges."
-    ],
-    "vignette": "images/19-gaule-romaine-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/19-gaule-romaine-1.png",
-        "format": "portrait (affiche) (fond transparent)"
-      },
-      {
-        "fichier": "images/19-gaule-romaine-2.jpg",
-        "format": "paysage 4:3"
-      }
-    ]
-  },
-  {
-    "id": "cartes-age-du-bronze",
-    "page_pdf": 20,
-    "masque": false,
-    "titre_fr": "Ressources et échanges à l’âge du Bronze",
-    "titre_en": "Resources and trade during the Bronze age",
-    "categories_fr": [
-      "GRAPHISME",
-      "CARTOGRAPHIE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "CARTOGRAPHY"
-    ],
-    "texte_fr": [
-      "Cartographies thématiques publiées dans un ouvrage d’archéologie aux éditions Faton."
-    ],
-    "texte_en": [
-      "Thematic maps published by Faton publishing in a book dedicated to archaeology."
-    ],
-    "vignette": "images/20-cartes-age-du-bronze-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/20-cartes-age-du-bronze-1.jpg",
-        "format": "paysage (carte — vectorielle, à exporter)"
-      },
-      {
-        "fichier": "images/20-cartes-age-du-bronze-2.jpg",
-        "format": "paysage (carte — vectorielle, à exporter)"
-      }
-    ]
-  },
-  {
-    "id": "plan-du-domaine",
-    "page_pdf": 21,
-    "masque": false,
-    "titre_fr": "Dépliant et plan du domaine",
-    "titre_en": "Domain’s map and brochure",
-    "categories_fr": [
-      "GRAPHISME",
-      "CARTOGRAPHIE",
-      "MISE EN PAGE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "CARTOGRAPHY",
-      "LAYOUT"
-    ],
-    "texte_fr": [
-      "Création du plan du domaine national de Saint-Germain-en-Laye.",
-      "Mise en page d’un dépliant présentant l’histoire du lieu, et conception et installation de panneaux dans le domaine."
-    ],
-    "texte_en": [
-      "Design of the map of the national domain of Saint-Germain-en-Laye.",
-      "Layout of a leaflet presenting the history of the site, and design and installation of information panels on the estate."
-    ],
-    "vignette": "images/21-plan-du-domaine-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/21-plan-du-domaine-1.jpg",
-        "format": "paysage 3:2"
-      },
-      {
-        "fichier": "images/21-plan-du-domaine-2.jpg",
-        "format": "paysage 5:4"
-      },
-      {
-        "fichier": "images/21-plan-du-domaine-3.jpg",
-        "format": "portrait (panneau)"
-      }
-    ]
-  },
-  {
     "id": "guide-promenades-man",
     "page_pdf": 22,
     "masque": true,
@@ -860,134 +989,6 @@ const PORTFOLIO = [
       {
         "fichier": "images/22-guide-promenades-man-3.jpg",
         "format": "paysage 16:10"
-      }
-    ]
-  },
-  {
-    "id": "catalogue-scolaire",
-    "page_pdf": 23,
-    "masque": false,
-    "titre_fr": "Catalogue d’activités scolaires",
-    "titre_en": "School workshops’ brochure",
-    "categories_fr": [
-      "GRAPHISME",
-      "MISE EN PAGE"
-    ],
-    "categories_en": [
-      "GRAPHICS",
-      "LAYOUT"
-    ],
-    "texte_fr": [
-      "Le musée d’Archéologie nationale accueille classes et groupes d’enfants de la maternelle au lycée, et propose des activités variées. Ce programme met en avant les ateliers proposés, et permet, grâce à un jeu de couleurs et de pictogrammes, de repérer facilement les activités adaptées, par tranche d’âge ou par thématique."
-    ],
-    "texte_en": [
-      "The National Archaeology Museum welcomes school classes and groups of children from nursery school to sixth form, and offers a variety of activities. This brochure highlights the workshops on offer and, through the use of a colour-coded system and pictograms, makes it easy to identify suitable activities, either by age group or by theme."
-    ],
-    "vignette": "images/23-catalogue-scolaire-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/23-catalogue-scolaire-1.jpg",
-        "format": "paysage 3:2"
-      },
-      {
-        "fichier": "images/23-catalogue-scolaire-2.jpg",
-        "format": "paysage 4:3"
-      }
-    ]
-  },
-  {
-    "id": "cahiers-du-man",
-    "page_pdf": 24,
-    "masque": false,
-    "titre_fr": "Série de publications scientifiques",
-    "titre_en": "Series of scientific publications",
-    "categories_fr": [
-      "IDENTITÉ",
-      "DESIGN",
-      "MISE EN PAGE"
-    ],
-    "categories_en": [
-      "IDENTITY",
-      "GRAPHICS",
-      "LAYOUT"
-    ],
-    "texte_fr": [
-      "Re-design de l’identité de la publication des Cahiers du musée d’Archéologie nationale qui constitue une contribution active à la diffusion des recherches en archéologie et à l’histoire de la discipline. Le design se démarque des autres séries publiées par la MAN, tout en reprenant les codes graphiques de l’institution."
-    ],
-    "texte_en": [
-      "Redesign of the visual identity for the publication series Cahiers du musée d’Archéologie nationale, which makes an active contribution to the dissemination of archaeological research and the history of the discipline. The design stands out from the other series published by the MAN, whilst retaining the institution’s graphic style."
-    ],
-    "vignette": "images/24-cahiers-du-man-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/24-cahiers-du-man-1.jpg",
-        "format": "paysage 4:3"
-      },
-      {
-        "fichier": "images/24-cahiers-du-man-2.jpg",
-        "format": "paysage 16:10"
-      },
-      {
-        "fichier": "images/24-cahiers-du-man-3.jpg",
-        "format": "paysage 16:10"
-      }
-    ]
-  },
-  {
-    "id": "port-epic",
-    "page_pdf": 25,
-    "masque": false,
-    "titre_fr": "Roadbook Antwerp Port Epic",
-    "titre_en": "Antwerp Port Epic Roadbook",
-    "categories_fr": [
-      "CARTOGRAPHIE",
-      "MISE EN PAGE",
-      "IDENTITÉ"
-    ],
-    "categories_en": [
-      "CARTOGRAPHY",
-      "LAYOUT",
-      "IDENTITY"
-    ],
-    "texte_fr": [
-      "Création graphique, mise en page et cartographie pour le roadbook de l’édition 2026 d’Antwerp Port Epic, pour Procyclingmaps.",
-      "Cette brochure A4 a été imprimée et diffusée sur le web.",
-      "Contenu : itinéraire des épreuves avec POI et profils altimétriques, plan des derniers kilomètres, plans d’accès et plans de situation, illustration des directions routières."
-    ],
-    "texte_en": [
-      "Graphic design, layout and cartography for the roadbook of the 2026 edition of Antwerp Port Epic, for Procyclingmaps.",
-      "This A4 brochure was printed and also published online.",
-      "Contents: race routes with points of interest and elevation profiles, final-kilometre maps, access and location maps, and illustrated road directions."
-    ],
-    "vignette": "images/25-port-epic-vignette.jpg",
-    "images": [
-      {
-        "fichier": "images/25-port-epic-1.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-2.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-3.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-4.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-5.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-6.jpg",
-        "format": ""
-      },
-      {
-        "fichier": "images/25-port-epic-7.jpg",
-        "format": ""
       }
     ]
   }
