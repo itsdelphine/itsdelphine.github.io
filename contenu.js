@@ -57,8 +57,8 @@ const PORTFOLIO = [
     "id": "archeomuse",
     "page_pdf": 2,
     "masque": false,
-    "titre_fr": "Identité des 10e rencontres ArchéoMuse",
-    "titre_en": "ArchéoMuse days’ branding and communication",
+    "titre_fr": "10 ans d’Archéomuse",
+    "titre_en": "10 years of Archéomuse",
     "categories_fr": [
       "DESIGN",
       "MISE EN PAGE"
@@ -619,8 +619,8 @@ const PORTFOLIO = [
     "id": "observatoire-greenwich",
     "page_pdf": 10,
     "masque": false,
-    "titre_fr": "Rénovation de l’observatoire de Greenwich",
-    "titre_en": "Refurbishment of the Royal Greenwich Observatory",
+    "titre_fr": "Rénovation de l’observatoire royal",
+    "titre_en": "Refurbishment of the observatory",
     "categories_fr": [
       "GRAPHISME",
       "EXPOSITION",
@@ -727,8 +727,8 @@ const PORTFOLIO = [
     "id": "world-of-whisky",
     "page_pdf": 13,
     "masque": false,
-    "titre_fr": "Dispositif de présentation World of Whisky",
-    "titre_en": "World of Whisky presentation display",
+    "titre_fr": "Dispositif World of Whisky",
+    "titre_en": "World of Whisky display",
     "categories_fr": [
       "GRAPHISME",
       "MISE EN PAGE",
