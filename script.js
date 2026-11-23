@@ -350,6 +350,13 @@
   new MutationObserver(() => requestAnimationFrame(updateModalHint)).observe(modal, { attributes: true, attributeFilter: ["hidden"], childList: true, subtree: true });
   modal.addEventListener("load", updateModalHint, true);
 
+  /* ---------- Protection des images ---------------------------------
+     Bloque le clic droit (« Enregistrer l'image… ») et le glisser-déposer
+     des images. Ne protège pas des captures d'écran. */
+  const protectedImg = (el) => el && el.closest && el.closest("img, .thumb, .modal-images, .lightbox");
+  document.addEventListener("contextmenu", (e) => { if (protectedImg(e.target)) e.preventDefault(); });
+  document.addEventListener("dragstart", (e) => { if (protectedImg(e.target)) e.preventDefault(); });
+
   /* ---------- Démarrage ---------------------------------------------- */
   document.getElementById("year").textContent = new Date().getFullYear();
   translateStatic();

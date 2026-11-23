@@ -209,7 +209,8 @@ html.can-draw, html.can-draw body { cursor: var(--pen-cursor); }
 html.can-draw a, html.can-draw button, html.can-draw .card { cursor: var(--pen-cursor); }
 html.can-draw .draw-tools button { cursor: pointer; }
 body.is-drawing { user-select: none; -webkit-user-select: none; }
-img { -webkit-user-drag: none; user-select: none; }
+/* images : pas de sélection, pas de glisser, pas de menu « Enregistrer » sur appui long (iPhone) */
+img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 
 .draw-layer {
   position: fixed; inset: 0; z-index: 45;
