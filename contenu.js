@@ -227,16 +227,28 @@ const PORTFOLIO = [
     "vignette": "images/06-expo-maitres-du-feu-vignette.jpg",
     "images": [
       {
-        "fichier": "images/06-expo-maitres-du-feu-1.jpg",
-        "format": "carré"
+        "fichier": "images/06-expo-maitres-du-feu-1.png",
+        "format": "carré (fond transparent)"
       },
       {
-        "fichier": "images/06-expo-maitres-du-feu-2.jpg",
-        "format": "paysage 4:3"
+        "fichier": "images/06-expo-maitres-du-feu-2.png",
+        "format": "paysage 4:3 (fond transparent)"
       },
       {
         "fichier": "images/06-expo-maitres-du-feu-3.jpg",
         "format": "paysage 16:10"
+      },
+      {
+        "fichier": "images/06-expo-maitres-du-feu-4.png",
+        "format": "fond transparent"
+      },
+      {
+        "fichier": "images/06-expo-maitres-du-feu-5.png",
+        "format": "fond transparent"
+      },
+      {
+        "fichier": "images/06-expo-maitres-du-feu-6.png",
+        "format": "fond transparent"
       }
     ]
   },
@@ -918,6 +930,64 @@ const PORTFOLIO = [
       {
         "fichier": "images/24-cahiers-du-man-3.jpg",
         "format": "paysage 16:10"
+      }
+    ]
+  },
+  {
+    "id": "port-epic",
+    "page_pdf": 25,
+    "masque": false,
+    "titre_fr": "Roadbook Antwerp Port Epic",
+    "titre_en": "Antwerp Port Epic Roadbook",
+    "categories_fr": [
+      "CARTOGRAPHIE",
+      "MISE EN PAGE",
+      "IDENTITÉ"
+    ],
+    "categories_en": [
+      "CARTOGRAPHY",
+      "LAYOUT",
+      "IDENTITY"
+    ],
+    "texte_fr": [
+      "Création graphique, mise en page et cartographie pour le roadbook de l’édition 2026 d’Antwerp Port Epic, pour Procyclingmaps.",
+      "Cette brochure A4 a été imprimée et diffusée sur le web.",
+      "Contenu : itinéraire des épreuves avec POI et profils altimétriques, plan des derniers kilomètres, plans d’accès et plans de situation, illustration des directions routières."
+    ],
+    "texte_en": [
+      "Graphic design, layout and cartography for the roadbook of the 2026 edition of Antwerp Port Epic, for Procyclingmaps.",
+      "This A4 brochure was printed and also published online.",
+      "Contents: race routes with points of interest and elevation profiles, final-kilometre maps, access and location maps, and illustrated road directions."
+    ],
+    "vignette": "images/25-port-epic-vignette.jpg",
+    "images": [
+      {
+        "fichier": "images/25-port-epic-1.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-2.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-3.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-4.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-5.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-6.jpg",
+        "format": ""
+      },
+      {
+        "fichier": "images/25-port-epic-7.jpg",
+        "format": ""
       }
     ]
   }
